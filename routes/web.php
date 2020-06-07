@@ -16,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/h', function () {
     return view('welcome');
 });
+Route::view('admin','admin.index');
+Route::view('productList','admin.productList');
+Route::view('addProduct','admin.addProduct');
+Route::view('orders','admin.orders');
+
+
+
+
+
+
 Route::view('/','customer.index');
 Route::view('dashboard','customer.dashboard');
 Route::view('shop','customer.shop');

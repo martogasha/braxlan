@@ -96,14 +96,17 @@
                     </div>
                     <div class="col-md-12">
                         <div class="delivery-sec">
-                            <h3>expected date of delivery</h3>
-                            <h2>october 22, 2018</h2></div>
+                            <h3>expected Time of delivery to your doorstep</h3>
+                            <h2>2hrs Maximum</h2></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+    alert('PING YOUR LOCATION TO 0754-238-704 USING WHATSAPP')
+</script>
 <!-- Section ends -->
 
 
