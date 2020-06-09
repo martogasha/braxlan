@@ -19,6 +19,8 @@ Route::get('/h', function () {
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 Route::view('admin','admin.index');
+Route::view('privacy','privacy');
+
 Route::view('productList','admin.productList');
 Route::view('addProduct','admin.addProduct');
 Route::view('orders','admin.orders');
