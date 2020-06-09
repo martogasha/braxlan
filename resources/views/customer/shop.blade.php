@@ -1,9 +1,8 @@
 @include('CPartials.header')
+<title>Shop</title>
 
 <!-- breadcrumb start -->
 <!-- breadcrumb End -->
-
-
 <!-- section start -->
 <section class="section-big-pt-space ratio_asos bg-light">
     <div class="collection-wrapper">

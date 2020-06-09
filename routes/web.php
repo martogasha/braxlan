@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/h', function () {
     return view('welcome');
 });
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 Route::view('admin','admin.index');
 Route::view('productList','admin.productList');
 Route::view('addProduct','admin.addProduct');
 Route::view('orders','admin.orders');
+Route::view('l','auth.l');
+Route::view('r','auth.r');
 
 
 
@@ -39,3 +43,7 @@ Route::view('success','customer.orderSuccess');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

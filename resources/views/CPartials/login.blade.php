@@ -19,11 +19,13 @@
                 <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">
             </div>
             <div class="form-group">
-                <a href="javascript:document.getElementById('form').submit();" class="btn btn-rounded btn-block">Login</a>
+                <a href="javascript:document.getElementById('form').submit();" class="btn btn-rounded btn-block">Sign In</a>
+                <a href="{{url('login/facebook')}}" class="btn btn-rounded btn-block">Sign In with Facebook</a>
+
             </div>
             <div>
                 <h5 class="forget-class"><a href="forget-pwd.html" class="d-block">forget password?</a></h5>
-                <h6 class="forget-class"><a href="register.html" class="d-block">new to store? Signup now</a></h6>
+                <h6 class="forget-class"><a href="{{url('register')}}" class="d-block">new to store? Signup now</a></h6>
             </div>
         </form>
     </div>

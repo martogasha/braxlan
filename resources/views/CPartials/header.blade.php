@@ -280,8 +280,7 @@
                             <div class="icon-block">
                                 <ul>
                                     <li class="mobile-user onhover-dropdown"  onclick="openAccount()">
-                                        <a href="#"><i class="icon-user"></i>
-                                        </a>
+                                            <img src="assets/images/dafault.png" class="rounded-circle" alt="Cinque Terre" width="22" height="22">
                                     </li>
                                     <li class="mobile-search"><a href="#"><i class="icon-search"></i></a>
                                         <div class ="search-overlay">
@@ -302,7 +301,11 @@
                                             </div>
                                         </div>
                                     </li>
+
                                     <li class="mobile-setting mobile-setting-hover" onclick="openSetting()"><a href="#"><i class="icon-settings"></i></a>
+                                    </li>
+                                    <li class="mobile-wishlist" onclick="openWishlist()">
+                                        <a ><i class="icon-heart"></i><div class="cart-item"><div>0 item<span>wishlist</span></div></div></a>
                                     </li>
                                 </ul>
                             </div>
