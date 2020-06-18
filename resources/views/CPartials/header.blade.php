@@ -9,35 +9,35 @@
     <meta name="description" content="big-deal">
     <meta name="keywords" content="big-deal">
     <meta name="author" content="big-deal">
-    <link rel="icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{asset('assets/images/favicon/favicon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon/favicon.ico')}}" type="image/x-icon">
 
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
 
     <!--icon css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/themify.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify.css')}}">
 
     <!--Slick slider css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick-theme.css')}}">
 
     <!--Animate css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/animate.css')}}">
     <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.css')}}">
 
     <!-- Theme css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/color2.css" media="screen" id="color">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/color2.css')}}" media="screen" id="color">
 </head>
 <body class="bg-light ">
 
 <!-- loader start -->
 <div class="loader-wrapper">
     <div>
-        <img src="assets/images/loader.gif" alt="loader">
+        <img src="{{asset('assets/images/loader.gif')}}" alt="loader">
     </div>
 </div>
 <!-- loader end -->
@@ -51,17 +51,11 @@
                 <div class="col-xl-5 col-md-7 col-sm-6">
                     <div class="top-header-left">
                         <div class="shpping-order">
-                            <h6>free shipping on order over $99 </h6>
                         </div>
                         <div class="app-link">
                             <h6>
-                                Download aap
-                            </h6>
-                            <ul>
-                                <li><a><i class="fa fa-apple" ></i></a></li>
-                                <li><a><i class="fa fa-android" ></i></a></li>
-                                <li><a><i class="fa fa-windows" ></i></a></li>
-                            </ul>
+                                free Delivery on order over Ksh:3000
+
                         </div>
                     </div>
                 </div>
@@ -81,23 +75,19 @@
                         <div class="language-block">
                             <div class="language-dropdown">
                   <span  class="language-dropdown-click">
-                    english <i class="fa fa-angle-down" aria-hidden="true"></i>
+                      @if(\Illuminate\Support\Facades\Auth::check())
+                    {{\Illuminate\Support\Facades\Auth::user()->name}} <i class="fa fa-angle-down" aria-hidden="true"></i>
+                      @endif
                   </span>
                                 <ul class="language-dropdown-open">
-                                    <li><a href="#">hindi</a></li>
-                                    <li><a href="#">english</a></li>
-                                    <li><a href="#">marathi</a></li>
-                                    <li><a href="#">spanish</a></li>
-                                </ul>
-                            </div>
-                            <div class="curroncy-dropdown">
-                  <span class="curroncy-dropdown-click">
-                    usd<i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                                <ul class="curroncy-dropdown-open">
-                                    <li><a href="#"><i class="fa fa-inr"></i>inr</a></li>
-                                    <li><a href="#"><i class="fa fa-usd"></i>usd</a></li>
-                                    <li><a href="#"><i class="fa fa-eur"></i>eur</a></li>
+                                    <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                                    <li><a href="{{url('trackOrder')}}">Orders</a></li>
+                                    <form action="{{route('logout')}}" method="post" id="logout">
+                                        @csrf
+                                    <li><a href="javascript:document.getElementById('logout').submit();">Logout</a></li>
+                                    </form>
+
+
                                 </ul>
                             </div>
                         </div>
@@ -148,7 +138,7 @@
                         </ul>
                     </div>
                     <div class="logo-block">
-                        <a href="{{url('/')}}"><img src="assets/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo"></a>
+                        <a href="{{url('/')}}"><img src="{{asset('assets/images/layout-2/logo/logo.png')}}" class="img-fluid  " alt="logo"></a>
                     </div>
                     <div class="input-block">
                         <div class="input-box">
@@ -269,19 +259,18 @@
                                         <li><a href="#" class="dark-menu-item">Shoes</a>
 
                                         </li>
-
+                                        @if(\Illuminate\Support\Facades\Auth::check())
+                                        @else
                                         <li>
-                                            <a href="#" class="dark-menu-item">blog</a>
+                                            <a href="{{url('login')}}" class="dark-menu-item">Login</a>
                                         </li>
+                                    @endif
                                         <!--blog-meu end-->
                                     </ul>
                                 </nav>
                             </div>
                             <div class="icon-block">
                                 <ul>
-                                    <li class="mobile-user onhover-dropdown"  onclick="openAccount()">
-                                            <img src="assets/images/dafault.png" class="rounded-circle" alt="Cinque Terre" width="22" height="22">
-                                    </li>
                                     <li class="mobile-search"><a href="#"><i class="icon-search"></i></a>
                                         <div class ="search-overlay">
                                             <div>
@@ -301,12 +290,13 @@
                                             </div>
                                         </div>
                                     </li>
-
-                                    <li class="mobile-setting mobile-setting-hover" onclick="openSetting()"><a href="#"><i class="icon-settings"></i></a>
+                                    @if(\Illuminate\Support\Facades\Auth::check())
+                                    <li class="mobile-setting mobile-setting-hover" onclick="openSetting()"><a href="#"><i class="icon-user"></i></a>
                                     </li>
-                                    <li class="mobile-wishlist" onclick="openWishlist()">
-                                        <a ><i class="icon-heart"></i><div class="cart-item"><div>0 item<span>wishlist</span></div></div></a>
-                                    </li>
+                                    @else
+                                        <li class="mobile-setting mobile-setting-hover" onclick="openAccount()"><a href="#"><i class="icon-user"></i></a>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>

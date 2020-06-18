@@ -9,18 +9,19 @@
                 </a>
             </div>
         </div>
-        <form class="theme-form" action="{{url('about')}}" id="form">
+        <form class="theme-form" action="{{route('loginCustom')}}" method="post" id="form">
+            @csrf
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="Email" required="">
+                <input type="text" class="form-control" name="email" id="email" placeholder="Email" required="">
             </div>
             <div class="form-group">
                 <label for="review">Password</label>
-                <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">
+                <input type="password" class="form-control" name="password" id="review" placeholder="Enter your password" required="">
             </div>
             <div class="form-group">
                 <a href="javascript:document.getElementById('form').submit();" class="btn btn-rounded btn-block">Sign In</a>
-                <a href="{{url('login/facebook')}}" class="btn btn-rounded btn-block">Sign In with Facebook</a>
+                <a href="{{url('login/google')}}" class="btn btn-rounded btn-block">Sign In with Google</a>
 
             </div>
             <div>
@@ -29,4 +30,5 @@
             </div>
         </form>
     </div>
+
 </div>

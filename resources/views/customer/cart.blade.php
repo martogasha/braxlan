@@ -1,24 +1,6 @@
 @include('CPartials.header')
 <title>Cart</title>
-
-<div class="breadcrumb-main ">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="breadcrumb-contain">
-                    <div>
-                        <h2>cart</h2>
-                        <ul>
-                            <li><a href="#">home</a></li>
-                            <li><i class="fa fa-angle-double-right"></i></li>
-                            <li><a href="#">cart</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include('flash-message')
 <!-- breadcrumb End -->
 
 
@@ -38,12 +20,13 @@
                         <th scope="col">total</th>
                     </tr>
                     </thead>
+                    @foreach($carts as $cart)
                     <tbody>
                     <tr>
                         <td>
-                            <a href="#"><img src="assets/images/layout-3/product/1.jpg" alt="cart"  class=" "></a>
+                            <a href="#"><img src="{{asset('uploads/product/'.$cart->product->product_image)}}" alt="cart"  class=" "></a>
                         </td>
-                        <td><a href="#">cotton shirt</a>
+                        <td><a href="#">{{$cart->product->product_name}}</a>
                             <div class="mobile-cart-content row">
                                 <div class="col-xs-3">
                                     <div class="qty-box">
@@ -53,108 +36,47 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-3">
-                                    <h2 class="td-color">$63.00</h2></div>
                                 <div class="col-xs-3">
                                     <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
                             </div>
                         </td>
                         <td>
-                            <h2>$63.00</h2></td>
+                            <h2>Ksh: {{$cart->product->product_price}}</h2></td>
                         <td>
                             <div class="qty-box">
                                 <div class="input-group">
-                                    <input type="number" name="quantity" class="form-control input-number" value="1">
+                                    <input type="number" name="quantity" class="form-control input-number" value="{{$cart->quantity}}">
                                 </div>
                             </div>
                         </td>
-                        <td><a href="#" class="icon"><i class="ti-close"></i></a></td>
+                        <form action="{{url('cartDelete',$cart->id)}}" method="post" id="deleteCart">
+                            @csrf
+                        <td><a href="javascript:document.getElementById('deleteCart').submit();" class="icon"><i class="ti-close"></i></a></td>
+                        </form>
                         <td>
-                            <h2 class="td-color">$4539.00</h2></td>
+                            <h2 class="td-color">Ksh: {{$cart->product->product_price*$cart->quantity}}</h2></td>
                     </tr>
                     </tbody>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <a href="#"><img src="assets/images/layout-3/product/4.jpg" alt="cart" class=" "></a>
-                        </td>
-                        <td><a href="#">cotton shirt</a>
-                            <div class="mobile-cart-content row">
-                                <div class="col-xs-3">
-                                    <div class="qty-box">
-                                        <div class="input-group">
-                                            <input type="number" name="quantity" class="form-control input-number" value="1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-3">
-                                    <h2 class="td-color">$63.00</h2></div>
-                                <div class="col-xs-3">
-                                    <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
-                            </div>
-                        </td>
-                        <td>
-                            <h2>$63.00</h2></td>
-                        <td>
-                            <div class="qty-box">
-                                <div class="input-group">
-                                    <input type="number" name="quantity" class="form-control input-number" value="1">
-                                </div>
-                            </div>
-                        </td>
-                        <td><a href="#" class="icon"><i class="ti-close"></i></a></td>
-                        <td>
-                            <h2 class="td-color">$4539.00</h2></td>
-                    </tr>
-                    </tbody>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <a href="#"><img src="assets/images/layout-3/product/3.jpg" alt="cart" class=" "></a>
-                        </td>
-                        <td><a href="#">cotton shirt</a>
-                            <div class="mobile-cart-content row">
-                                <div class="col-xs-3">
-                                    <div class="qty-box">
-                                        <div class="input-group">
-                                            <input type="number" name="quantity" class="form-control input-number" value="1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-3">
-                                    <h2 class="td-color">$63.00</h2></div>
-                                <div class="col-xs-3">
-                                    <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
-                            </div>
-                        </td>
-                        <td>
-                            <h2>$63.00</h2></td>
-                        <td>
-                            <div class="qty-box">
-                                <div class="input-group">
-                                    <input type="number" name="quantity" class="form-control input-number" value="1">
-                                </div>
-                            </div>
-                        </td>
-                        <td><a href="#" class="icon"><i class="ti-close"></i></a></td>
-                        <td>
-                            <h2 class="td-color">$4539.00</h2></td>
-                    </tr>
-                    </tbody>
+                    @endforeach
+
                 </table>
                 <table class="table cart-table table-responsive-md">
                     <tfoot>
                     <tr>
                         <td>total price :</td>
                         <td>
-                            <h2>$6935.00</h2></td>
+                            <h2>Ksh :{{$totalSum}}</h2></td>
                     </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
+        <form action="{{route('checkout.store')}}" method="post" id="checkout">
+            @csrf
         <div class="row cart-buttons">
-            <div class="col-12"><a href="#" class="btn btn-normal">continue shopping</a> <a href="{{url('checkout')}}" class="btn btn-normal ml-3">check out</a></div>
+            <div class="col-12"><a href="#" class="btn btn-normal">continue shopping</a> <a href="javascript:document.getElementById('checkout').submit();" class="btn btn-normal ml-3">check out</a></div>
         </div>
+        </form>
     </div>
 </section>
 <!--section end-->

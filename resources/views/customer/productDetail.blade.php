@@ -2,24 +2,6 @@
 <title>Product Detail</title>
 
 <!-- breadcrumb start -->
-<div class="breadcrumb-main ">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="breadcrumb-contain">
-                    <div>
-                        <h2>product</h2>
-                        <ul>
-                            <li><a href="#">home</a></li>
-                            <li><i class="fa fa-angle-double-right"></i></li>
-                            <li><a href="#">product</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- breadcrumb End -->
 
 <!-- section start -->
@@ -28,6 +10,8 @@
         <div class="custom-container">
             <div class="row">
                 <div class="col-lg-9 col-sm-12 col-xs-12">
+                    <form action="{{route('cart.store')}}" method="post" id="formCart">
+                        @csrf
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-xl-12">
@@ -37,27 +21,26 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="product-slick">
-                                    <div><img src="assets/images/product-sidebar/001.jpg" alt="" class="img-fluid  image_zoom_cls-0"></div>
-                                    <div><img src="assets/images/product-sidebar/002.jpg" alt="" class="img-fluid  image_zoom_cls-1"></div>
-                                    <div><img src="assets/images/product-sidebar/003.jpg" alt="" class="img-fluid  image_zoom_cls-2"></div>
-                                    <div><img src="assets/images/product-sidebar/004.jpg" alt="" class="img-fluid  image_zoom_cls-3"></div>
+                                    <div><img src="{{asset('uploads/product/'.$productDetail->product_image)}}" alt="" ></div>
+                                    <div><img src="{{asset('uploads/product/'.$productDetail->product_image1)}}" alt="" class="img-fluid  image_zoom_cls-1"></div>
+                                    <div><img src="{{asset('uploads/product/'.$productDetail->product_image2)}}" alt="" class="img-fluid  image_zoom_cls-2"></div>
+                                    <div><img src="{{asset('uploads/product/'.$productDetail->product_image3)}}" alt="" class="img-fluid  image_zoom_cls-3"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 p-0">
                                         <div class="slider-nav">
-                                            <div><img src="assets/images/product-sidebar/001.jpg" alt="" class="img-fluid  image_zoom_cls-0"></div>
-                                            <div><img src="assets/images/product-sidebar/002.jpg" alt="" class="img-fluid  image_zoom_cls-1"></div>
-                                            <div><img src="assets/images/product-sidebar/003.jpg" alt="" class="img-fluid  image_zoom_cls-2"></div>
-                                            <div><img src="assets/images/product-sidebar/004.jpg" alt="" class="img-fluid  image_zoom_cls-3"></div>
+                                            <div><img src="{{asset('uploads/product/'.$productDetail->product_image)}}" alt="" class="img-fluid  image_zoom_cls-0"></div>
+                                            <div><img src="{{asset('uploads/product/'.$productDetail->product_image1)}}" alt="" class="img-fluid  image_zoom_cls-1"></div>
+                                            <div><img src="{{asset('uploads/product/'.$productDetail->product_image2)}}" alt="" class="img-fluid  image_zoom_cls-2"></div>
+                                            <div><img src="{{asset('uploads/product/'.$productDetail->product_image3)}}" alt="" class="img-fluid  image_zoom_cls-3"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 rtl-text">
                                 <div class="product-right">
-                                    <h2>Women Pink Shirt</h2>
-                                    <h4><del>$459.00</del><span>55% off</span></h4>
-                                    <h3>$32.96</h3>
+                                    <h2>{{$productDetail->product_name}}</h2>
+                                    <h3>Ksh: {{$productDetail->product_price}}</h3>
                                     <ul class="color-variant">
                                         <li class="bg-light0"></li>
                                         <li class="bg-light1"></li>
@@ -72,7 +55,7 @@
                                                         <h5 class="modal-title" id="exampleModalLabel">Sheer Straight Kurta</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                     </div>
-                                                    <div class="modal-body"><img src="assets/images/size-chart.jpg" alt="" class="img-fluid "></div>
+                                                    <div class="modal-body"><img src="{{asset('assets/images/size-chart.jpg')}}" alt="" class="img-fluid "></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,10 +73,15 @@
                                                 <input type="text" name="quantity" class="form-control input-number" value="1"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
                                         </div>
                                     </div>
-                                    <div class="product-buttons"><a href="{{url('cart')}}"  class="btn btn-normal">add to cart</a> <a href="{{url('checkout')}}" class="btn btn-normal">Buy Now</a></div>
+
+                                        <input type="hidden" name="productId" value="{{$productDetail->id}}">
+                                        <div class="product-buttons"><a href="javascript:document.getElementById('formCart').submit();" class="btn btn-normal">add to cart</a>
+                                            <a href="{{url('checkout')}}" class="btn btn-normal">Buy Now</a>
+
+                                    </div>
                                     <div class="border-product">
                                         <h6 class="product-title">product details</h6>
-                                        <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,</p>
+                                        <p>{{$productDetail->product_desc}}</p>
                                     </div>
                                     <div class="border-product">
                                         <div class="product-icon">
@@ -113,15 +101,13 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                     <section class="tab-product tab-exes  bg-transparent">
                         <div class="row">
                             <div class="col-sm-12 col-lg-12">
                                 <div class="creative-card creative-inner">
                                     <ul class="nav nav-tabs nav-material" id="top-tab" role="tablist">
                                         <li class="nav-item"><a class="nav-link active bg-transparent" id="top-home-tab" data-toggle="tab" href="#top-home" role="tab" aria-selected="true"><i class="icofont icofont-ui-home"></i>Description</a>
-                                            <div class="material-border"></div>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link bg-transparent" id="profile-top-tab" data-toggle="tab" href="#top-profile" role="tab" aria-selected="false"><i class="icofont icofont-man-in-glasses"></i>Details</a>
                                             <div class="material-border"></div>
                                         </li>
 
@@ -132,39 +118,6 @@
                                     <div class="tab-content nav-material" id="top-tabContent">
                                         <div class="tab-pane fade show active" id="top-home" role="tabpanel" aria-labelledby="top-home-tab">
                                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                        </div>
-                                        <div class="tab-pane fade" id="top-profile" role="tabpanel" aria-labelledby="profile-top-tab">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                            <div class="single-product-tables">
-                                                <table>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Febric</td>
-                                                        <td>Chiffon</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Color</td>
-                                                        <td>Red</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Material</td>
-                                                        <td>Crepe printed</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Length</td>
-                                                        <td>50 Inches</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Size</td>
-                                                        <td>S, M, L .XXL</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
                                         </div>
                                         <div class="tab-pane fade" id="top-review" role="tabpanel" aria-labelledby="review-top-tab">
                                             <form class="theme-form">
@@ -295,19 +248,19 @@
                         <div class="offer-slider slide-1">
                             <div>
                                 <div class="media">
-                                    <a href="#"><img class="img-fluid " src="assets/images/product-sidebar/001.jpg" alt=""></a>
+                                    <a href="#"><img class="img-fluid " src="{{asset('assets/images/product-sidebar/001.jpg')}}" alt=""></a>
                                     <div class="media-body align-self-center">
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div><a href="product-page(no-sidebar).html"><h6>Slim Fit Cotton Shirt</h6></a>
                                         <h4>$500.00</h4></div>
                                 </div>
                                 <div class="media">
-                                    <a href="#"><img class="img-fluid " src="assets/images/product-sidebar/002.jpg" alt=""></a>
+                                    <a href="#"><img class="img-fluid " src="{{asset('assets/images/product-sidebar/002.jpg')}}" alt=""></a>
                                     <div class="media-body align-self-center">
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div><a href="product-page(no-sidebar).html"><h6>Slim Fit Cotton Shirt</h6></a>
                                         <h4>$500.00</h4></div>
                                 </div>
                                 <div class="media">
-                                    <a href="#"><img class="img-fluid " src="assets/images/product-sidebar/003.jpg" alt=""></a>
+                                    <a href="#"><img class="img-fluid " src="{{asset('assets/images/product-sidebar/003.jpg')}}" alt=""></a>
                                     <div class="media-body align-self-center">
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div><a href="product-page(no-sidebar).html"><h6>Slim Fit Cotton Shirt</h6></a>
                                         <h4>$500.00</h4></div>
@@ -315,19 +268,19 @@
                             </div>
                             <div>
                                 <div class="media">
-                                    <a href="#"><img class="img-fluid " src="assets/images/product-sidebar/004.jpg" alt=""></a>
+                                    <a href="#"><img class="img-fluid " src="{{asset('assets/images/product-sidebar/004.jpg')}}" alt=""></a>
                                     <div class="media-body align-self-center">
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div><a href="product-page(no-sidebar).html"><h6>Slim Fit Cotton Shirt</h6></a>
                                         <h4>$500.00</h4></div>
                                 </div>
                                 <div class="media">
-                                    <a href="#"><img class="img-fluid " src="assets/images/product-sidebar/001.jpg" alt=""></a>
+                                    <a href="#"><img class="img-fluid " src="{{asset('assets/images/product-sidebar/001.jpg')}}" alt=""></a>
                                     <div class="media-body align-self-center">
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div><a href="product-page(no-sidebar).html"><h6>Slim Fit Cotton Shirt</h6></a>
                                         <h4>$500.00</h4></div>
                                 </div>
                                 <div class="media">
-                                    <a href="#"><img class="img-fluid " src="assets/images/product-sidebar/002.jpg" alt=""></a>
+                                    <a href="#"><img class="img-fluid " src="{{asset('assets/images/product-sidebar/002.jpg')}}" alt=""></a>
                                     <div class="media-body align-self-center">
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div><a href="product-page(no-sidebar).html"><h6>Slim Fit Cotton Shirt</h6></a>
                                         <h4>$500.00</h4></div>

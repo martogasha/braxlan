@@ -1,5 +1,7 @@
 @include('APartials.header')
+<title>Braxlan- Add Product</title>
 <div class="page-body">
+@include('flash-message')
 
     <!-- Container-fluid starts-->
     <div class="container-fluid">
@@ -14,8 +16,8 @@
                 </div>
                 <div class="col-lg-6">
                     <ol class="breadcrumb pull-right">
-                        <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                        <li class="breadcrumb-item">Physical</li>
+                        <li class="breadcrumb-item"><a href="{{url('admin')}}"><i data-feather="home"></i></a></li>
+                       <li class="breadcrumb-item">admin</li>
                         <li class="breadcrumb-item active">Add Product</li>
                     </ol>
                 </div>
@@ -32,91 +34,76 @@
                     <div class="card-header">
                         <h5>Add Product</h5>
                     </div>
+                <form action="{{route('add')}}" method="post" enctype="multipart/form-data">
+                        @csrf
                     <div class="card-body">
                         <div class="row product-adding">
                             <div class="col-xl-5">
-                                <div class="add-product">
                                     <div class="row">
                                         <div class="col-xl-3 xl-50 col-sm-6 col-3">
                                             <ul class="file-upload-product">
-                                                <li><input class="upload" type="file"></li>
-                                                <li><input class="upload" type="file"></li>
-                                                <li><input class="upload" type="file"></li>
-                                                <li><input class="upload" type="file"></li>
+                                                <li><input class="upload" name="product_image" type="file" required></li>
+                                                <br>
+                                                <br>
+                                                <li><input class="upload" name="product_image1" type="file"></li>
+                                                <br>
+                                                <br>
+                                                <li><input class="upload" name="product_image2" type="file"></li>
+                                                <br>
+                                                <br>
+                                                <li><input class="upload" name="product_image3" type="file"></li>
+                                                <br>
+                                                <br>
                                             </ul>
+                                        </div>
 
 
                                         </div>
                                     </div>
-                                </div>
                             </div>
+                        <br>
                             <div class="col-xl-7">
-                                <form class="needs-validation add-product-form" novalidate="">
                                     <div class="form">
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Title :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" type="text" required="">
-                                            <div class="valid-feedback">Looks good!</div>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" name="product_name" type="text" required="">
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Describe :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" name="product_desc" type="textarea" required="">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" type="text" required="">
-                                            <div class="valid-feedback">Looks good!</div>
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" type="text" required="">
-                                            <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price" type="text" required="">
                                         </div>
                                     </div>
                                     <div class="form">
                                         <div class="form-group row">
-                                            <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Size :</label>
-                                            <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1">
-                                                <option>Small</option>
-                                                <option>Medium</option>
-                                                <option>Large</option>
-                                                <option>Extra Large</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group row">
                                             <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
-                                            <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1">
-                                                <option>Groceries</option>
-                                                <option>Supermarket</option>
-                                                <option>Kitchen Utencils</option>
+                                            <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category">
+                                                <option value="supermarket">Supermarket</option>
+                                                <option value="saftey">Safety Essentials</option>
+                                                <option value="kitchen">Kitchen Essentials</option>
+                                                <option value="drinks">Drinks</option>
+
                                             </select>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-xl-3 col-sm-4 mb-0">Total Products :</label>
-                                            <fieldset class="qty-box col-xl-9 col-xl-8 col-sm-7 pl-0">
-                                                <div class="input-group">
-                                                    <input class="touchspin" type="text" value="1">
-                                                </div>
-                                            </fieldset>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-xl-3 col-sm-4">Add Description :</label>
-                                            <div class="col-xl-8 col-sm-7 pl-0 description-sm">
-                                                <textarea id="editor1" name="editor1" cols="10" rows="4"></textarea>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="offset-xl-3 offset-sm-4">
                                         <button type="submit" class="btn btn-primary">Add</button>
-                                        <button type="button" class="btn btn-light">Discard</button>
+                                        <a href="{{url('admin')}}"> <button type="button" class="btn btn-light">Discard</button></a>
                                     </div>
-                                </form>
                             </div>
                         </div>
+                </form>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
     <!-- Container-fluid Ends-->
 
-</div>
 
 <!-- footer start-->
 <footer class="footer">
@@ -133,9 +120,7 @@
 </footer>
 <!-- footer end-->
 
-</div>
 
-</div>
 
 <!-- latest jquery-->
 <script src="assets/js/jquery-3.3.1.min.js"></script>

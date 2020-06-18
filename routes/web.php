@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/h', function () {
     return view('welcome');
 });
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::post('Login','LoginCustomController@login')->name('loginCustom');
+Route::post('Register','RegisterCustomController@register')->name('registerCustom');
+
 Route::view('admin','admin.index');
 Route::view('privacy','privacy');
 
 Route::view('productList','admin.productList');
 Route::view('addProduct','admin.addProduct');
-Route::view('orders','admin.orders');
 Route::view('l','auth.l');
 Route::view('r','auth.r');
 
@@ -32,16 +32,38 @@ Route::view('r','auth.r');
 
 
 
-Route::view('/','customer.index');
+Route::get('/','ProductController@index')->name('customer');
+Route::post('add','ProductController@store')->name('add');
+Route::resource('poster','PosterController');
+Route::get('posterView','PosterController@poster');
+Route::post('PosterEdit/{id}','PosterController@update');
+Route::resource('cart','CartController');
+Route::post('cartDelete/{id}','CartController@delete');
+Route::resource('checkout','CheckoutController');
+Route::post('placeOrder','CheckoutController@placeOrder');
+Route::resource('success','OrderController');
+Route::get('orders','OrderController@orders');
+Route::get('ajax','OrderController@getOrderDetails');
+Route::resource('completeOrder','CompleteOrderController');
+Route::get('trackOrder','OrderController@trackOrder');
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::view('dashboard','customer.dashboard');
 Route::view('shop','customer.shop');
 
+Route::resource('productDetail','ProductDetailController');
 
-Route::view('productDetail','customer.productDetail');
-
-Route::view('cart','customer.cart');
-Route::view('checkout','customer.checkout');
-Route::view('success','customer.orderSuccess');
 
 
 

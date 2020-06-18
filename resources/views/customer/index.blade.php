@@ -89,7 +89,7 @@
     <div class="tab-product-main">
         <div class="tab-prodcut-contain">
             <ul class="tabs tab-title" style="height: 50px">
-                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">GROCERIES</b></a><h6>View More</h6>
+                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">SUPERMARKET</b><h6>View More</h6></a>
 
             </ul>
         </div>
@@ -108,15 +108,16 @@
                     <div class="tab-content-cls ">
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
+                                @foreach($supermarkets as $supermarket)
                                 <div>
-                                    <a href="{{url('productDetail')}}">
+                                    <a href="{{url('productDetail',$supermarket->id)}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
-                                                <img src="assets/images/layout-2/product/4.jpg" class="img-fluid  " alt="product">
+                                                <img src="{{asset('uploads/product/'.$supermarket->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a4.jpg" class="img-fluid  " alt="product">
+                                                <img src="{{asset('uploads/product/'.$supermarket->product_image1)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-icon icon-inline">
 
@@ -138,17 +139,17 @@
                                                     </div>
                                                     <a href="#">
                                                         <h6 class="price-title">
-                                                            reader will be distracted.
+                                                            {{$supermarket->product_name}}.
                                                         </h6>
                                                     </a>
                                                 </div>
                                                 <div class="detail-right">
                                                     <div class="check-price">
-                                                        $ 56.21
                                                     </div>
                                                     <div class="price">
                                                         <div class="price">
-                                                            $ 24.05
+                                                            Ksh: {{$supermarket->product_price}}
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -157,229 +158,8 @@
                                     </div>
                                     </a>
                                 </div>
-                                <div>
-                                    <div class="product-box">
-                                        <div class="product-imgbox">
-                                            <div class="product-front">
-                                                <img src="assets/images/layout-2/product/5.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a5.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-icon icon-inline">
-                                                <button onclick="openCart()">
-                                                    <i class="ti-bag" ></i>
-                                                </button>
-                                                <a href="javascript:void(0)" title="Add to Wishlist">
-                                                    <i class="ti-heart" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-search" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="compare.html" title="Compare">
-                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                </a>
+                                @endforeach
 
-                                            </div>
-                                            <div class="new-label1">
-                                                <div>new</div>
-                                            </div>
-                                            <div class="on-sale1">
-                                                on sale
-                                            </div>
-                                        </div>
-                                        <div class="product-detail detail-inline">
-                                            <div class="detail-title">
-                                                <div class="detail-left">
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <a href="#">
-                                                        <h6 class="price-title">
-                                                            reader will be distracted.
-                                                        </h6>
-                                                    </a>
-                                                </div>
-                                                <div class="detail-right">
-                                                    <div class="check-price">
-                                                        $ 56.21
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="price">
-                                                            $ 24.05
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="product-box">
-                                        <div class="product-imgbox">
-                                            <div class="product-front">
-                                                <img src="assets/images/layout-2/product/6.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a6.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-icon icon-inline">
-                                                <button onclick="openCart()">
-                                                    <i class="ti-bag" ></i>
-                                                </button>
-                                                <a href="javascript:void(0)" title="Add to Wishlist">
-                                                    <i class="ti-heart" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-search" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="compare.html" title="Compare">
-                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail detail-inline">
-                                            <div class="detail-title">
-                                                <div class="detail-left">
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <a href="#">
-                                                        <h6 class="price-title">
-                                                            reader will be distracted.
-                                                        </h6>
-                                                    </a>
-                                                </div>
-                                                <div class="detail-right">
-                                                    <div class="check-price">
-                                                        $ 56.21
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="price">
-                                                            $ 24.05
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="product-box">
-                                        <div class="product-imgbox">
-                                            <div class="product-front">
-                                                <img src="assets/images/layout-2/product/7.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a7.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-icon icon-inline">
-                                                <button onclick="openCart()">
-                                                    <i class="ti-bag" ></i>
-                                                </button>
-                                                <a href="javascript:void(0)" title="Add to Wishlist">
-                                                    <i class="ti-heart" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-search" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="compare.html" title="Compare">
-                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail detail-inline">
-                                            <div class="detail-title">
-                                                <div class="detail-left">
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <a href="#">
-                                                        <h6 class="price-title">
-                                                            reader will be distracted.
-                                                        </h6>
-                                                    </a>
-                                                </div>
-                                                <div class="detail-right">
-                                                    <div class="check-price">
-                                                        $ 56.21
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="price">
-                                                            $ 24.05
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="product-box">
-                                        <div class="product-imgbox">
-                                            <div class="product-front">
-                                                <img src="assets/images/layout-2/product/8.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a8.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-icon icon-inline">
-                                                <button onclick="openCart()">
-                                                    <i class="ti-bag" ></i>
-                                                </button>
-                                                <a href="javascript:void(0)" title="Add to Wishlist">
-                                                    <i class="ti-heart" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-search" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="compare.html" title="Compare">
-                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail detail-inline">
-                                            <div class="detail-title">
-                                                <div class="detail-left">
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <a href="#">
-                                                        <h6 class="price-title">
-                                                            reader will be distracted.
-                                                        </h6>
-                                                    </a>
-                                                </div>
-                                                <div class="detail-right">
-                                                    <div class="check-price">
-                                                        $ 56.21
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="price">
-                                                            $ 24.05
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div id="tab-2" class="tab-content">
@@ -2418,7 +2198,7 @@
     <div class="tab-product-main">
         <div class="tab-prodcut-contain">
             <ul class="tabs tab-title" style="height: 50px">
-                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">SUPERMARKET</b></a><h6>View More</h6>
+                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">SAFETY ESSENTIALS</b><h6>View More</h6></a>
 
             </ul>
         </div>
@@ -2436,15 +2216,16 @@
                     <div class="tab-content-cls ">
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
+                                @foreach($safteys as $saftey)
                                 <div>
-                                    <a href="{{url('productDetail')}}">
+                                    <a href="{{url('productDetail',$saftey->id)}}">
                                         <div class="product-box">
                                             <div class="product-imgbox">
                                                 <div class="product-front">
-                                                    <img src="assets/images/layout-2/product/4.jpg" class="img-fluid  " alt="product">
+                                                    <img src="{{asset('uploads/product/'.$saftey->product_image)}}" class="img-fluid  " alt="product">
                                                 </div>
                                                 <div class="product-back">
-                                                    <img src="assets/images/layout-2/product/a4.jpg" class="img-fluid  " alt="product">
+                                                    <img src="{{asset('uploads/product/'.$saftey->product_image1)}}" class="img-fluid  " alt="product">
                                                 </div>
                                                 <div class="product-icon icon-inline">
 
@@ -2466,17 +2247,16 @@
                                                         </div>
                                                         <a href="#">
                                                             <h6 class="price-title">
-                                                                reader will be distracted.
+                                                                {{$saftey->product_name}}.
                                                             </h6>
                                                         </a>
                                                     </div>
                                                     <div class="detail-right">
                                                         <div class="check-price">
-                                                            $ 56.21
                                                         </div>
                                                         <div class="price">
                                                             <div class="price">
-                                                                $ 24.05
+                                                                Ksh: {{$saftey->product_price}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2485,229 +2265,8 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div>
-                                    <div class="product-box">
-                                        <div class="product-imgbox">
-                                            <div class="product-front">
-                                                <img src="assets/images/layout-2/product/5.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a5.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-icon icon-inline">
-                                                <button onclick="openCart()">
-                                                    <i class="ti-bag" ></i>
-                                                </button>
-                                                <a href="javascript:void(0)" title="Add to Wishlist">
-                                                    <i class="ti-heart" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-search" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="compare.html" title="Compare">
-                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                </a>
+                                @endforeach
 
-                                            </div>
-                                            <div class="new-label1">
-                                                <div>new</div>
-                                            </div>
-                                            <div class="on-sale1">
-                                                on sale
-                                            </div>
-                                        </div>
-                                        <div class="product-detail detail-inline">
-                                            <div class="detail-title">
-                                                <div class="detail-left">
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <a href="#">
-                                                        <h6 class="price-title">
-                                                            reader will be distracted.
-                                                        </h6>
-                                                    </a>
-                                                </div>
-                                                <div class="detail-right">
-                                                    <div class="check-price">
-                                                        $ 56.21
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="price">
-                                                            $ 24.05
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="product-box">
-                                        <div class="product-imgbox">
-                                            <div class="product-front">
-                                                <img src="assets/images/layout-2/product/6.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a6.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-icon icon-inline">
-                                                <button onclick="openCart()">
-                                                    <i class="ti-bag" ></i>
-                                                </button>
-                                                <a href="javascript:void(0)" title="Add to Wishlist">
-                                                    <i class="ti-heart" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-search" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="compare.html" title="Compare">
-                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail detail-inline">
-                                            <div class="detail-title">
-                                                <div class="detail-left">
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <a href="#">
-                                                        <h6 class="price-title">
-                                                            reader will be distracted.
-                                                        </h6>
-                                                    </a>
-                                                </div>
-                                                <div class="detail-right">
-                                                    <div class="check-price">
-                                                        $ 56.21
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="price">
-                                                            $ 24.05
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="product-box">
-                                        <div class="product-imgbox">
-                                            <div class="product-front">
-                                                <img src="assets/images/layout-2/product/7.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a7.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-icon icon-inline">
-                                                <button onclick="openCart()">
-                                                    <i class="ti-bag" ></i>
-                                                </button>
-                                                <a href="javascript:void(0)" title="Add to Wishlist">
-                                                    <i class="ti-heart" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-search" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="compare.html" title="Compare">
-                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail detail-inline">
-                                            <div class="detail-title">
-                                                <div class="detail-left">
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <a href="#">
-                                                        <h6 class="price-title">
-                                                            reader will be distracted.
-                                                        </h6>
-                                                    </a>
-                                                </div>
-                                                <div class="detail-right">
-                                                    <div class="check-price">
-                                                        $ 56.21
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="price">
-                                                            $ 24.05
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="product-box">
-                                        <div class="product-imgbox">
-                                            <div class="product-front">
-                                                <img src="assets/images/layout-2/product/8.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-back">
-                                                <img src="assets/images/layout-2/product/a8.jpg" class="img-fluid  " alt="product">
-                                            </div>
-                                            <div class="product-icon icon-inline">
-                                                <button onclick="openCart()">
-                                                    <i class="ti-bag" ></i>
-                                                </button>
-                                                <a href="javascript:void(0)" title="Add to Wishlist">
-                                                    <i class="ti-heart" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-search" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="compare.html" title="Compare">
-                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-detail detail-inline">
-                                            <div class="detail-title">
-                                                <div class="detail-left">
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    <a href="#">
-                                                        <h6 class="price-title">
-                                                            reader will be distracted.
-                                                        </h6>
-                                                    </a>
-                                                </div>
-                                                <div class="detail-right">
-                                                    <div class="check-price">
-                                                        $ 56.21
-                                                    </div>
-                                                    <div class="price">
-                                                        <div class="price">
-                                                            $ 24.05
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div id="tab-2" class="tab-content">
@@ -4724,7 +4283,7 @@
     <div class="tab-product-main">
         <div class="tab-prodcut-contain">
             <ul class="tabs tab-title" style="height: 50px">
-                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">KITCHEN ESSENTIALS</b></a><h6>View More</h6>
+                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">KITCHEN ESSENTIALS</b><h6>View More</h6></a>
 
             </ul>
         </div>
@@ -4742,54 +4301,1709 @@
                     <div class="tab-content-cls ">
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
-                                <div>
-                                    <a href="{{url('productDetail')}}">
-                                        <div class="product-box">
-                                            <div class="product-imgbox">
-                                                <div class="product-front">
-                                                    <img src="assets/images/layout-2/product/4.jpg" class="img-fluid  " alt="product">
-                                                </div>
-                                                <div class="product-back">
-                                                    <img src="assets/images/layout-2/product/a4.jpg" class="img-fluid  " alt="product">
-                                                </div>
-                                                <div class="product-icon icon-inline">
-
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                        <i class="ti-eye" aria-hidden="true"></i>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-                                            <div class="product-detail detail-inline">
-                                                <div class="detail-title">
-                                                    <div class="detail-left">
-                                                        <div class="rating-star">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </div>
-                                                        <a href="#">
-                                                            <h6 class="price-title">
-                                                                reader will be distracted.
-                                                            </h6>
-                                                        </a>
+                                @foreach($kitchens as $kitchen)
+                                    <div>
+                                        <a href="{{url('productDetail',$kitchen->id)}}">
+                                            <div class="product-box">
+                                                <div class="product-imgbox">
+                                                    <div class="product-front">
+                                                        <img src="{{asset('uploads/product/'.$kitchen->product_image)}}" class="img-fluid  " alt="product">
                                                     </div>
-                                                    <div class="detail-right">
-                                                        <div class="check-price">
-                                                            $ 56.21
+                                                    <div class="product-back">
+                                                        <img src="{{asset('uploads/product/'.$kitchen->product_image1)}}" class="img-fluid  " alt="product">
+                                                    </div>
+                                                    <div class="product-icon icon-inline">
+
+                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                            <i class="ti-eye" aria-hidden="true"></i>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail detail-inline">
+                                                    <div class="detail-title">
+                                                        <div class="detail-left">
+                                                            <div class="rating-star">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </div>
+                                                            <a href="#">
+                                                                <h6 class="price-title">
+                                                                    {{$kitchen->product_name}}.
+                                                                </h6>
+                                                            </a>
                                                         </div>
-                                                        <div class="price">
+                                                        <div class="detail-right">
+                                                            <div class="check-price">
+                                                            </div>
                                                             <div class="price">
-                                                                $ 24.05
+                                                                <div class="price">
+                                                                    Ksh: {{$kitchen->product_price}}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div id="tab-2" class="tab-content">
+                            <div class="product-slide-6 product-m no-arrow">
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/8.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a8.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </a>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline ">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/5.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a5.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/6.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a6.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/7.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a7.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-3" class="tab-content">
+                            <div class="product-slide-6 product-m no-arrow">
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/7.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a7.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/8.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a8.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline ">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/5.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a5.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/6.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a6.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-4" class="tab-content">
+                            <div class="product-slide-6 product-m no-arrow">
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/6.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a6.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/7.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a7.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/8.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a8.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline ">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/5.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a5.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-5" class="tab-content">
+                            <div class="product-slide-6 product-m no-arrow">
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/5.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a5.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/6.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a6.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/7.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a7.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/8.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a8.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline ">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-6" class="tab-content">
+                            <div class="product-slide-6 product-m no-arrow">
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a4.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div>
                                     <div class="product-box">
@@ -5014,6 +6228,206 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a1.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                            <div class="on-sale1">
+                                                on sale
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline ">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="assets/images/layout-2/product/3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="assets/images/layout-2/product/a3.jpg" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <button onclick="openCart()">
+                                                    <i class="ti-bag" ></i>
+                                                </button>
+                                                <a href="javascript:void(0)" title="Add to Wishlist">
+                                                    <i class="ti-heart" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                    <i class="ti-search" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                </a>
+
+                                            </div>
+                                            <div class="new-label1">
+                                                <div>new</div>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            reader will be distracted.
+                                                        </h6>
+                                                    </a>
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                        $ 56.21
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            $ 24.05
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--product end-->
+
+<section class="section-pt-space" >
+    <div class="tab-product-main">
+        <div class="tab-prodcut-contain">
+            <ul class="tabs tab-title" style="height: 50px">
+                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">DRINKS</b><h6>View More</h6></a>
+
+            </ul>
+        </div>
+    </div>
+</section>
+<!--title end-->
+
+<!--product start-->
+<section class="section-py-space ratio_square product">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col pr-0">
+                <div class="theme-tab product mb--5">
+
+                    <div class="tab-content-cls ">
+                        <div id="tab-1" class="tab-content active default">
+                            <div class="product-slide-6 product-m no-arrow">
+                                @foreach($drinks as $drink)
+                                    <div>
+                                        <a href="{{url('productDetail',$drink->id)}}">
+                                            <div class="product-box">
+                                                <div class="product-imgbox">
+                                                    <div class="product-front">
+                                                        <img src="{{asset('uploads/product/'.$drink->product_image)}}" class="img-fluid  " alt="product">
+                                                    </div>
+                                                    <div class="product-back">
+                                                        <img src="{{asset('uploads/product/'.$drink->product_image1)}}" class="img-fluid  " alt="product">
+                                                    </div>
+                                                    <div class="product-icon icon-inline">
+
+                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                            <i class="ti-eye" aria-hidden="true"></i>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail detail-inline">
+                                                    <div class="detail-title">
+                                                        <div class="detail-left">
+                                                            <div class="rating-star">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </div>
+                                                            <a href="#">
+                                                                <h6 class="price-title">
+                                                                    {{$drink->product_name}}.
+                                                                </h6>
+                                                            </a>
+                                                        </div>
+                                                        <div class="detail-right">
+                                                            <div class="check-price">
+                                                            </div>
+                                                            <div class="price">
+                                                                <div class="price">
+                                                                    Ksh: {{$drink->product_price}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                         <div id="tab-2" class="tab-content">
@@ -7204,7 +8618,9 @@
     <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>
     <div class="cart-inner">
         <div class="cart_top">
-            <h3>my setting</h3>
+            @if(\Illuminate\Support\Facades\Auth::check())
+            <h3>{{\Illuminate\Support\Facades\Auth::user()->name}}</h3>
+            @endif
             <div class="close-cart">
                 <a href="javascript:void(0)" onclick="closeSetting()">
                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -7213,17 +8629,15 @@
         </div>
         <div class="setting-block">
             <div >
-                <h5>language</h5>
+                <a href=""><h5>My Account</h5></a>
                 <ul>
-                    <li><a href="#">english</a></li>
-                    <li><a href="#">french</a></li>
-                </ul>
-                <h5>currency</h5>
-                <ul>
-                    <li><a href="#">uro</a></li>
-                    <li><a href="#">rupees</a></li>
-                    <li><a href="#">pound</a></li>
-                    <li><a href="#">doller</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Edit Details</a></li>
+                    <form action="{{route('logout')}}" method="post" id="logoutForm">
+                        @csrf
+                    <li><a href="javascript:document.getElementById('logoutForm').submit();">Logout</a></li>
+                    </form>
                 </ul>
             </div>
         </div>

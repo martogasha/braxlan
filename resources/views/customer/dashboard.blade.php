@@ -1,54 +1,19 @@
 @include('CPartials.header')
-<!-- breadcrumb start -->
-<div class="breadcrumb-main ">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="breadcrumb-contain">
-                    <div>
-                        <h2>dashboard</h2>
-                        <ul>
-                            <li><a href="#">home</a></li>
-                            <li><i class="fa fa-angle-double-right"></i></li>
-                            <li><a href="#">dashbord</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- breadcrumb End -->
+<title>Braxlan - Dashboard</title>
 
 <!-- section start -->
 <section class="section-big-py-space bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
-                <div class="account-sidebar"><a class="popup-btn">my account</a></div>
-                <div class="dashboard-left">
-                    <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left" aria-hidden="true"></i> back</span></div>
-                    <div class="block-content ">
-                        <ul>
-                            <li class="active"><a href="#">Account Info</a></li>
-                            <li><a href="#">Address Book</a></li>
-                            <li><a href="#">My Orders</a></li>
-                            <li><a href="#">My Wishlist</a></li>
-                            <li><a href="#">Newsletter</a></li>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Change Password</a></li>
-                            <li class="last"><a href="#">Log Out</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <div class="col-lg-9">
                 <div class="dashboard-right">
                     <div class="dashboard">
                         <div class="page-title">
                             <h2>My Dashboard</h2></div>
                         <div class="welcome-msg">
-                            <p>Hello, MARK JECNO !</p>
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                            <p>Hello, {{\Illuminate\Support\Facades\Auth::user()->name}} !</p>
+                            @endif
                             <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
                         </div>
                         <div class="box-account box-info">
@@ -91,9 +56,15 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </section>
+<script>
+    $('.col-lg-9').hide();
+
+</script>
 <!-- section end -->
 @include('CPartials.footer1')
 @include('CPartials.footer')

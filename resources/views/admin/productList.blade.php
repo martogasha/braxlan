@@ -1,4 +1,5 @@
 @include('APartials.header')
+<title>Braxlan - Product List</title>
 <div class="page-body">
 
     <!-- Container-fluid starts-->
