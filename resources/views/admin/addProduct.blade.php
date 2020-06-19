@@ -83,7 +83,7 @@
                                             <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category">
                                                 <option value="supermarket">Supermarket</option>
                                                 <option value="saftey">Safety Essentials</option>
-                                                <option value="kitchen">Kitchen Essentials</option>
+                                                <option value="kitchen">Homestead Essentials</option>
                                                 <option value="drinks">Drinks</option>
 
                                             </select>

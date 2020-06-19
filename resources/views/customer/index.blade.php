@@ -4267,7 +4267,7 @@
     <div class="tab-product-main">
         <div class="tab-prodcut-contain">
             <ul class="tabs tab-title" style="height: 50px">
-                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">KITCHEN ESSENTIALS</b><h6>View More</h6></a>
+                <a href="{{url('shop')}}"><b style="color: black;font-size:20px">HOMESTEAD ESSENTIALS</b><h6>View More</h6></a>
 
             </ul>
         </div>
