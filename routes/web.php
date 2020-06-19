@@ -42,7 +42,6 @@ Route::get('getCProduct','ProductController@getCProduct');
 Route::post('add','ProductController@store')->name('add');
 Route::resource('poster','PosterController');
 Route::get('posterView','PosterController@poster');
-
 Route::post('PosterEdit/{id}','PosterController@update');
 Route::resource('cart','CartController');
 Route::post('cartDelete/{id}','CartController@delete');

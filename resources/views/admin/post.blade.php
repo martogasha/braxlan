@@ -75,10 +75,11 @@
                 <section class="collection-banner section-pt-space b-g-white ">
                     <div class="custom-container">
                         <div class="row collection2">
+                            @if(isset($poster))
                             <div class="col-md-4">
                                 <div class="collection-banner-main banner-1  p-right">
                                     <div class="collection-img" style="background-color: aquamarine">
-                                        <img src="" class="img-fluid bg-img  " alt="banner">
+                                        <img src="{{asset('uploads/product/'.$poster->poster_image)}}" class="img-fluid bg-img  " alt="banner">
                                     </div>
                                     <div class="collection-banner-contain">
                                         <div>
@@ -93,10 +94,122 @@
                                     </div>
                                 </div>
                                 <br>
-                                <td><a href=""><button class="btn btn-secondary">Edit</button></a></td>
+                                <td><a href="{{route('poster.edit',$poster->id)}}"><button class="btn btn-secondary">Edit</button></a></td>
 
                             </div>
+                            @else
+                                <div class="col-md-4">
+                                    <div class="collection-banner-main banner-1  p-right">
+                                        <div class="collection-img" style="background-color: aquamarine">
+                                            <img src="" class="img-fluid bg-img  " alt="banner">
+                                        </div>
+                                        <div class="collection-banner-contain">
+                                            <div>
+                                                <h3 style="color: black"><b>Liquor</b></h3>
+                                                <h4>Store</h4>
+                                                <div class="shop">
+                                                    <a>
+                                                        shop now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <td><a href=""><button class="btn btn-secondary">Edit</button></a></td>
 
+                                </div>
+                            @endif
+                                @if(isset($poster2))
+                                <div class="col-md-4">
+                                <div class="collection-banner-main banner-1  p-right">
+                                    <div class="collection-img" style="background-color: aquamarine">
+                                        <img src="{{asset('uploads/product/'.$poster2->poster_image)}}" class="img-fluid bg-img  " alt="banner">
+                                    </div>
+                                    <div class="collection-banner-contain">
+                                        <div>
+                                            <h3 style="color: black"><b>Food</b></h3>
+                                            <h4>Store</h4>
+                                            <div class="shop">
+                                                <a>
+                                                    shop now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <td><a href="{{route('poster.edit',$poster->id)}}"><button class="btn btn-secondary">Edit</button></a></td>
+
+                            </div>
+                                @else
+                                    <div class="col-md-4">
+                                        <div class="collection-banner-main banner-1  p-right">
+                                            <div class="collection-img" style="background-color: aquamarine">
+                                                <img src="" class="img-fluid bg-img  " alt="banner">
+                                            </div>
+                                            <div class="collection-banner-contain">
+                                                <div>
+                                                    <h3 style="color: black"><b>Liquor</b></h3>
+                                                    <h4>Store</h4>
+                                                    <div class="shop">
+                                                        <a>
+                                                            shop now
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <td><a href=""><button class="btn btn-secondary">Edit</button></a></td>
+
+                                    </div>
+                                @endif
+                                @if(isset($poster3))
+                                <div class="col-md-4">
+                                <div class="collection-banner-main banner-1  p-right">
+                                    <div class="collection-img" style="background-color: aquamarine">
+                                        <img src="{{asset('uploads/product/'.$poster3->poster_image)}}" class="img-fluid bg-img  " alt="banner">
+                                    </div>
+                                    <div class="collection-banner-contain">
+                                        <div>
+                                            <h3 style="color: black"><b>Kitchen</b></h3>
+                                            <h4>Store</h4>
+                                            <div class="shop">
+                                                <a>
+                                                    shop now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <td><a href="{{route('poster.edit',$poster->id)}}"><button class="btn btn-secondary">Edit</button></a></td>
+
+                            </div>
+                                @else
+                                    <div class="col-md-4">
+                                        <div class="collection-banner-main banner-1  p-right">
+                                            <div class="collection-img" style="background-color: aquamarine">
+                                                <img src="" class="img-fluid bg-img  " alt="banner">
+                                            </div>
+                                            <div class="collection-banner-contain">
+                                                <div>
+                                                    <h3 style="color: black"><b>Liquor</b></h3>
+                                                    <h4>Store</h4>
+                                                    <div class="shop">
+                                                        <a>
+                                                            shop now
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <td><a href=""><button class="btn btn-secondary">Edit</button></a></td>
+
+                                    </div>
+                                @endif
 
                         </div>
                     </div>
