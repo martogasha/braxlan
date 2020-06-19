@@ -49,7 +49,7 @@
                     <div class="collection-banner-contain">
                         <div>
                             <h3 style="color: black"><b>LIQUOR</b></h3>
-                            <h4">Store</h4>
+                            <h4>Store</h4>
                             <div class="shop">
                                 <a>
                                     shop now

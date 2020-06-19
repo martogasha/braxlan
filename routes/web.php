@@ -67,6 +67,14 @@ Route::get('vTransaction','VendorController@transaction');
 Route::get('vAdd','VendorController@Product');
 Route::post('vAddProduct','VendorController@addProduct');
 
+Route::get('supermarket','CategoryController@supermarket');
+Route::get('homestead','CategoryController@homestead');
+Route::get('saftey','CategoryController@saftey');
+Route::get('drinks','CategoryController@drinks');
+
+
+
+
 
 
 

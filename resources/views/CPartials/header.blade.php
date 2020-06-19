@@ -207,29 +207,12 @@
                                     </nav>
                                     <div class="collapse  nav-desk" id="navbarToggleExternalContent">
                                         <ul class="nav-cat title-font">
-                                            <li> <img src="assets/images/layout-1/nav-img/01.png" alt="category-product"> <a href="#">western ware</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/02.png" alt="category-product"> <a href="#">TV, Appliances</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/03.png" alt="category-product"> <a href="#">Pets Products</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/04.png" alt="category-product"> <a href="#">Car, Motorbike</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/05.png" alt="category-product"> <a href="#">Industrial Products</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/06.png" alt="category-product"> <a href="#">Beauty, Health Products</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/07.png" alt="category-product"> <a href="#">Grocery Products </a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/08.png" alt="category-product"> <a href="#">Sports</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/09.png" alt="category-product"> <a href="#">Bags, Luggage</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/10.png" alt="category-product"> <a href="#">Movies, Music </a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/11.png" alt="category-product"> <a href="#">Video Games</a></li>
-                                            <li> <img src="assets/images/layout-1/nav-img/12.png" alt="category-product"> <a href="#">Toys, Baby Products</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/07.png')}}" alt="category-product"> <a href="{{url('supermarket')}}">Supermarket </a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/02.png')}}" alt="category-product"> <a href="{{url('homestead')}}">Homestead Essentials</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/09.png')}}" alt="category-product"> <a href="{{url('saftey')}}">Safety Essentials</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('drinks')}}">Drinks</a></li>
                                             <li>
-                                                <ul class="mor-slide-open">
-                                                    <li> <img src="assets/images/layout-1/nav-img/08.png" alt="category-product"> <a>Sports</a></li>
-                                                    <li> <img src="assets/images/layout-1/nav-img/09.png" alt="category-product"> <a>Bags, Luggage</a></li>
-                                                    <li> <img src="assets/images/layout-1/nav-img/10.png" alt="category-product"> <a>Movies, Music </a></li>
-                                                    <li> <img src="assets/images/layout-1/nav-img/11.png" alt="category-product"> <a>Video Games</a></li>
-                                                    <li> <img src="assets/images/layout-1/nav-img/12.png" alt="category-product"> <a>Toys, Baby Products</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a class="mor-slide-click">mor category <i class="fa fa-angle-down pro-down"></i><i class="fa fa-angle-up pro-up"></i></a>
+                                                <a class="mor-slide-click">more category <i class="fa fa-angle-down pro-down"></i><i class="fa fa-angle-up pro-up"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -247,20 +230,20 @@
 
                                         <!--SHOP-->
                                         <li>
-                                            <a href="#" class="dark-menu-item">Supermarket</a>
+                                            <a href="{{url('supermarket')}}" class="dark-menu-item">Supermarket</a>
                                         </li>
                                         <!--SHOP-END-->
 
 
                                         <!--product-meu start-->
-                                        <li class="mega"><a href="#" class="dark-menu-item">Kitchen Essentials
+                                        <li class="mega"><a href="{{url('homestead')}}" class="dark-menu-item">Homestead Essentials
                                             </a>
                                         </li>
                                         <li class="mega" >
-                                            <a href="#" class="dark-menu-item">Safety Essentials</a>
+                                            <a href="{{url('saftey')}}" class="dark-menu-item">Safety Essentials</a>
                                         </li>
 
-                                        <li><a href="#" class="dark-menu-item">Drinks</a>
+                                        <li><a href="{{url('drinks')}}" class="dark-menu-item">Drinks</a>
 
                                         </li>
                                         @if(\Illuminate\Support\Facades\Auth::check())
