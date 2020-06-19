@@ -2214,7 +2214,7 @@
                                                 <div class="product-icon icon-inline">
 
                                                     <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                        <i class="ti-eye view" id="{{$safety->id}}" aria-hidden="true"></i>
+                                                        <i class="ti-eye view" id="{{$saftey->id}}" aria-hidden="true"></i>
                                                     </a>
 
                                                 </div>
