@@ -40,6 +40,7 @@ Route::get('/','ProductController@index')->name('customer');
 Route::get('getCProduct','ProductController@getCProduct');
 
 Route::post('add','ProductController@store')->name('add');
+Route::post('deleteProduct','ProductController@deleteProduct');
 Route::resource('poster','PosterController');
 Route::get('posterView','PosterController@poster');
 Route::post('PosterEdit/{id}','PosterController@update');

@@ -1,6 +1,7 @@
 @include('APartials.header')
 <title>Braxlan - Product List</title>
 <div class="page-body">
+@include('flash-message')
 
     <!-- Container-fluid starts-->
     <div class="container-fluid">
@@ -93,13 +94,24 @@
 <!-- Quick-view modal popup start-->
 <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content quick-view-modal">
-            <div class="modal-body">
+        <form action="{{url('deleteProduct')}}" method="post" id="delProduct">
+            @csrf
+            <div class="modal-content quick-view-modal">
+                <div class="modal-body">
 
+                </div>
+                <div class="row">>
+                    <div class="col-lg-6 rtl-text">
+                        <div class="product-right">
+                            <a href="javascript:document.getElementById('delProduct').submit();"class="btn btn-normal">Delete Product</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+        </form>
         </div>
     </div>
-</div>
 <!-- Quick-view modal popup end-->
 
 <!-- footer start-->
