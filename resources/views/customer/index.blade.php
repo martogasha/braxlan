@@ -12,7 +12,7 @@
                     </div>
                     <div class="collection-banner-contain">
                         <div>
-                            <h3 style="color: black"><b>Liquor</b></h3>
+                            <h3 style="color: black"><b>FOOD</b></h3>
                             <h4>Store</h4>
                             <div class="shop">
                                 <a>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="collection-banner-contain">
                         <div>
-                            <h3 style="color: black"><b>Food</b></h3>
+                            <h3 style="color: black"><b>HOMESTEAD</b></h3>
                             <h4>Store</h4>
                             <div class="shop">
                                 <a>
@@ -48,8 +48,8 @@
                     </div>
                     <div class="collection-banner-contain">
                         <div>
-                            <h3 style="color: black"><b>Kitchen</b></h3>
-                            <h4>Store</h4>
+                            <h3 style="color: black"><b>LIQUOR</b></h3>
+                            <h4">Store</h4>
                             <div class="shop">
                                 <a>
                                     shop now
