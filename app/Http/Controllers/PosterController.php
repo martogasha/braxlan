@@ -9,13 +9,15 @@ use Illuminate\Http\Request;
 class PosterController extends Controller
 {
     public function index(){
-        return view('customer.index');
+        return view('customer.index',[
+        ]);
     }
     public function poster(){
-        $posters = Poster::all();
-        return view('admin.post',[
-            'posters'=>$posters
-        ]);
+        $poster = Poster::where('poster_category','first')->first();
+        $poster2 = Poster::where('poster_category','second')->first();
+        $poster3 = Poster::where('poster_category','third')->first();
+
+
     }
     public function edit($id){
         $edit = Poster::find($id);

@@ -74,9 +74,12 @@
                                             </ul>
                                         </div>
                                     </div>
+
                                     <form action="{{url('placeOrder')}}" method="post" id="placeOrder">
                                         @csrf
-                                        <div class="text-right"><button class="btn-normal btn" type="submit">Place Order</button></div>
+                                        <div class="row cart-buttons">
+                                            <div class="col-12"><a href="{{url('cart')}}" class="btn btn-normal">Edit Cart</a> <a href="javascript:document.getElementById('placeOrder').submit();" class="btn btn-normal ml-3">Place Order</a></div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

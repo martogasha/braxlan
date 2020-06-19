@@ -18,8 +18,8 @@
                                 <th>Payment Status</th>
                                 <th>Order Status</th>
                                 <th>Date</th>
+                                <th>Quantity</th>
                                 <th>Total</th>
-                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -28,14 +28,19 @@
                                 <td>#{{$trackOrder->id}}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <img src="{{asset('uploads/product/'.$trackOrder->product->product_image)}}" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded">
+                                        <img src="{{asset('uploads/product/'.$trackOrder->product->product_image)}}" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded" style="height: 50px">
                                     </div>
                                 </td>
                                 <td><span class="badge badge-secondary">{{$trackOrder->order_status}}</span></td>
+                                @if($trackOrder->order_stats =='Order on the Way')
+                                <td><span class="badge badge-primary">{{$trackOrder->order_stats}}</span></td>
+                                @else
                                 <td><span class="badge badge-success">{{$trackOrder->order_stats}}</span></td>
-                                <td>Dec 10,18</td>
+                                @endif
+                                    <td>{{$trackOrder->created_at->format('y/m')}}</td>
+                                <td>{{$trackOrder->product->product_price}}</td>
+                                <td>{{$trackOrder->quantity}}</td>
                                 <td>Ksh: {{$trackOrder->product->product_price*$trackOrder->quantity}}</td>
-                                <td><button class="btn btn-success">View</button> </td>
                             </tr>
                             @endforeach
 

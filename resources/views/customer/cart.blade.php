@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                         </td>
-                        <form action="{{url('cartDelete',$cart->id)}}" method="post" id="deleteCart">
+                        <form action="{{url('cartDelete',\Illuminate\Support\Facades\Auth::user()->id)}}" method="post" id="deleteCart">
                             @csrf
                         <td><a href="javascript:document.getElementById('deleteCart').submit();" class="icon"><i class="ti-close"></i></a></td>
                         </form>
@@ -71,12 +71,9 @@
                 </table>
             </div>
         </div>
-        <form action="{{route('checkout.store')}}" method="post" id="checkout">
-            @csrf
         <div class="row cart-buttons">
-            <div class="col-12"><a href="#" class="btn btn-normal">continue shopping</a> <a href="javascript:document.getElementById('checkout').submit();" class="btn btn-normal ml-3">check out</a></div>
+            <div class="col-12"><a href="#" class="btn btn-normal">continue shopping</a> <a href="{{url('checkout')}}" class="btn btn-normal ml-3">check out</a></div>
         </div>
-        </form>
     </div>
 </section>
 <!--section end-->

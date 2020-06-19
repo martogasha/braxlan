@@ -10,8 +10,8 @@ class OrderController extends Controller
 {
     public function index(){
         if (Auth::check()) {
-            $orders = Order::where('user_id', Auth::user()->id)->get();
-            $orderSums = Order::where('user_id', Auth::user()->id)->get();
+            $orders = Order::where('user_id', Auth::user()->id)->where('order_stats','Order on the Way')->get();
+            $orderSums = Order::where('user_id', Auth::user()->id)->where('order_stats','Order on the Way')->get();
 
             $totalSum=0;
 
@@ -38,7 +38,7 @@ class OrderController extends Controller
         ]);
     }
     public function getOrderDetails(Request $request){
-        $checks = Order::where('user_id',$request->order)->get();
+        $checks = Order::where('user_id',$request->order)->where('order_stats','Order on the Way')->get();
         $totalSum=0;
         foreach ($checks as $check){
             $sum = $check->product->product_price;
@@ -49,21 +49,20 @@ class OrderController extends Controller
         }
         if ($request->ajax()){
             $output="";
-            $orders = Order::where('user_id',$request->order)->get();
+            $orders = Order::where('user_id',$request->order)->where('order_stats','Order on the Way')->get();
         }
         foreach ($orders as $order) {
-            $output .=
-                '<tbody>
+            $output .= '<tbody>
                     <tr>
                         <td>
                             <div class="d-flex">
-                                <img src="{{asset(uploads/product/.'.$order->product->product_image.')}}" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded">
+                                <img src="uploads/product/'.$order->product->product_image.'" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded">
                             </div>
                         </td>
                         <input type="hidden" name="userId" value='.$order->user_id.' id="userId">
                         <td>'.$order->product->product_name.'</td>
                         <td><span class="badge badge-primary">Cash on Delivery</span></td>
-                        <td>'.$order->created_at->format('d/m/y:m/s').'</td>
+                        <td>'.$order->quantity.'</td>
                         <td>Total:Ksh: '.$totalSum.'</td>
                     </tr>
                     </tbody>
@@ -73,9 +72,15 @@ class OrderController extends Controller
         return response($output);
     }
     public function trackOrder(){
-        $trackOrders = Order::where('user_id',Auth::user()->id)->get();
+        $trackOrders = Order::where('user_id',Auth::user()->id)->latest('id')->get();
         return view('customer.orders',[
             'trackOrders'=>$trackOrders
         ]);
+    }
+    public function deleteOrder(Request $request, $id){
+        $delete = Order::find($id);
+        $delete->delete();
+        return redirect()->back()->with('success','Order Cancelled Successfully');
+
     }
 }

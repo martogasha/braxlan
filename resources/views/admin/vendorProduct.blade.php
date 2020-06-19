@@ -1,6 +1,7 @@
 @include('APartials.header')
-<title>Braxlan - Product List</title>
+<title>Braxlan - Vendor Product List</title>
 <div class="page-body">
+    @include('flash-message')
 
     <!-- Container-fluid starts-->
     <div class="container-fluid">
@@ -8,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="page-header-left">
-                        <h3>Product List
+                        <h3>Vendor Product List
                             <small>Bigdeal Admin panel</small>
                         </h3>
                     </div>
@@ -17,7 +18,7 @@
                     <ol class="breadcrumb pull-right">
                         <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
                         <li class="breadcrumb-item">Physical</li>
-                        <li class="breadcrumb-item active">Product List</li>
+                        <li class="breadcrumb-item active">Vendor Product List</li>
                     </ol>
                 </div>
             </div>
@@ -41,7 +42,7 @@
                                     <img src="{{asset('uploads/product/'.$productList->product_image2)}}" class="img-fluid  " alt="product">
                                 </div>
                                 <div class="product-icon icon-inline">
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                    <a href="#" data-toggle="modal"  data-target="#quick-view" title="Quick View">
                                         <i class="ti-search view" id="{{$productList->id}}" aria-hidden="true"></i>
                                     </a>
                                 </div>
@@ -94,9 +95,17 @@
 <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content quick-view-modal">
-            <div class="modal-body">
+            <form action="{{url('transferVendorProduct')}}" method="post" id="transfer">
+                @csrf
+                <div class="modal-body">
 
             </div>
+            </form>
+            <div>
+                <a href="javascript:document.getElementById('transfer').submit();" class="btn btn-normal">Verify</a>
+                <a href="{{url('productDetail')}}" class="btn btn-normal">Reject</a>
+            </div>
+
         </div>
     </div>
 </div>
@@ -147,12 +156,13 @@
 <!--script admin-->
 <script src="assets/js/admin-script.js"></script>
 
+</body>
 <script>
     $(document).on('click','.view',function () {
         $value = $(this).attr('id');
         $.ajax({
             type:"get",
-            url:"{{url('getProductList')}}",
+            url:"{{url('ajax1')}}",
             data:{'product':$value},
             success:function (data) {
                 $('.modal-body').html(data);
@@ -166,8 +176,6 @@
         });
     });
 </script>
-
-</body>
 
 <!-- Mirrored from themes.pixelstrap.com/bigdeal/admin/product-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Jun 2020 06:06:35 GMT -->
 </html>

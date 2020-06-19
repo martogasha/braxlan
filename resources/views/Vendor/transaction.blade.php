@@ -1,5 +1,5 @@
-@include('APartials.header')
-<title>Admin - Complete Orders</title>
+@include('VPartials.header')
+<title>Vendor - Complete Orders</title>
 <div class="page-body">
 
     <!-- Container-fluid starts-->
@@ -46,29 +46,26 @@
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
-                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($comps as $comp)
+                            @foreach($completeOrders as $completeOrder)
                             <tr>
-                                <td>#{{$comp->id}}</td>
+                                <td>#{{$completeOrder->id}}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <img src="{{asset('uploads/product/'.$comp->product->product_image)}}" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded">
+                                        <img src="{{asset('uploads/product/'.$completeOrder->product->product_image)}}" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded">
                                     </div>
                                 </td>
-                                <td><span class="badge badge-secondary">{{$comp->order_status}}</span></td>
-                                <td>{{$comp->user->name}}</td>
-                                <td><span class="badge badge-success">{{$comp->order_stats}}</span></td>
-                                <td>{{$comp->created_at->format('m/d/y')}}</td>
-                                <td>{{$comp->product->product_price}}</td>
-                                <td>{{$comp->quantity}}</td>
-                                <td>Ksh: {{$comp->product->product_price*$comp->quantity}}</td>
-                                <td><button class="btn btn-success">View</button> </td>
+                                <td><span class="badge badge-secondary">{{$completeOrder->order_status}}</span></td>
+                                <td>{{$completeOrder->user->name}}</td>
+                                <td><span class="badge badge-success">{{$completeOrder->order_stats}}</span></td>
+                                <td>Dec 10,18</td>
+                                <td>{{$completeOrder->product->product_price}}</td>
+                                <td>{{$completeOrder->quantity}}</td>
+                                <td>Ksh: {{$completeOrder->product->product_price*$completeOrder->quantity}}</td>
                             </tr>
                             @endforeach
-
 
                             </tbody>
                         </table>

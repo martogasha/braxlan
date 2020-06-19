@@ -7,13 +7,13 @@
         <div class="row collection2">
             <div class="col-md-4">
                 <div class="collection-banner-main banner-1  p-right">
-                    <div class="collection-img">
-                        <img src="assets/images/layout-2/collection-banner/1.jpg" class="img-fluid bg-img  " alt="banner">
+                    <div class="collection-img" style="background-color: aquamarine">
+                        <img src="{{asset('uploads/product/'.$poster->poster_image)}}" class="img-fluid bg-img  " alt="banner">
                     </div>
                     <div class="collection-banner-contain">
                         <div>
-                            <h3>women</h3>
-                            <h4>fashion</h4>
+                            <h3 style="color: black"><b>Liquor</b></h3>
+                            <h4>Store</h4>
                             <div class="shop">
                                 <a>
                                     shop now
@@ -24,14 +24,14 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="collection-banner-main banner-1 p-right">
-                    <div class="collection-img">
-                        <img src="assets/images/layout-2/collection-banner/2.jpg" class="img-fluid bg-img  " alt="banner">
+                <div class="collection-banner-main banner-1  p-right">
+                    <div class="collection-img" style="background-color: aquamarine">
+                        <img src="{{asset('uploads/product/'.$poster2->poster_image)}}" class="img-fluid bg-img  " alt="banner">
                     </div>
-                    <div class="collection-banner-contain ">
+                    <div class="collection-banner-contain">
                         <div>
-                            <h3>camera</h3>
-                            <h4>lenses</h4>
+                            <h3 style="color: black"><b>Food</b></h3>
+                            <h4>Store</h4>
                             <div class="shop">
                                 <a>
                                     shop now
@@ -42,14 +42,14 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="collection-banner-main banner-1 p-right">
-                    <div class="collection-img">
-                        <img src="assets/images/layout-2/collection-banner/3.jpg" class="img-fluid bg-img  " alt="banner">
+                <div class="collection-banner-main banner-1  p-right">
+                    <div class="collection-img" style="background-color: aquamarine">
+                        <img src="{{asset('uploads/product/'.$poster3->poster_image)}}" class="img-fluid bg-img  " alt="banner">
                     </div>
-                    <div class="collection-banner-contain ">
+                    <div class="collection-banner-contain">
                         <div>
-                            <h3>refrigerator</h3>
-                            <h4>lG mini</h4>
+                            <h3 style="color: black"><b>Kitchen</b></h3>
+                            <h4>Store</h4>
                             <div class="shop">
                                 <a>
                                     shop now
@@ -65,22 +65,6 @@
 <!--collection banner end-->
 
 <!--discount banner start-->
-<section class="discount-banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="discount-banner-contain">
-                    <h1><span>OMG! Just Look at the</span> <span>great Deals!</span></h1>
-                    <div class="rounded-contain rounded-inverse">
-                        <div class="rounded-subcontain">
-                            How does it feel, when you see great discount deals for each product?
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!--discount banner end-->
 
 <!--tab product-->
@@ -122,7 +106,7 @@
                                             <div class="product-icon icon-inline">
 
                                                 <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-eye" aria-hidden="true"></i>
+                                                    <i class="ti-eye view" id="{{$supermarket->id}}" aria-hidden="true"></i>
                                                 </a>
 
                                             </div>
@@ -2230,7 +2214,7 @@
                                                 <div class="product-icon icon-inline">
 
                                                     <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                        <i class="ti-eye" aria-hidden="true"></i>
+                                                        <i class="ti-eye view" id="{{$safety->id}}" aria-hidden="true"></i>
                                                     </a>
 
                                                 </div>
@@ -4315,7 +4299,7 @@
                                                     <div class="product-icon icon-inline">
 
                                                         <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye" aria-hidden="true"></i>
+                                                            <i class="ti-eye view" id="{{$kitchen->id}}" aria-hidden="true"></i>
                                                         </a>
 
                                                     </div>
@@ -6392,7 +6376,7 @@
                                                     <div class="product-icon icon-inline">
 
                                                         <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye" aria-hidden="true"></i>
+                                                            <i class="ti-eye view" id="{{$drink->id}}" aria-hidden="true"></i>
                                                         </a>
 
                                                     </div>
@@ -8560,47 +8544,24 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content quick-view-modal">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <div class="row">
-                    <div class="col-lg-6 col-xs-12">
-                        <div class="quick-view-img"><img src="assets/images/layout-2/product/a1.jpg" alt="" class="img-fluid "></div>
-                    </div>
+               <div id="modalBody">
+
+               </div>
+
+                <div class="row">>
                     <div class="col-lg-6 rtl-text">
                         <div class="product-right">
-                            <h2>Women Pink Shirt</h2>
-                            <h3>$32.96</h3>
-                            <ul class="color-variant">
-                                <li class="bg-light0"></li>
-                                <li class="bg-light1"></li>
-                                <li class="bg-light2"></li>
-                            </ul>
-                            <div class="border-product">
-                                <h6 class="product-title">product details</h6>
-                                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                            <div class="product-buttons"><a href="javascript:openCart();" class="btn btn-normal">add to cart</a>
+                                <a href="{{url('productDetail')}}" class="btn btn-normal">view detail</a>
+                                <a href="{{url('productDetail')}}"class="btn btn-normal">Buy Now</a>
                             </div>
-                            <div class="product-description border-product">
-                                <div class="size-box">
-                                    <ul>
-                                        <li class="active"><a href="#">s</a></li>
-                                        <li><a href="#">m</a></li>
-                                        <li><a href="#">l</a></li>
-                                        <li><a href="#">xl</a></li>
-                                    </ul>
-                                </div>
-                                <h6 class="product-title">quantity</h6>
-                                <div class="qty-box">
-                                    <div class="input-group"><span class="input-group-prepend"><button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""><i class="ti-angle-left"></i></button> </span>
-                                        <input type="text" name="quantity" class="form-control input-number" value="1"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
-                                </div>
                             </div>
-                            <div class="product-buttons"><a href="javascript:openCart();" class="btn btn-normal">add to cart</a> <a href="{{url('productDetail')}}" class="btn btn-normal">view detail</a><a href="{{url('productDetail')}}"class="btn btn-normal">Buy Now</a></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <!-- Quick-view modal popup end-->
 
 
@@ -8643,9 +8604,25 @@
         </div>
     </div>
 </div>
-<script>
-
-</script>
 <!-- facebook chat section end -->
 
 @include('CPartials.footer')
+<script>
+    $(document).on('click','.view',function () {
+        $value = $(this).attr('id');
+        $.ajax({
+            type:"get",
+            url:"{{url('getCProduct')}}",
+            data:{'product':$value},
+            success:function (data) {
+                $('#modalBody').html(data);
+            },
+            error:function (error) {
+                console.log(error)
+                alert('error')
+
+            }
+
+        });
+    });
+</script>

@@ -1,17 +1,16 @@
-@include('APartials.header')
-<title>Admin - Manage Orders</title>
-<div class="page-body">
+@include('VPartials.header')
+<title>Vendor - Manage Orders</title>
 @include('flash-message')
+<div class="page-body">
 
-
-<!-- Container-fluid starts-->
+    <!-- Container-fluid starts-->
     <div class="container-fluid">
         <div class="page-header">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="page-header-left">
                         <h3>Orders
-                            <small>Bigdeal Admin panel</small>
+                            <small>Bigdeal Vendor panel</small>
                         </h3>
                     </div>
                 </div>
@@ -41,10 +40,8 @@
                             <tr>
                                 <th>Order Id</th>
                                 <th>Name</th>
-                                <th>Phone</th>
+                                <th>Payment_Status</th>
                                 <th>Status</th>
-                                <th>Action</th>
-                                <th>Delete Order</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -52,13 +49,14 @@
                             <tr>
                                 <td id="getOrder">#00{{$order->id}}</td>
                                 <td><span class="badge badge-secondary">{{$order->user->name}}</span></td>
-                                <td><span class="badge badge-secondary">{{$order->user->phone}}</span></td>
                                 <td><span class="badge badge-primary">{{$order->order_status}}</span></td>
-                                <td><button type="button" class="btn btn-success view" name="view" id="{{$order->user_id}}" data-toggle="modal" data-target="#exampleModal">View</button> </td>
-                                <form action="{{url('deleteOrder',$order->id)}}" method="post">
-                                    @csrf
-                                <td><button type="submit" class="btn btn-danger">Cancel Order</button></td>
-                                </form>
+                                @if(\App\Order::where('user_id',\Illuminate\Support\Facades\Auth::user()->id)->where('order_stats','Order on the Way'))
+                                <td><span class="badge badge-danger">{{$order->order_stats}}</span></td>
+                                @else
+                                    <td><span class="badge badge-success">{{$order->order_stats}}</span></td>
+                                @endif
+
+
                             </tr>
                             @endforeach
 

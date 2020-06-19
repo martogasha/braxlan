@@ -75,7 +75,6 @@
                 <section class="collection-banner section-pt-space b-g-white ">
                     <div class="custom-container">
                         <div class="row collection2">
-                            @foreach($posters as $poster)
                             <div class="col-md-4">
                                 <div class="collection-banner-main banner-1  p-right">
                                     <div class="collection-img" style="background-color: aquamarine">
@@ -83,8 +82,8 @@
                                     </div>
                                     <div class="collection-banner-contain">
                                         <div>
-                                            <h3>Liquor</h3>
-                                            <h4>fashion</h4>
+                                            <h3 style="color: black"><b>Liquor</b></h3>
+                                            <h4>Store</h4>
                                             <div class="shop">
                                                 <a>
                                                     shop now
@@ -97,7 +96,49 @@
                                 <td><a href="{{route('poster.edit',$poster->id)}}"><button class="btn btn-secondary">Edit</button></a></td>
 
                             </div>
-                            @endforeach
+                            <div class="col-md-4">
+                                <div class="collection-banner-main banner-1  p-right">
+                                    <div class="collection-img" style="background-color: aquamarine">
+                                        <img src="{{asset('uploads/product/'.$poster2->poster_image)}}" class="img-fluid bg-img  " alt="banner">
+                                    </div>
+                                    <div class="collection-banner-contain">
+                                        <div>
+                                            <h3 style="color: black"><b>Food</b></h3>
+                                            <h4>Store</h4>
+                                            <div class="shop">
+                                                <a>
+                                                    shop now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <td><a href="{{route('poster.edit',$poster->id)}}"><button class="btn btn-secondary">Edit</button></a></td>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="collection-banner-main banner-1  p-right">
+                                    <div class="collection-img" style="background-color: aquamarine">
+                                        <img src="{{asset('uploads/product/'.$poster3->poster_image)}}" class="img-fluid bg-img  " alt="banner">
+                                    </div>
+                                    <div class="collection-banner-contain">
+                                        <div>
+                                            <h3 style="color: black"><b>Kitchen</b></h3>
+                                            <h4>Store</h4>
+                                            <div class="shop">
+                                                <a>
+                                                    shop now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <td><a href="{{route('poster.edit',$poster->id)}}"><button class="btn btn-secondary">Edit</button></a></td>
+
+                            </div>
+
                         </div>
                     </div>
                 </section>

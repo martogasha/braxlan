@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Poster;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use function GuzzleHttp\Promise\all;
 
 class ProductController extends Controller
@@ -13,12 +15,18 @@ class ProductController extends Controller
         $safteys = Product::where('product_category','saftey')->get();
         $kitchens = Product::where('product_category','kitchen')->get();
         $drinks = Product::where('product_category','drinks')->get();
+        $poster = Poster::where('poster_category','first')->first();
+        $poster2 = Poster::where('poster_category','second')->first();
+        $poster3 = Poster::where('poster_category','third')->first();
 
         return view('customer.index',[
             'supermarkets'=>$supermarkets,
             'safteys'=>$safteys,
             'kitchens'=>$kitchens,
-            'drinks'=>$drinks
+            'drinks'=>$drinks,
+            'poster'=>$poster,
+            'poster2'=>$poster2,
+            'poster3'=>$poster3
         ]);
     }
 
@@ -29,7 +37,7 @@ class ProductController extends Controller
         $pictures->product_price = $request->input('product_price');
         $pictures->product_category = $request->input('category');
 
-        $pictures->user_id = 1;
+        $pictures->user_id = Auth::user()->id;
 
         $file = $request->file('product_image');
         $extension = $file->getClientOriginalName();
@@ -63,5 +71,35 @@ class ProductController extends Controller
         return redirect()->back()->with('success','Product Added Successfully');
 
 
+    }
+    public function getCProduct(Request $request){
+        if ($request->ajax()){
+            $output = "";
+            $product = Product::where('id',$request->product)->first();
+        }
+        $output = ' <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="quick-view-img"><img src="uploads/product/'.$product->product_image.'" alt="" class="img-fluid "></div>
+                    </div>
+                    <div class="col-lg-6 rtl-text">
+                        <div class="product-right">
+                            <h2>'.$product->product_name.'</h2>
+                            <h3>Ksh: '.$product->product_price.'</h3>
+                            <ul class="color-variant">
+                                <li class="bg-light0"></li>
+                                <li class="bg-light1"></li>
+                                <li class="bg-light2"></li>
+                            </ul>
+                            <div class="border-product">
+                                <h6 class="product-title">product details</h6>
+                                <p>'.$product->product_image.'</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                ';
+        return response($output);
     }
 }

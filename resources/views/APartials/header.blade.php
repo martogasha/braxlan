@@ -109,9 +109,10 @@
                         </div>
                         <ul class="profile-dropdown onhover-show-div p-20 profile-dropdown-hover">
                             <li><a href="#">Profile<span class="pull-right"><i data-feather="user"></i></span></a></li>
-                            <li><a href="#">Inbox<span class="pull-right"><i data-feather="mail"></i></span></a></li>
-                            <li><a href="#">Taskboard<span class="pull-right"><i data-feather="file-text"></i></span></a></li>
-                            <li><a href="#">Settings<span class="pull-right"><i data-feather="settings"></i></span></a></li>
+                            <form action="{{route('logout')}}" method="post" id="logout">
+                                @csrf
+                                <li><a href="javascript:document.getElementById('logout').submit();">Logout<span class="pull-right"><i data-feather="settings"></i></span></a></li>
+                            </form>
                         </ul>
                     </li>
                 </ul>
@@ -130,8 +131,10 @@
                 <div class="sidebar-user text-center">
                     <div><img class="img-60 rounded-circle lazyloaded blur-up" src="{{asset('assets/images/dashboard/man.png')}}" alt="#">
                     </div>
-                    <h6 class="mt-3 f-14">JOHN</h6>
-                    <p>Ux Designer</p>
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                    <h6 class="mt-3 f-14">{{\Illuminate\Support\Facades\Auth::user()->name}}</h6>
+                        @endif
+                    <p>Admin</p>
                 </div>
                 <ul class="sidebar-menu">
                     <li><a class="sidebar-header" href="{{url('admin')}}"><i data-feather="home"></i><span>Dashboard</span></a></li>
@@ -150,6 +153,11 @@
                             <li>
                                 <a href="{{url('posterView')}}"><i class="fa fa-circle"></i>
                                     <span>Poster View</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('vendorProduct')}}"><i class="fa fa-circle"></i>
+                                    <span>Vendor Product Check</span>
                                 </a>
                             </li>
                         </ul>

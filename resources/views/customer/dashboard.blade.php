@@ -14,7 +14,7 @@
                             @if(\Illuminate\Support\Facades\Auth::check())
                             <p>Hello, {{\Illuminate\Support\Facades\Auth::user()->name}} !</p>
                             @endif
-                            <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
+                            <p>From your My Account Dashboard you have the ability to <track> completed orders.</p>
                         </div>
                         <div class="box-account box-info">
                             <div class="box-head">
@@ -25,9 +25,11 @@
                                         <div class="box-title">
                                             <h3>Contact Information</h3><a href="#">Edit</a></div>
                                         <div class="box-content">
-                                            <h6>MARK JECNO</h6>
-                                            <h6>MARk-JECNO@gmail.com</h6>
+                                            @if(\Illuminate\Support\Facades\Auth::check())
+                                            <h6>{{\Illuminate\Support\Facades\Auth::user()->phone}}</h6>
+                                            <h6>{{\Illuminate\Support\Facades\Auth::user()->email}}</h6>
                                             <h6><a href="#">Change Password</a></h6></div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -43,13 +45,13 @@
                             <div>
                                 <div class="box">
                                     <div class="box-title">
-                                        <h3>Address Book</h3><a href="#">Manage Addresses</a></div>
+                                        <h3>Location</h3>
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <h6>Default Billing Address</h6><address>You have not set a default billing address.<br><a href="#">Edit Address</a></address></div>
-                                        <div class="col-sm-6">
-                                            <h6>Default Shipping Address</h6><address>You have not set a default shipping address.<br><a href="#">Edit Address</a></address></div>
-                                    </div>
+                                            @if(\Illuminate\Support\Facades\Auth::check())
+                                            <address>{{\Illuminate\Support\Facades\Auth::user()->location}}.<br><a href="#">Edit Address</a></address></div>
+                                        @endif
+
                                 </div>
                             </div>
                         </div>

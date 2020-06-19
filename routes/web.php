@@ -19,10 +19,14 @@ Route::get('/h', function () {
 Route::post('Login','LoginCustomController@login')->name('loginCustom');
 Route::post('Register','RegisterCustomController@register')->name('registerCustom');
 
-Route::view('admin','admin.index');
+Route::get('admin','AdminController@admin')->name('admin');
 Route::view('privacy','privacy');
 
-Route::view('productList','admin.productList');
+Route::get('productList','AdminController@productList');
+Route::get('getProductList','AdminController@getProductList');
+
+Route::get('vendorProduct','AdminController@vendorProduct');
+
 Route::view('addProduct','admin.addProduct');
 Route::view('l','auth.l');
 Route::view('r','auth.r');
@@ -33,9 +37,12 @@ Route::view('r','auth.r');
 
 
 Route::get('/','ProductController@index')->name('customer');
+Route::get('getCProduct','ProductController@getCProduct');
+
 Route::post('add','ProductController@store')->name('add');
 Route::resource('poster','PosterController');
 Route::get('posterView','PosterController@poster');
+
 Route::post('PosterEdit/{id}','PosterController@update');
 Route::resource('cart','CartController');
 Route::post('cartDelete/{id}','CartController@delete');
@@ -43,9 +50,26 @@ Route::resource('checkout','CheckoutController');
 Route::post('placeOrder','CheckoutController@placeOrder');
 Route::resource('success','OrderController');
 Route::get('orders','OrderController@orders');
+Route::post('deleteOrder/{id}','OrderController@deleteOrder');
+
 Route::get('ajax','OrderController@getOrderDetails');
+Route::get('ajax1','AdminController@getVendorProduct');
+Route::post('transferVendorProduct','AdminController@transferVendorProduct');
+
+
 Route::resource('completeOrder','CompleteOrderController');
 Route::get('trackOrder','OrderController@trackOrder');
+
+Route::resource('vendor','VendorController');
+Route::get('vProductList','VendorController@productList');
+Route::get('vOrders','VendorController@order');
+Route::get('vTransaction','VendorController@transaction');
+Route::get('vAdd','VendorController@Product');
+Route::post('vAddProduct','VendorController@addProduct');
+
+
+
+
 
 
 

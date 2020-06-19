@@ -159,21 +159,28 @@
                             </form>
                         </div>
                     </div>
-                    <div class="cart-block cart-hover-div " onclick="openCart()">
+                    <div class="cart-block cart-hover-div">
                         <div class="cart ">
-                            <span class="cart-product">0</span>
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                                @if(\App\Cart::where('user_id',\Illuminate\Support\Facades\Auth::user()->id)->count()==0)
+                                @else
+                                    <span class="cart-product">{{\App\Cart::where('user_id',\Illuminate\Support\Facades\Auth::user()->id)->count()}}</span>
+                            @endif
+                            @endif
                             <ul>
                                 <li class="mobile-cart  ">
-                                    <a href="#">
+                                    <a href="{{url('cart')}}">
                                         <i class="icon-shopping-cart "></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
+                        <a href="{{url('cart')}}">
                         <div class="cart-item">
                             <h5>shopping</h5>
                             <h5>cart</h5>
                         </div>
+                        </a>
                     </div>
                     <div class="menu-nav">
               <span class="toggle-nav">
@@ -236,9 +243,6 @@
                                             <div class="mobile-back text-right">Back<i class="fa fa-angle-right pl-2" aria-hidden="true"></i></div>
                                         </li>
                                         <!--HOME-->
-                                        <li>
-                                            <a href="#" class="dark-menu-item">Groceries</a>
-                                        </li>
                                         <!--HOME-END-->
 
                                         <!--SHOP-->
@@ -249,14 +253,14 @@
 
 
                                         <!--product-meu start-->
-                                        <li class="mega"><a href="#" class="dark-menu-item">Electronics
+                                        <li class="mega"><a href="#" class="dark-menu-item">Kitchen Essentials
                                             </a>
                                         </li>
                                         <li class="mega" >
-                                            <a href="#" class="dark-menu-item">Fashion Wear</a>
+                                            <a href="#" class="dark-menu-item">Safety Essentials</a>
                                         </li>
 
-                                        <li><a href="#" class="dark-menu-item">Shoes</a>
+                                        <li><a href="#" class="dark-menu-item">Drinks</a>
 
                                         </li>
                                         @if(\Illuminate\Support\Facades\Auth::check())

@@ -23,7 +23,7 @@ class LoginCustomController extends Controller
                 return redirect()->route('customer');
             }
             elseif ($user->role == 'vendor') {
-                return redirect()->route('vendor');
+                return redirect()->route('vendor.index');
             }
 
             else{

@@ -1,4 +1,4 @@
-@include('APartials.header')
+@include('VPartials.header')
 <title>Braxlan - Product List</title>
 <div class="page-body">
 
@@ -9,7 +9,7 @@
                 <div class="col-lg-6">
                     <div class="page-header-left">
                         <h3>Product List
-                            <small>Bigdeal Admin panel</small>
+                            <small>Bigdeal Vendor panel</small>
                         </h3>
                     </div>
                 </div>
@@ -38,11 +38,11 @@
                                     <img src="{{asset('uploads/product/'.$productList->product_image)}}" class="img-fluid  " alt="product">
                                 </div>
                                 <div class="product-back">
-                                    <img src="{{asset('uploads/product/'.$productList->product_image2)}}" class="img-fluid  " alt="product">
+                                    <img src="{{asset('uploads/product/'.$productList->product_image1)}}" class="img-fluid  " alt="product">
                                 </div>
                                 <div class="product-icon icon-inline">
                                     <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search view" id="{{$productList->id}}" aria-hidden="true"></i>
+                                        <i class="ti-search" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="new-label1">
@@ -84,7 +84,6 @@
                 </div>
             </div>
             @endforeach
-
         </div>
     </div>
     <!-- Container-fluid Ends-->
@@ -95,7 +94,38 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content quick-view-modal">
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="quick-view-img"><img src="assets/images/layout-2/product/a1.jpg" alt="" class="img-fluid "></div>
+                    </div>
+                    <div class="col-lg-6 rtl-text">
+                        <div class="product-right">
+                            <h2>Women Pink Shirt</h2>
+                            <h3>$32.96</h3>
 
+                            <div class="border-product">
+                                <h6 class="product-title">product details</h6>
+                                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                            </div>
+                            <div class="product-description border-product">
+                                <div class="size-box">
+                                    <ul>
+                                        <li class="active"><a href="#">s</a></li>
+                                        <li><a href="#">m</a></li>
+                                        <li><a href="#">l</a></li>
+                                        <li><a href="#">xl</a></li>
+                                    </ul>
+                                </div>
+                                <h6 class="product-title">quantity</h6>
+                                <div class="qty-box">
+                                    <div class="input-group"><span class="input-group-prepend"><button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""><i class="ti-angle-left"></i></button> </span>
+                                        <input type="text" name="quantity" class="form-control input-number" value="1"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -146,26 +176,6 @@
 
 <!--script admin-->
 <script src="assets/js/admin-script.js"></script>
-
-<script>
-    $(document).on('click','.view',function () {
-        $value = $(this).attr('id');
-        $.ajax({
-            type:"get",
-            url:"{{url('getProductList')}}",
-            data:{'product':$value},
-            success:function (data) {
-                $('.modal-body').html(data);
-            },
-            error:function (error) {
-                console.log(error)
-                alert('error')
-
-            }
-
-        });
-    });
-</script>
 
 </body>
 
