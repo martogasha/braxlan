@@ -100,7 +100,7 @@ class ProductController extends Controller
                             </ul>
                             <div class="border-product">
                                 <h6 class="product-title">product details</h6>
-                                <p>'.$product->product_image.'</p>
+                                <p>'.$product->product_desc.'</p>
                             </div>
 
                         </div>
