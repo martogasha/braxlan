@@ -146,7 +146,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="sub-footer-contain">
-                        <p><span>2018 - 19 </span>copy right by themeforest powered by pixel strap</p>
+                        <p><span>2018 - 19 </span>braxlan.com</p>
                     </div>
                 </div>
             </div>

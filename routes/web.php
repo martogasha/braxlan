@@ -71,6 +71,7 @@ Route::get('supermarket','CategoryController@supermarket');
 Route::get('homestead','CategoryController@homestead');
 Route::get('saftey','CategoryController@saftey');
 Route::get('drinks','CategoryController@drinks');
+Route::post('buyNow','OrderController@buyNow');
 
 
 

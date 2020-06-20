@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="row cart-buttons">
-            <div class="col-12"><a href="#" class="btn btn-normal">continue shopping</a> <a href="{{url('checkout')}}" class="btn btn-normal ml-3">check out</a></div>
+            <div class="col-12"><a href="{{url('/')}}" class="btn btn-normal">continue shopping</a> <a href="{{url('checkout')}}" class="btn btn-normal ml-3">check out</a></div>
         </div>
     </div>
 </section>

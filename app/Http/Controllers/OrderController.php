@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
+use App\Checkout;
 use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +39,24 @@ class OrderController extends Controller
         return view('admin.orders',[
             'orders'=>$orders
         ]);
+    }
+    public function buyNow(Request $request){
+        if (Auth::check()){
+            $addCart = Cart::create([
+                'product_id'=>$request->input('productId'),
+                'quantity'=>$request->input('quantity'),
+                'user_id'=>Auth::user()->id,
+            ]);
+            $addCart = Checkout::create([
+                'product_id'=>$request->input('productId'),
+                'quantity'=>$request->input('quantity'),
+                'user_id'=>Auth::user()->id,
+            ]);
+            return redirect(url('checkout'))->with('success', 'Item Added to Cart Successfully');
+        }
+        else{
+            return redirect(url('login'));
+        }
     }
     public function getOrderDetails(Request $request){
         $checks = Order::where('user_id',$request->order)->where('order_stats','Order on the Way')->get();

@@ -35,6 +35,7 @@ class CartController extends Controller
         ]);
     }
     public function store(Request $request){
+        dd($request->all());
         if (Auth::check()){
             $addCart = Cart::create([
                 'product_id'=>$request->input('productId'),

@@ -84,7 +84,11 @@ class ProductController extends Controller
             $output = "";
             $product = Product::where('id',$request->product)->first();
         }
-        $output = ' <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        $output = '
+
+ <input type="hidden" name="productId" value="4" id="productId">
+  <input type="hidden" name="quantity" value="1" id="quantity">
+ <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <div class="row">
                     <div class="col-lg-6 col-xs-12">
                         <div class="quick-view-img"><img src="uploads/product/'.$product->product_image.'" alt="" class="img-fluid "></div>
