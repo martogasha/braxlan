@@ -49,23 +49,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($completeOrders as $completeOrder)
-                            <tr>
-                                <td>#{{$completeOrder->id}}</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <img src="{{asset('uploads/product/'.$completeOrder->product->product_image)}}" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded">
-                                    </div>
-                                </td>
-                                <td><span class="badge badge-secondary">{{$completeOrder->order_status}}</span></td>
-                                <td>{{$completeOrder->user->name}}</td>
-                                <td><span class="badge badge-success">{{$completeOrder->order_stats}}</span></td>
-                                <td>Dec 10,18</td>
-                                <td>{{$completeOrder->product->product_price}}</td>
-                                <td>{{$completeOrder->quantity}}</td>
-                                <td>Ksh: {{$completeOrder->product->product_price*$completeOrder->quantity}}</td>
-                            </tr>
-                            @endforeach
+
 
                             </tbody>
                         </table>

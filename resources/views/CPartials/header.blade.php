@@ -54,7 +54,7 @@
                         </div>
                         <div class="app-link">
                             <h6>
-                                free Delivery on order over Ksh:3000
+                                free Delivery on order over Ksh:5000
 
                         </div>
                     </div>
@@ -108,26 +108,11 @@
                                     back <i class="fa fa-angle-right pl-2"></i>
                                 </div>
                             </li>
-                            <li><a href="#">western ware</a></li>
-                            <li><a href="#">TV, Appliances</a></li>
-                            <li><a href="#">Pets Products</a></li>
-                            <li><a href="#">Car, Motorbike</a></li>
-                            <li><a href="#">Industrial Products</a></li>
-                            <li><a href="#">Beauty, Health Products</a></li>
-                            <li><a href="#">Grocery Products </a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Bags, Luggage</a></li>
-                            <li><a href="#">Movies, Music </a></li>
-                            <li><a href="#">Video Games</a></li>
-                            <li><a href="#">Toys, Baby Products</a></li>
-                            <li class="mor-slide-open">
-                                <ul>
-                                    <li><a href="#">Bags, Luggage</a></li>
-                                    <li><a href="#">Movies, Music </a></li>
-                                    <li><a href="#">Video Games</a></li>
-                                    <li><a href="#">Toys, Baby Products</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{url('supermarket')}}">Supermarket</a></li>
+                            <li><a href="{{url('homestead')}}">Homestead Essentials</a></li>
+                            <li><a href="{{url('saftey')}}">Safety Essentials</a></li>
+                            <li><a href="{{url('drinks')}}">Drinks</a></li>
+
                             <li>
                                 <a class="mor-slide-click">
                                     mor category
@@ -138,7 +123,7 @@
                         </ul>
                     </div>
                     <div class="logo-block">
-                        <a href="{{url('/')}}"><img src="{{asset('assets/images/layout-2/logo/logo.png')}}" class="img-fluid  " alt="logo"></a>
+                        <a href="{{url('/')}}"><img src="{{asset('assets/images/layout-2/logo/braxLogo.png')}}" class="img-fluid  " alt="logo"></a>
                     </div>
                     <div class="input-block">
                         <div class="input-box">
@@ -302,53 +287,6 @@
                                     <div class="gift-offer">
                                         <p>gift box</p>
                                         <span>Festivel Offer</span>
-                                    </div>
-                                </div>
-                                <div class="dropdown-menu gift-dropdown">
-                                    <div class="media">
-                                        <div  class="mr-3">
-                                            <img src="assets/images/icon/1.png" alt="Generic placeholder image">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Billion Days</h5>
-                                            <p><img src="assets/images/icon/currency.png" class="cash" alt="curancy"> Flat Rs. 270 Rewards</p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div  class="mr-3">
-                                            <img src="assets/images/icon/2.png" alt="Generic placeholder image" class="gift-bloc">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Fashion Discount</h5>
-                                            <p><img src="assets/images/icon/fire.png"  class="fire" alt="fire">Extra 10% off (upto Rs. 10,000*) </p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div  class="mr-3">
-                                            <img src="assets/images/icon/3.png" alt="Generic placeholder image">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">75% off Store</h5>
-                                            <p>No coupon code is required.</p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div  class="mr-3">
-                                            <img src="assets/images/icon/6.png" alt="Generic placeholder image">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Upto 50% off</h5>
-                                            <p>Buy popular phones under Rs.20.</p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div  class="mr-3">
-                                            <img src="assets/images/icon/5.png" alt="Generic placeholder image">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Beauty store</h5>
-                                            <p><img src="assets/images/icon/currency.png" class="cash" alt="curancy" > Flat Rs. 270 Rewards</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

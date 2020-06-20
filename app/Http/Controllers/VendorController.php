@@ -36,19 +36,31 @@ class VendorController extends Controller
         foreach ($products as $product){
             $orders = Order::where('product_id',$product->id)->where('order_stats','Order on the Way')->get();
         }
-        if (isset($orders))
-        return view('Vendor.orders',[
-            'orders'=>$orders,
-        ]);
+        if (isset($orders)) {
+            return view('Vendor.orders', [
+                'orders' => $orders,
+            ]);
+        }
+        else{
+            return view('Vendor.order', [
+            ]);
+
+        }
     }
     public function transaction(){
         $getProducts = Product::where('user_id',Auth::user()->id)->get();
         foreach ($getProducts as $getProduct) {
             $completeOrders = Order::where('order_stats', 'Delivered')->where('product_id',$getProduct->id)->get();
         }
+        if (isset($completeOrders)) {
             return view('Vendor.transaction', [
                 'completeOrders' => $completeOrders
             ]);
+        }
+        else{
+            return view('Vendor.transactions', [
+            ]);
+        }
     }
     public function product(){
         return view('Vendor.addProduct');

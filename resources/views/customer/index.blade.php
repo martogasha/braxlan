@@ -5,6 +5,7 @@
 <section class="collection-banner section-pt-space b-g-white ">
     <div class="custom-container">
         <div class="row collection2">
+            <a href="{{url('supermarket')}}">
             <div class="col-md-4">
                 <div class="collection-banner-main banner-1  p-right">
                     <div class="collection-img" style="background-color: aquamarine">
@@ -15,7 +16,7 @@
                             <h3 style="color: black"><b>FOOD</b></h3>
                             <h4>Store</h4>
                             <div class="shop">
-                                <a>
+                                <a href="{{url('supermarket')}}">
                                     shop now
                                 </a>
                             </div>
@@ -23,6 +24,8 @@
                     </div>
                 </div>
             </div>
+            </a>
+            <a href="{{url('homestead')}}">
             <div class="col-md-4">
                 <div class="collection-banner-main banner-1  p-right">
                     <div class="collection-img" style="background-color: aquamarine">
@@ -33,7 +36,7 @@
                             <h3 style="color: black"><b>HOMESTEAD</b></h3>
                             <h4>Store</h4>
                             <div class="shop">
-                                <a>
+                                <a href="{{url('homestead')}}">
                                     shop now
                                 </a>
                             </div>
@@ -41,6 +44,8 @@
                     </div>
                 </div>
             </div>
+            </a>
+            <a href="{{url('drinks')}}">
             <div class="col-md-4">
                 <div class="collection-banner-main banner-1  p-right">
                     <div class="collection-img" style="background-color: aquamarine">
@@ -51,7 +56,7 @@
                             <h3 style="color: black"><b>LIQUOR</b></h3>
                             <h4>Store</h4>
                             <div class="shop">
-                                <a>
+                                <a href="{{'drinks'}}">
                                     shop now
                                 </a>
                             </div>
@@ -59,6 +64,7 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
     </div>
 </section>
@@ -2156,14 +2162,12 @@
             <div class="col">
                 <div class="collection-banner-main banner-5 p-center">
                     <div class="collection-img">
-                        <img src="assets/images/layout-2/collection-banner/7.jpg" class="bg-img  " alt="banner">
+                        <img src="assets/images/layout-2/collection-banner/bbb.jpg" class="bg-img  " alt="banner">
                     </div>
                     <div class="collection-banner-contain ">
                         <div class="sub-contain">
-                            <h3>save up to 30% off</h3>
-                            <h4>women<span>fashion</span></h4>
                             <div class="shop">
-                                <a class="btn btn-normal" href="#">
+                                <a class="btn btn-normal" href="{{url('supermarket')}}">
                                     shop now
                                 </a>
                             </div>
@@ -8552,7 +8556,6 @@
                     <div class="col-lg-6 rtl-text">
                         <div class="product-right">
                             <div class="product-buttons"><a href="javascript:openCart();" class="btn btn-normal">add to cart</a>
-                                <a href="{{url('productDetail')}}" class="btn btn-normal">view detail</a>
                                 <a href="{{url('productDetail')}}"class="btn btn-normal">Buy Now</a>
                             </div>
                             </div>
@@ -8568,7 +8571,7 @@
 
 
 <!-- My account bar start-->
-@include('CPartials.login')
+@include('CPartials.login')style="size: 10px"
 <!-- Add to account bar end-->
 
 <!-- Add to wishlist bar -->

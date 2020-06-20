@@ -13,6 +13,7 @@ class OrderController extends Controller
             $orders = Order::where('user_id', Auth::user()->id)->where('order_stats','Order on the Way')->get();
             $orderSums = Order::where('user_id', Auth::user()->id)->where('order_stats','Order on the Way')->get();
 
+
             $totalSum=0;
 
             foreach ($orderSums as $orderSum){
@@ -73,9 +74,10 @@ class OrderController extends Controller
     }
     public function trackOrder(){
         $trackOrders = Order::where('user_id',Auth::user()->id)->latest('id')->get();
-        return view('customer.orders',[
-            'trackOrders'=>$trackOrders
-        ]);
+            return view('customer.orders', [
+                'trackOrders' => $trackOrders
+            ]);
+
     }
     public function deleteOrder(Request $request, $id){
         $delete = Order::find($id);

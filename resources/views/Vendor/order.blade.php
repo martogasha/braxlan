@@ -45,20 +45,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($orders as $order)
-                            <tr>
-                                <td id="getOrder">#00{{$order->id}}</td>
-                                <td><span class="badge badge-secondary">{{$order->user->name}}</span></td>
-                                <td><span class="badge badge-primary">{{$order->order_status}}</span></td>
-                                @if(\App\Order::where('user_id',\Illuminate\Support\Facades\Auth::user()->id)->where('order_stats','Order on the Way'))
-                                <td><span class="badge badge-danger">{{$order->order_stats}}</span></td>
-                                @else
-                                    <td><span class="badge badge-success">{{$order->order_stats}}</span></td>
-                                @endif
 
-
-                            </tr>
-                            @endforeach
 
 
                             </tbody>

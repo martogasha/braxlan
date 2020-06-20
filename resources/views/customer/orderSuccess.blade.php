@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <div class="success-text"><i class="fa fa-check-circle" aria-hidden="true"></i>
                     <h2>thank you</h2>
-                    <p>Payment is successfully processsed and your order is on the way</p>
+                    <p>Order is successfully processed will contact you shortly for confirmation</p>
                     <span class="badge badge-secondary">Order on the Way</span>
                 </div>
             </div>
@@ -57,14 +57,6 @@
             <div class="col-lg-6">
                 <div class="row order-success-sec">
                     <div class="col-sm-6">
-                        <h4>summery</h4>
-                        <ul class="order-detail">
-                            <li>order ID: 5563853658932</li>
-                            <li>Order Date: October 22, 2018</li>
-                            <li>Order Total: $907.28</li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6">
                         <h4>shipping address</h4>
                         <ul class="order-detail">
                             <li>gerg harvell</li>
@@ -91,7 +83,35 @@
     alert('PING YOUR LOCATION TO 0754-238-704 USING WHATSAPP')
 </script>
 <!-- Section ends -->
-
+<div id="mySetting" class="add_to_cart right">
+    <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>
+    <div class="cart-inner">
+        <div class="cart_top">
+            @if(\Illuminate\Support\Facades\Auth::check())
+                <h3>{{\Illuminate\Support\Facades\Auth::user()->name}}</h3>
+            @endif
+            <div class="close-cart">
+                <a href="javascript:void(0)" onclick="closeSetting()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="setting-block">
+            <div >
+                <a href=""><h5>My Account</h5></a>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Edit Details</a></li>
+                    <form action="{{route('logout')}}" method="post" id="logoutForm">
+                        @csrf
+                        <li><a href="javascript:document.getElementById('logoutForm').submit();">Logout</a></li>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @include('CPartials.footer1')

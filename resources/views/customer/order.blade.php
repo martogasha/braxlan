@@ -23,26 +23,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($trackOrders as $trackOrder)
-                            <tr>
-                                <td>#{{$trackOrder->id}}</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <img src="{{asset('uploads/product/'.$trackOrder->product->product_image)}}" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded" style="height: 50px">
-                                    </div>
-                                </td>
-                                <td><span class="badge badge-secondary">{{$trackOrder->order_status}}</span></td>
-                                @if($trackOrder->order_stats =='Order on the Way')
-                                <td><span class="badge badge-primary">{{$trackOrder->order_stats}}</span></td>
-                                @else
-                                <td><span class="badge badge-success">{{$trackOrder->order_stats}}</span></td>
-                                @endif
-                                    <td>{{$trackOrder->created_at->format('y/m')}}</td>
-                                <td>{{$trackOrder->product->product_price}}</td>
-                                <td>{{$trackOrder->quantity}}</td>
-                                <td>Ksh: {{$trackOrder->product->product_price*$trackOrder->quantity}}</td>
-                            </tr>
-                            @endforeach
+
 
 
                             </tbody>
@@ -55,7 +36,6 @@
 </section>
 
 <!-- Section ends -->
-
 <div id="mySetting" class="add_to_cart right">
     <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>
     <div class="cart-inner">
@@ -85,6 +65,7 @@
         </div>
     </div>
 </div>
+
 
 
 @include('CPartials.footer1')

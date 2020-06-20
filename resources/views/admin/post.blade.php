@@ -61,6 +61,8 @@
                                                 <option value="first">First</option>
                                                 <option value="second">Second</option>
                                                 <option value="third">Third</option>
+                                                <option value="four">4th</option>
+
 
 
                                             </select>
@@ -224,12 +226,10 @@
                             <div class="col">
                                 <div class="collection-banner-main banner-5 p-center">
                                     <div class="collection-img">
-                                        <img src="assets/images/layout-2/collection-banner/7.jpg" class="bg-img  " alt="banner">
+                                        <img src="assets/images/layout-2/collection-banner/bbb.jpg" class="bg-img  " alt="banner">
                                     </div>
                                     <div class="collection-banner-contain ">
                                         <div class="sub-contain">
-                                            <h3>save up to 30% off</h3>
-                                            <h4>women<span>fashion</span></h4>
                                             <div class="shop">
                                                 <a class="btn btn-normal" href="#">
                                                     shop now

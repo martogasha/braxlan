@@ -40,8 +40,8 @@
                                     <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
                             </div>
                         </td>
-                        <td>
-                            <h2>Ksh: {{$cart->product->product_price}}</h2></td>
+
+                        <td><h2>Ksh: {{$cart->product->product_price}}</h2></td>
                         <td>
                             <div class="qty-box">
                                 <div class="input-group">
@@ -77,5 +77,37 @@
     </div>
 </section>
 <!--section end-->
-@include('CPartials.footer1')
+<div id="mySetting" class="add_to_cart right">
+    <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>
+    <div class="cart-inner">
+        <div class="cart_top">
+            @if(\Illuminate\Support\Facades\Auth::check())
+                <h3>{{\Illuminate\Support\Facades\Auth::user()->name}}</h3>
+            @endif
+            <div class="close-cart">
+                <a href="javascript:void(0)" onclick="closeSetting()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="setting-block">
+            <div >
+                <a href=""><h5>My Account</h5></a>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Edit Details</a></li>
+                    <form action="{{route('logout')}}" method="post" id="logoutForm">
+                        @csrf
+                        <li><a href="javascript:document.getElementById('logoutForm').submit();">Logout</a></li>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @include('CPartials.footer')
+@include('CPartials.footer1')
+
