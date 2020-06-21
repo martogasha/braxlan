@@ -1,6 +1,9 @@
 @include('CPartials.header')
 <title>Cart</title>
 @include('flash-message')
+<!--header end-->
+
+<!-- breadcrumb start -->
 <!-- breadcrumb End -->
 
 
@@ -24,24 +27,28 @@
                     <tbody>
                     <tr>
                         <td>
-                            <a href="#"><img src="{{asset('uploads/product/'.$cart->product->product_image)}}" alt="cart"  class=" "></a>
+                            <a href="#"><img src="{{asset('uploads/product/'.$cart->product->product_image)}}" alt="cart" class=" "></a>
                         </td>
                         <td><a href="#">{{$cart->product->product_name}}</a>
                             <div class="mobile-cart-content row">
                                 <div class="col-xs-3">
                                     <div class="qty-box">
                                         <div class="input-group">
-                                            <input type="text" name="quantity" class="form-control input-number" value="1">
+                                            <input type="number" name="quantity" class="form-control input-number" value="{{$cart->quantity}}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-3">
+                                    <h2 class="td-color">Ksh: {{$cart->product->product_price*$cart->quantity}} </h2></div>
                                 <div class="col-xs-3">
-                                    <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
-                            </div>
+                                    <form action="{{url('cartDelete',$cart->product_id)}}" method="post">
+                                        @csrf
+                                        <button type="submit"><i class="ti-close"></i></button>
+                                    </form>
+                                </div>
                         </td>
-
-                        <td><h2>Ksh: {{$cart->product->product_price}}</h2></td>
+                        <td>
+                            <h2>Ksh: {{$cart->product->product_price}}</h2></td>
                         <td>
                             <div class="qty-box">
                                 <div class="input-group">
@@ -49,23 +56,24 @@
                                 </div>
                             </div>
                         </td>
-                        <form action="{{url('cartDelete',\Illuminate\Support\Facades\Auth::user()->id)}}" method="post" id="deleteCart">
-                            @csrf
-                        <td><a href="javascript:document.getElementById('deleteCart').submit();" class="icon"><i class="ti-close"></i></a></td>
-                        </form>
+                        <td>
+                            <form action="{{url('cartDelete',$cart->product_id)}}" method="post">
+                                @csrf
+                                <button type="submit"><i class="ti-close"></i></button>
+                            </form>
+                        </td>
                         <td>
                             <h2 class="td-color">Ksh: {{$cart->product->product_price*$cart->quantity}}</h2></td>
                     </tr>
                     </tbody>
                     @endforeach
-
                 </table>
                 <table class="table cart-table table-responsive-md">
                     <tfoot>
                     <tr>
                         <td>total price :</td>
                         <td>
-                            <h2>Ksh :{{$totalSum}}</h2></td>
+                            <h2>Ksh: {{$totalSum}}</h2></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -77,6 +85,7 @@
     </div>
 </section>
 <!--section end-->
+
 <div id="mySetting" class="add_to_cart right">
     <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>
     <div class="cart-inner">
@@ -108,6 +117,8 @@
 </div>
 
 
-@include('CPartials.footer')
-@include('CPartials.footer1')
 
+
+<!-- latest jquery-->
+@include('CPartials.footer1')
+@include('CPartials.footer')

@@ -47,36 +47,17 @@
                                         <li class="bg-light2"></li>
                                     </ul>
                                     <div class="product-description border-product">
-                                        <h6 class="product-title size-text">select size <span><a href="#" data-toggle="modal" data-target="#sizemodal">size chart</a></span></h6>
-                                        <div class="modal fade" id="sizemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Sheer Straight Kurta</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    </div>
-                                                    <div class="modal-body"><img src="{{asset('assets/images/size-chart.jpg')}}" alt="" class="img-fluid "></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="size-box">
-                                            <ul>
-                                                <li class="active"><a href="#">s</a></li>
-                                                <li><a href="#">m</a></li>
-                                                <li><a href="#">l</a></li>
-                                                <li><a href="#">xl</a></li>
-                                            </ul>
-                                        </div>
+
                                         <h6 class="product-title">quantity</h6>
                                         <div class="qty-box">
                                             <div class="input-group"><span class="input-group-prepend"><button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""><i class="ti-angle-left"></i></button> </span>
-                                                <input type="text" name="quantity" class="form-control input-number" value="1"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
+                                                <input type="text" name="quantity" class="form-control input-number" value="1" id="quantity"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
                                         </div>
                                     </div>
 
                                         <input type="hidden" name="productId" value="{{$productDetail->id}}">
-                                        <div class="product-buttons"><a href="javascript:document.getElementById('formCart').submit();" class="btn btn-normal">add to cart</a>
-                                            <a href="{{url('checkout')}}" class="btn btn-normal">Buy Now</a>
+                                        <div class="product-buttons"><a href="javascript:document.getElementById('formCart').submit();" class="btn btn-normal">Add to Cart</a>
+                                            <a href="{{url('/')}}" class="btn btn-normal">Continue Shopping</a>
 
                                     </div>
                                     <div class="border-product">
@@ -92,9 +73,7 @@
                                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-rss"></i></a></li>
                                             </ul>
-                                            <form class="d-inline-block">
-                                                <button class="wishlist-btn"><i class="fa fa-heart"></i><span class="title-font">Add To WishList</span></button>
-                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
@@ -334,3 +313,4 @@
 
 @include('CPartials.footer1')
 @include('CPartials.footer')
+

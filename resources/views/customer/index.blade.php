@@ -14,7 +14,7 @@
                     <div class="collection-banner-contain">
                         <div>
                             <h3 style="color: black"><b>FOOD</b></h3>
-                            <h4>Store</h4>
+                            <h4></h4>
                             <div class="shop">
                                 <a href="{{url('supermarket')}}">
                                     shop now
@@ -8581,7 +8581,7 @@
 
 
 <!-- My account bar start-->
-@include('CPartials.login')style="size: 10px"
+@include('CPartials.login')
 <!-- Add to account bar end-->
 
 <!-- Add to wishlist bar -->
