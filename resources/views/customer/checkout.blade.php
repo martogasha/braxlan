@@ -1,5 +1,6 @@
 @include('CPartials.header')
 <title>Checkout</title>
+@include('flash-message')
 
 
 <!-- section start -->
@@ -11,30 +12,34 @@
                         <div class="col-lg-6 col-sm-12 col-xs-12">
                             <div class="checkout-title">
                                 <h3>Billing Details</h3></div>
+                            <form action="{{url('editUserDetail')}}" method="post">
+                                <input type="hidden" name="userId" value="{{\Illuminate\Support\Facades\Auth::id()}}">
+                                @csrf
                             <div class="theme-form">
                                 <div class="row check-out ">
 
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <label>Full Name</label>
-                                        <input type="text" name="field-name" value="{{$user->name}}" placeholder="">
+                                        <input type="text" name="name" value="{{$user->name}}" placeholder="">
                                     </div>
 
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label class="field-label">Phone</label>
-                                        <input type="text" name="field-name" value="{{$user->phone}}" placeholder="">
+                                        <input type="text" name="phone" value="{{$user->phone}}" placeholder="">
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label class="field-label">Email Address</label>
-                                        <input type="text" name="field-name" value="{{$user->email}}" placeholder="">
+                                        <input type="text" name="email" value="{{$user->email}}" placeholder="">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Location</label>
-                                        <input type="text" name="field-name" value="{{$user->location}}" placeholder="">
+                                        <input type="text" name="location" value="{{$user->location}}" placeholder="">
 
                                     </div>
                                     <button class="btn btn-secondary">Edit</button>
                                 </div>
                             </div>
+                            </form>
                         </div>
                         <div class="col-lg-6 col-sm-12 col-xs-12">
                             <div class="checkout-details theme-form  section-big-mt-space">
@@ -44,7 +49,22 @@
                                     </div>
                                     <ul class="qty">
                                         @foreach($checkouts as $checkout)
-                                        <li>{{$checkout->product->product_name}} × {{$checkout->quantity}} <span>Ksh: {{$checkout->product->product_price*$checkout->quantity}}</span></li>
+                                        <li>{{$checkout->product->product_name}} × {{$checkout->quantity}}
+                                            @switch($checkout)
+                                                @case($checkout->size=='1LITRE')
+                                            <span>Ksh: {{$checkout->product->product_price*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='750ML')
+                                                <span>Ksh: {{$checkout->product->product_price750*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='375ML')
+                                                <span>Ksh: {{$checkout->product->product_price375*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='250ML')
+                                                <span>Ksh: {{$checkout->product->product_price250*$checkout->quantity}}</span>
+                                                @break
+                                            @endswitch
+                                        </li>
                                         @endforeach
                                     </ul>
                                     <ul class="sub-total">
@@ -85,6 +105,7 @@
                             </div>
                         </div>
                     </div>
+
             </div>
         </div>
     </div>

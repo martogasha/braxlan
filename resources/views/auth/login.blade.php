@@ -20,7 +20,7 @@
                             <input type="password" class="form-control" name="password" id="review" placeholder="Enter your password" required="">
                         </div>
                         <a href="javascript:document.getElementById('loginForm').submit();" class="btn btn-normal">Login</a>
-                        <a class="float-right txt-default mt-2" href="{{url('password/reset/{token}')}}" id="fgpwd">Forgot your password?</a>
+                        <a class="float-right txt-default mt-2" href="{{url('password/reset')}}" id="fgpwd">Forgot your password?</a>
                     </form>
                     <p class="mt-3">Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</p>
                     <a href="{{url('register')}}" class="txt-default pt-3 d-block">Create an Account</a>

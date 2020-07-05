@@ -54,7 +54,8 @@
                         </div>
                         <div class="app-link">
                             <h6>
-                                free Delivery on order over Ksh:5000
+                                Download app
+                            </h6>
 
                         </div>
                     </div>
@@ -108,10 +109,12 @@
                                     back <i class="fa fa-angle-right pl-2"></i>
                                 </div>
                             </li>
-                            <li><a href="{{url('supermarket')}}">Supermarket</a></li>
-                            <li><a href="{{url('homestead')}}">Homestead Essentials</a></li>
-                            <li><a href="{{url('saftey')}}">Safety Essentials</a></li>
-                            <li><a href="{{url('drinks')}}">Drinks</a></li>
+                            <li><a href="{{url('whisky')}}">Whisky</a></li>
+                            <li><a href="{{url('vodka')}}">Vodka</a></li>
+                            <li><a href="{{url('gin')}}">Gin</a></li>
+                            <li><a href="{{url('softDrink')}}">Soft Drinks</a></li>
+                            <li><a href="{{url('water')}}">Water</a></li>
+
 
                             <li>
                                 <a class="mor-slide-click">
@@ -127,17 +130,24 @@
                     </div>
                     <div class="input-block">
                         <div class="input-box">
-                            <form class="big-deal-form">
+                            <form class="big-deal-form" action="{{url('shopping')}}" method="post" id="search">
+                                @csrf
                                 <div class="input-group ">
                                     <div class="input-group-prepend">
                                         <span class="search"><i class="fa fa-search"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Search a Product" >
+                                    <input type="text" class="form-control" name="searchProduct" placeholder="Search a Product" >
                                     <div class="input-group-prepend">
                                         <select>
                                             <option>All Category</option>
-                                            <option>indurstrial</option>
-                                            <option>sports</option>
+                                            <option>Whisky</option>
+                                            <option>Vodka</option>
+                                            <option>Gin</option>
+                                            <option>Rum</option>
+                                            <option>Soft Drinks</option>
+                                            <option>Water</option>
+
+
                                         </select>
                                     </div>
                                 </div>
@@ -192,10 +202,14 @@
                                     </nav>
                                     <div class="collapse  nav-desk" id="navbarToggleExternalContent">
                                         <ul class="nav-cat title-font">
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/07.png')}}" alt="category-product"> <a href="{{url('supermarket')}}">Supermarket </a></li>
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/02.png')}}" alt="category-product"> <a href="{{url('homestead')}}">Homestead Essentials</a></li>
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/09.png')}}" alt="category-product"> <a href="{{url('saftey')}}">Safety Essentials</a></li>
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('drinks')}}">Drinks</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/07.png')}}" alt="category-product"> <a href="{{url('whisky')}}">Whisky </a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/02.png')}}" alt="category-product"> <a href="{{url('vodka')}}">Vodka</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/09.png')}}" alt="category-product"> <a href="{{url('gin')}}">Gin</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('rum')}}">Rum</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('softDrink')}}">Soft Drink</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('water')}}">Water</a></li>
+
+
                                             <li>
                                                 <a class="mor-slide-click">more category <i class="fa fa-angle-down pro-down"></i><i class="fa fa-angle-up pro-up"></i></a>
                                             </li>
@@ -215,20 +229,23 @@
 
                                         <!--SHOP-->
                                         <li>
-                                            <a href="{{url('supermarket')}}" class="dark-menu-item">Supermarket</a>
+                                            <a href="{{url('whisky')}}" class="dark-menu-item">Whisky</a>
                                         </li>
                                         <!--SHOP-END-->
 
 
                                         <!--product-meu start-->
-                                        <li class="mega"><a href="{{url('homestead')}}" class="dark-menu-item">Homestead Essentials
+                                        <li class="mega"><a href="{{url('vodka')}}" class="dark-menu-item">Vodka
                                             </a>
                                         </li>
                                         <li class="mega" >
-                                            <a href="{{url('saftey')}}" class="dark-menu-item">Safety Essentials</a>
+                                            <a href="{{url('gin')}}" class="dark-menu-item">Gin</a>
                                         </li>
 
-                                        <li><a href="{{url('drinks')}}" class="dark-menu-item">Drinks</a>
+                                        <li><a href="{{url('rum')}}" class="dark-menu-item">Rum</a>
+
+                                        </li>
+                                        <li><a href="{{url('softDrinks')}}" class="dark-menu-item">Soft Drinks</a>
 
                                         </li>
                                         @if(\Illuminate\Support\Facades\Auth::check())
@@ -250,12 +267,13 @@
                                                 <div class="overlay-content">
                                                     <div class="container">
                                                         <div class="row">
-                                                            <div class="col-xl-12">
-                                                                <form>
-                                                                    <div class="form-group"><input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product"></div>
+                                                            <form action="{{url('shopping')}}" method="post">
+                                                                @csrf
+                                                                <div class="col-xl-12">
+                                                                    <div class="form-group"><input type="text" class="form-control" name="searchProduct" placeholder="Search a Product"></div>
                                                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                                                                </form>
                                                             </div>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>

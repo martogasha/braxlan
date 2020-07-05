@@ -62,6 +62,9 @@
                                             <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="poster_category">
                                                 <option value="first">First</option>
                                                 <option value="second">Second</option>
+                                                <option value="third">Third</option>
+                                                <option value="fourth">4th</option>
+
 
                                             </select>
                                         </div>

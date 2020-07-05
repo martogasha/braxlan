@@ -14,6 +14,6 @@ class Order extends Model
     }
 
     protected $fillable=[
-      'order_status','product_id','user_id','quantity','order_stats'
+      'order_status','product_id','user_id','quantity','order_stats','size',
     ];
 }

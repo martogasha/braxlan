@@ -35,6 +35,7 @@
     </div>
 </section>
 
+
 <!-- Section ends -->
 <div id="mySetting" class="add_to_cart right">
     <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>

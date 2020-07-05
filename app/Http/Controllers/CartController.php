@@ -16,11 +16,36 @@ class CartController extends Controller
         $cartTotals = Cart::where('user_id',Auth::user()->id)->get();
         $totalSum=0;
             foreach ($cartTotals as $cartTotal) {
-                $sum = $cartTotal->product->product_price;
-                $quant = $cartTotal->quantity;
+                switch ($cartTotal){
+                    case($cartTotal->size=='1LITRE'):
+                        $sum = $cartTotal->product->product_price;
+                        $quant = $cartTotal->quantity;
 
-                $total = $sum * $quant;
-                $totalSum += $total;
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                    break;
+                    case ($cartTotal->size=='750ML'):
+                            $sum = $cartTotal->product->product_price750;
+                            $quant = $cartTotal->quantity;
+
+                            $total = $sum * $quant;
+                            $totalSum += $total;
+                        break;
+                    case ($cartTotal->size=='375ML'):
+                                $sum = $cartTotal->product->product_price375;
+                                $quant = $cartTotal->quantity;
+
+                                $total = $sum * $quant;
+                                $totalSum += $total;
+                            break;
+                    case ($cartTotal->size=='250ML'):
+                                    $sum = $cartTotal->product->product_price250;
+                                    $quant = $cartTotal->quantity;
+
+                                    $total = $sum * $quant;
+                                    $totalSum += $total;
+                                break;
+                }
 
             }
         }
@@ -36,14 +61,14 @@ class CartController extends Controller
     }
     public function store(Request $request){
         if (Auth::check()){
-            $getProductId =Cart::where('product_id',$request->productId)->where('user_id',Auth::user()->id)->first();
+            $getProductId =Cart::where('product_id',$request->productId)->where('user_id',Auth::user()->id)->where('size',$request->size)->first();
             if (isset($getProductId)){
             $productId = $getProductId->product_id;
                 $getQuantity = Cart::where('user_id',Auth::user()->id)->where('product_id',$request->productId)->first();
                 $quantity = $getQuantity->quantity;
                 $updateQuantity = $quantity + $request->quantity;
-            $updateCart = Cart::where('user_id',Auth::user()->id)->where('product_id',$request->productId)->update(['quantity'=>($updateQuantity)]);
-            $updateCart = Checkout::where('user_id',Auth::user()->id)->where('product_id',$request->productId)->update(['quantity'=>($updateQuantity)]);
+            $updateCart = Cart::where('user_id',Auth::user()->id)->where('product_id',$request->productId)->where('size',$request->size)->update(['quantity'=>($updateQuantity)]);
+            $updateCart = Checkout::where('user_id',Auth::user()->id)->where('product_id',$request->productId)->where('size',$request->size)->update(['quantity'=>($updateQuantity)]);
 
                 return redirect(url('cart'))->with('success', 'Item Added to Cart Successfully');
 
@@ -53,11 +78,13 @@ class CartController extends Controller
                 $addCart = Cart::create([
                     'product_id' => $request->input('productId'),
                     'quantity' => $request->input('quantity'),
+                    'size' => $request->input('size'),
                     'user_id' => Auth::user()->id,
                 ]);
                 $addCart = Checkout::create([
                     'product_id' => $request->input('productId'),
                     'quantity' => $request->input('quantity'),
+                    'size' => $request->input('size'),
                     'user_id' => Auth::user()->id,
                 ]);
                 return redirect(url('cart'))->with('success', 'Item Added to Cart Successfully');
@@ -69,11 +96,26 @@ class CartController extends Controller
 
 
     }
-    public function delete($id){
-        $deleteCart = Cart::where('product_id',$id)->where('user_id',Auth::user()->id)->delete();
-        $deleteCheckout = Checkout::where('product_id',$id)->where('user_id',Auth::user()->id)->delete();
+    public function delete(Request $request,$id){
+        $updateCart = Cart::where('product_id',$id)->where('user_id',Auth::user()->id)->where('size',$request->size)->first();
+        if ($updateCart->quantity>1){
+            $quantity = $updateCart->quantity;
+            $updateQuantity = $quantity-1;
+            $update = Cart::where('user_id',Auth::user()->id)->where('product_id',$id)->where('size',$request->size)->update(['quantity'=>($updateQuantity)]);
+
+        }
+        else{
+            $deleteCart = Cart::where('product_id',$id)->where('user_id',Auth::user()->id)->where('size',$request->size)->delete();
+            $deleteCheckout = Checkout::where('product_id',$id)->where('user_id',Auth::user()->id)->where('size',$request->size)->delete();
+        }
 
 
-        return redirect()->back()->with('success','Item Removed From Cart');
+        $checkCart = Cart::where('user_id',Auth::user()->id)->first();
+        if (isset($checkCart)) {
+            return redirect()->back()->with('success', 'Item Removed From Cart');
+        }
+        else{
+            return redirect(url('/'))->with('success','Your Cart is Empty');
+        }
     }
 }

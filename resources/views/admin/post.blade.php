@@ -87,12 +87,8 @@
                                     </div>
                                     <div class="collection-banner-contain">
                                         <div>
-                                            <h3 style="color: black"><b>Liquor</b></h3>
-                                            <h4>Store</h4>
                                             <div class="shop">
-                                                <a>
-                                                    shop now
-                                                </a>
+                                                <button class="btn btn-primary">Shop Now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -109,11 +105,9 @@
                                         </div>
                                         <div class="collection-banner-contain">
                                             <div>
-                                                <h3 style="color: black"><b>Liquor</b></h3>
-                                                <h4>Store</h4>
                                                 <div class="shop">
                                                     <a>
-                                                        shop now
+                                                        <button class="btn btn-primary">Shop Now</button>
                                                     </a>
                                                 </div>
                                             </div>
@@ -132,11 +126,9 @@
                                     </div>
                                     <div class="collection-banner-contain">
                                         <div>
-                                            <h3 style="color: black"><b>Food</b></h3>
-                                            <h4>Store</h4>
                                             <div class="shop">
                                                 <a>
-                                                    shop now
+                                                    <button class="btn btn-primary">Shop Now</button>
                                                 </a>
                                             </div>
                                         </div>
@@ -154,11 +146,9 @@
                                             </div>
                                             <div class="collection-banner-contain">
                                                 <div>
-                                                    <h3 style="color: black"><b>Liquor</b></h3>
-                                                    <h4>Store</h4>
                                                     <div class="shop">
                                                         <a>
-                                                            shop now
+                                                           <button class="btn btn-primary">Shop Now</button>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -177,11 +167,10 @@
                                     </div>
                                     <div class="collection-banner-contain">
                                         <div>
-                                            <h3 style="color: black"><b>Kitchen</b></h3>
-                                            <h4>Store</h4>
                                             <div class="shop">
                                                 <a>
-                                                    shop now
+                                                    <button class="btn btn-primary">Shop Now</button>
+
                                                 </a>
                                             </div>
                                         </div>
@@ -199,8 +188,6 @@
                                             </div>
                                             <div class="collection-banner-contain">
                                                 <div>
-                                                    <h3 style="color: black"><b>Liquor</b></h3>
-                                                    <h4>Store</h4>
                                                     <div class="shop">
                                                         <a>
                                                             shop now

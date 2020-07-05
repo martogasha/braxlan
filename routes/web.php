@@ -18,7 +18,7 @@ Route::get('/h', function () {
 });
 Route::post('Login','LoginCustomController@login')->name('loginCustom');
 Route::post('Register','RegisterCustomController@register')->name('registerCustom');
-Route::get('password/reset/{token}','ResetPasswordController@showResetForm');
+Route::get('password/reset/{token}','Auth\ResetPasswordController@showResetForm');
 Route::post('password/email','ForgotPasswordController@sendResetLinkEmail');
 Route::post('password/reset','ResetPasswordController@reset');
 Route::view('rrr','customer.forgetPassword');
@@ -47,16 +47,21 @@ Route::get('getCProduct','ProductController@getCProduct');
 
 Route::post('add','ProductController@store')->name('add');
 Route::post('deleteProduct','ProductController@deleteProduct');
+Route::post('editProduct','ProductController@edit');
 Route::resource('poster','PosterController');
 Route::get('posterView','PosterController@poster');
 Route::post('PosterEdit/{id}','PosterController@update');
 Route::resource('cart','CartController');
+Route::resource('updateCart','CartController');
 Route::post('cartDelete/{id}','CartController@delete');
 Route::resource('checkout','CheckoutController');
 Route::post('placeOrder','CheckoutController@placeOrder');
 Route::resource('success','OrderController');
 Route::get('orders','OrderController@orders');
+Route::get('order/{id}','OrderController@getEachOrder');
+
 Route::post('deleteOrder/{id}','OrderController@deleteOrder');
+
 
 Route::get('ajax','OrderController@getOrderDetails');
 Route::get('ajax1','AdminController@getVendorProduct');
@@ -73,11 +78,26 @@ Route::get('vTransaction','VendorController@transaction');
 Route::get('vAdd','VendorController@Product');
 Route::post('vAddProduct','VendorController@addProduct');
 
-Route::get('supermarket','CategoryController@supermarket');
-Route::get('homestead','CategoryController@homestead');
-Route::get('saftey','CategoryController@saftey');
-Route::get('drinks','CategoryController@drinks');
+Route::get('whisky','CategoryController@whisky');
+Route::get('getWhisky','CategoryController@getWhisky');
+
+Route::get('vodka','CategoryController@vodka');
+Route::get('getVodka','CategoryController@getVodka');
+
+Route::get('gin','CategoryController@gin');
+Route::get('getGin','CategoryController@getGin');
+
+Route::get('mostSold','CategoryController@mostSold');
 Route::post('buyNow','OrderController@buyNow');
+Route::get('sendSms','SmsController@sendSms');
+Route::post('editUserDetail','UserController@editUser');
+Route::post('eProduct','ProductController@eProduct');
+Route::get('editProductDetails/{id}','ProductController@editProductDetails');
+
+
+
+
+
 
 
 
@@ -99,11 +119,14 @@ Route::post('buyNow','OrderController@buyNow');
 
 
 Route::view('dashboard','customer.dashboard');
-Route::view('shop','customer.shop');
+Route::post('shopping','ProductController@shop');
+Route::get('newTrending','ProductController@trending');
+Route::get('shop','ProductController@Shopping');
+Route::get('getShopDetails','ProductController@shopDetails');
+
+
 
 Route::resource('productDetail','ProductDetailController');
-
-
 
 
 

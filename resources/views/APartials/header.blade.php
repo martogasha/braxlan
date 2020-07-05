@@ -41,7 +41,7 @@
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="{{asset('assets/images/layout-2/logo/braxLogo.png')}}" alt=""></a></div>
+            <div class="logo-wrapper"><a href="{{url('admin')}}"><img class="blur-up lazyloaded" src="{{asset('assets/images/layout-2/logo/braxLogo.png')}}" alt=""></a></div>
         </div>
         <div class="main-header-right row">
             <div class="mobile-sidebar">
@@ -192,7 +192,7 @@
                     <div class="chat-box">
                         <div class="people-list friend-list">
                             <ul class="list">
-                                <li class="clearfix"><img class="rounded-circle user-image" src="assets/images/dashboard/user.png" alt="">
+                                <li class="clearfix"><img class="rounded-circle user-image" src="{{asset('assets/images/dashboard/user.png')}}" alt="">
                                     <div class="status-circle online"></div>
                                     <div class="about">
                                         <div class="name">Vincent Porter</div>

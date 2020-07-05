@@ -32,8 +32,11 @@
                                     </div>
                                 </td>
                                 <td><span class="badge badge-secondary">{{$trackOrder->order_status}}</span></td>
-                                @if($trackOrder->order_stats =='Order on the Way')
+                                @if($trackOrder->order_stats =='Awaiting Confirmation')
                                 <td><span class="badge badge-primary">{{$trackOrder->order_stats}}</span></td>
+                                @elseif($trackOrder->order_stats =='Order on the Way')
+                                    <td><span class="badge badge-secondary">{{$trackOrder->order_stats}}</span></td>
+
                                 @else
                                 <td><span class="badge badge-success">{{$trackOrder->order_stats}}</span></td>
                                 @endif

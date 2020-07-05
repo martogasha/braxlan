@@ -1,5 +1,5 @@
 @include('CPartials.header')
-<title>Saftey Essentials</title>
+<title>Gin</title>
 
 <!-- breadcrumb start -->
 <!-- breadcrumb End -->
@@ -14,6 +14,9 @@
                         <!-- brand filter start -->
                         <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left" aria-hidden="true"></i> back</span></div>
                         <!-- color filter start here -->
+                        <div class="collection-sidebar-banner">
+                            <a href="#"><img src="{{asset('assets/images/6pack.jpg')}}" class="img-fluid " alt=""></a>
+                        </div>
                         <!-- price filter start here -->
                         <div class="collection-collapse-block border-0 open">
                             <h3 class="collapse-block-title">price</h3>
@@ -44,6 +47,7 @@
                         </div>
                     </div>
                     <!-- silde-bar colleps block end here -->
+                    @include('APartials.trending')
                     <!-- side-bar single product slider start -->
                     <!-- side-bar single product slider end -->
                     <!-- side-bar banner start here -->
@@ -99,53 +103,55 @@
                                     </div>
                                     <div class="product-wrapper-grid">
                                         <div class="row">
-                                            @foreach($safteys as $saftey)
-                                                <a href="{{url('productDetail',$saftey->id)}}">
-                                            <div class="col-xl-3 col-md-4 col-6  col-grid-box">
-                                                <div class="product">
-                                                    <div class="product-box">
-                                                        <div class="product-imgbox">
-                                                            <div class="product-front">
-                                                                <img src="{{asset('uploads/product/'.$saftey->product_image)}}" class="img-fluid  " alt="product">
-                                                            </div>
-                                                            <div class="product-back">
-                                                                <img src="{{asset('uploads/product/'.$saftey->product_image1)}}" class="img-fluid  " alt="product">
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-detail detail-center ">
-                                                            <div class="detail-title">
-                                                                <div class="detail-left">
-                                                                    <div class="rating-star">
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
+                                            @foreach($gins as $gin)
+                                                <a href="{{url('productDetail',$gin->id)}}">
+                                                    <div class="col-xl-3 col-md-4 col-6  col-grid-box">
+                                                        <div class="product">
+                                                            <div class="product-box">
+                                                                <div class="product-imgbox">
+                                                                    <div class="product-front">
+                                                                        <img src="{{asset('uploads/product/'.$gin->product_image)}}" class="img-fluid  " alt="product">
                                                                     </div>
-                                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                                                                    <a href="#">
-                                                                        <h6 class="price-title">
-                                                                            {{$saftey->product_name}}.
-                                                                        </h6>
-                                                                    </a>
                                                                 </div>
-                                                                <div class="detail-right">
-                                                                    <div class="check-price">
-                                                                    </div>
-                                                                    <div class="price">
-                                                                        <div class="price">
-                                                                            Ksh: {{$saftey->product_price}}
+                                                                <div class="product-detail detail-center ">
+                                                                    <div class="detail-title">
+                                                                        <div class="detail-left">
+                                                                            <div class="rating-star">
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                            </div>
+                                                                            <a href="#">
+                                                                                <h6 class="price-title">
+                                                                                    {{$gin->product_name}}.
+                                                                                </h6>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="detail-right">
+                                                                            <div class="check-price">
+                                                                            </div>
+                                                                            <div class="price">
+                                                                                <div class="price">
+                                                                                    Ksh: {{$gin->product_price}}
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="icon-detail">
+
+                                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                                            <i class="ti-eye view" id="{{$gin->id}}" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
                                                 </a>
                                             @endforeach
+
                                         </div>
                                     </div>
                                     <div class="product-pagination">
@@ -178,6 +184,31 @@
         </div>
     </div>
 </section>
+<div class="modal fade bd-example-modal-lg theme-modal" id="quick-view" tabindex="-1" role="dialog" aria-hidden="true">
+    <form action="{{route('cart.store')}}" method="post" id="cart">
+        @csrf
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+            <div class="modal-content quick-view-modal">
+                <div class="modal-body">
+                    <div id="modalBody">
+
+                    </div>
+
+                    <div class="row">>
+                        <div class="col-lg-6 rtl-text">
+                            <div class="product-right">
+                                <div class="product-buttons">
+                                    <a href="javascript:document.getElementById('cart').submit();"class="btn btn-normal">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 <!-- section End -->
 <div id="mySetting" class="add_to_cart right">
     <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>
@@ -210,5 +241,28 @@
 </div>
 @include('CPartials.login')
 
+
 @include('CPartials.footer1')
 @include('CPartials.footer')
+<script>
+    $(document).on('click','.view',function () {
+        $value = $(this).attr('id');
+        $.ajax({
+            type:"get",
+            url:"{{url('getGin')}}",
+            data:{'product':$value},
+            success:function (data) {
+                $('#modalBody').html(data);
+            },
+            error:function (error) {
+                console.log(error)
+                alert('error')
+
+            }
+
+        });
+
+
+    });
+
+</script>

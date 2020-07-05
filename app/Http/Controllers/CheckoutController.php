@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use AfricasTalking\SDK\AfricasTalking;
 use App\Cart;
 use App\Checkout;
 use App\CompletedOrder;
@@ -18,11 +19,36 @@ class CheckoutController extends Controller
         $user = User::where('id',Auth::user()->id)->first();
         $totalSum=0;
         foreach ($checks as $check){
-            $sum = $check->product->product_price;
-            $quant = $check->quantity;
+            switch ($check){
+                case($check->size=='1LITRE'):
+                    $sum = $check->product->product_price;
+                    $quant = $check->quantity;
 
-            $total = $sum*$quant;
-            $totalSum+=$total;
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
+                case ($check->size=='750ML'):
+                    $sum = $check->product->product_price750;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
+                case ($check->size=='375ML'):
+                    $sum = $check->product->product_price375;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
+                case ($check->size=='250ML'):
+                    $sum = $check->product->product_price250;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
+            }
         }
 
         return view('customer.checkout',[
@@ -48,15 +74,29 @@ class CheckoutController extends Controller
             $placeOrder = Order::create([
                 'product_id'=>$Checkout->product_id,
                 'user_id'=>Auth::user()->id,
+                'size' => $Checkout->size,
                 'quantity'=>$Checkout->quantity,
                 'order_status' => 'cash on delivery',
-                'order_stats' => 'Order on the Way',
+                'order_stats' => 'Awaiting Confirmation',
 
             ]);
 
         }
         $deleteCart = Cart::where('user_id',Auth::user()->id)->delete();
         $deleteCheckout = Checkout::where('user_id',Auth::user()->id)->delete();
+//        $username = 'sandbox'; // use 'sandbox' for development in the test environment
+//        $apiKey   = '44a616cdbb47adafaa4e62f34003aca52733a2a61403200e174b7e73913bc4af'; // use your sandbox app API key for development in the test environment
+//        $AT       = new AfricasTalking($username, $apiKey);
+//
+//// Get one of the services
+//        $sms      = $AT->sms();
+//
+//// Use the service
+//        $result   = $sms->send([
+//            'to'      => '0790268795',
+//            'message' => 'Hello World!'
+//        ]);
+
 
         return redirect(url('success'))->with('success','Order Placed Successfully');
     }

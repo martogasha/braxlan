@@ -11,23 +11,90 @@ use function GuzzleHttp\Promise\all;
 class ProductController extends Controller
 {
     public function index(){
-        $supermarkets = Product::where('product_category','supermarket')->get();
-        $safteys = Product::where('product_category','saftey')->get();
-        $kitchens = Product::where('product_category','kitchen')->get();
-        $drinks = Product::where('product_category','drinks')->get();
+        $whiskys = Product::where('product_category','whisky')->get();
+        $vodkas = Product::where('product_category','vodka')->get();
+        $gins = Product::where('product_category','gin')->get();
+        $mostSolds = Product::where('product_category1','mostSold')->get();
         $poster = Poster::where('poster_category','first')->first();
         $poster2 = Poster::where('poster_category','second')->first();
         $poster3 = Poster::where('poster_category','third')->first();
 
         return view('customer.index',[
-            'supermarkets'=>$supermarkets,
-            'safteys'=>$safteys,
-            'kitchens'=>$kitchens,
-            'drinks'=>$drinks,
+            'whiskys'=>$whiskys,
+            'vodkas'=>$vodkas,
+            'gins'=>$gins,
+            'mostSolds'=>$mostSolds,
             'poster'=>$poster,
             'poster2'=>$poster2,
             'poster3'=>$poster3
         ]);
+    }
+    public function shopping(){
+        return view('customer.shop');
+    }
+    public function shop(Request $request){
+        $search = $request->input('searchProduct');
+        $searchProducts = Product::where('product_name','like',"%$search%")->get();
+        $newProducts = Product::where('product_category3','trending')->get();
+
+
+        return view('customer.shop',[
+            'searchProducts'=>$searchProducts,
+            'newProducts'=>$newProducts,
+
+
+        ]);
+    }
+    public function shopDetails(Request $request){
+        if ($request->ajax()){
+            $output = "";
+            $product = Product::where('id',$request->product)->first();
+        }
+        $output = '
+
+ <input type="hidden" name="productId" value='.$product->id.' id="productId">
+ <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="quick-view-img"><img src="uploads/product/'.$product->product_image.'" alt="" class="img-fluid "></div>
+                    </div>
+                    <div class="col-lg-6 rtl-text">
+                        <div class="product-right">
+                            <h2>'.$product->product_name.'</h2>
+                            <h3>Ksh: '.$product->product_price.'</h3>
+                            <ul class="color-variant">
+                                <li class="bg-light0"></li>
+                                <li class="bg-light1"></li>
+                                <li class="bg-light2"></li>
+                            </ul>
+                            <div class="border-product">
+                                <h6 class="product-title">product details</h6>
+                                <p>'.$product->product_desc.'</p>
+                            </div>
+                            <div class="product-description border-product">
+
+                                        <h6 class="product-title">quantity</h6>
+                                        <div class="qty-box">
+                                            <div class="input-group"><span class="input-group-prepend"><button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""><i class="ti-angle-left"></i></button> </span>
+                                                <input type="text" name="quantity" class="form-control input-number" value="1" id="quantity"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
+                                        </div>
+                                    </div>
+                            <div class="col-md-12 form-group">
+                                        <label for="exampleFormControlSelect1">Size:</label>
+                                        <select class="form-control" name="size">
+                                            <option value="1LITRE">1Litre Ksh: '.$product->product_price.'</option>
+                                            <option value="750ML">750ML Ksh: '.$product->product_price750.'</option>
+                                            <option value="375ML">375ML Ksh: '.$product->product_price375.'</option>
+                                            <option value="250ML">250ML Ksh: '.$product->product_price250.'</option>
+
+                                        </select>
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>
+                ';
+        return response($output);
     }
 
     public function store(Request $request){
@@ -35,7 +102,17 @@ class ProductController extends Controller
         $pictures->product_name = $request->input('product_name');
         $pictures->product_desc = $request->input('product_desc');
         $pictures->product_price = $request->input('product_price');
+        $pictures->product_price750 = $request->input('product_price750');
+        $pictures->product_price375 = $request->input('product_price375');
+        $pictures->product_price250 = $request->input('product_price250');
         $pictures->product_category = $request->input('category');
+        $pictures->product_category1 = $request->input('category1');
+        $pictures->product_category3 = $request->input('category3');
+        $pictures->product_category4 = $request->input('category4');
+
+
+        $pictures->product_status = 0;
+
 
         $pictures->user_id = Auth::user()->id;
 
@@ -86,8 +163,7 @@ class ProductController extends Controller
         }
         $output = '
 
- <input type="hidden" name="productId" value="4" id="productId">
-  <input type="hidden" name="quantity" value="1" id="quantity">
+ <input type="hidden" name="productId" value='.$product->id.' id="productId">
  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <div class="row">
                     <div class="col-lg-6 col-xs-12">
@@ -106,6 +182,24 @@ class ProductController extends Controller
                                 <h6 class="product-title">product details</h6>
                                 <p>'.$product->product_desc.'</p>
                             </div>
+                            <div class="product-description border-product">
+
+                                        <h6 class="product-title">quantity</h6>
+                                        <div class="qty-box">
+                                            <div class="input-group"><span class="input-group-prepend"><button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""><i class="ti-angle-left"></i></button> </span>
+                                                <input type="text" name="quantity" class="form-control input-number" value="1" id="quantity"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
+                                        </div>
+                                    </div>
+                            <div class="col-md-12 form-group">
+                                        <label for="exampleFormControlSelect1">Size:</label>
+                                        <select class="form-control" name="size">
+                                            <option value="1LITRE">1Litre Ksh: '.$product->product_price.'</option>
+                                            <option value="750ML">750ML Ksh: '.$product->product_price750.'</option>
+                                            <option value="375ML">375ML Ksh: '.$product->product_price375.'</option>
+                                            <option value="250ML">250ML Ksh: '.$product->product_price250.'</option>
+
+                                        </select>
+                                    </div>
 
                         </div>
                     </div>
@@ -117,5 +211,48 @@ class ProductController extends Controller
         $deleteProduct = Product::where('id',$request->productId)->delete();
         return redirect()->back()->with('success','Product Deleted Successfully');
 
+    }
+    public function edit(Request $request){
+        $ppp = Product::where('id',$request->productId)->first();
+        if ($ppp->product_status ==1) {
+            $deleteP = Product::where('id', $request->productId)->update(['product_status' => 0]);
+        }
+        else {
+            $deleteProduct = Product::where('id', $request->productId)->update(['product_status' => 1]);
+        }
+
+        return redirect()->back()->with('success','Product Edited Successfully');
+    }
+    public function eProduct(Request $request){
+        $edit = Product::find($request->prodId);
+        if ($request->product_image) {
+            $file = $request->file('product_image');
+            $extension = $file->getClientOriginalName();
+            $filename = time() . '.' . $extension;
+            $file->move('uploads/product/', $filename);
+            $edit->product_image = $filename;
+        }
+        $edit->product_name = $request->product_name;
+        $edit->product_desc = $request->product_desc;
+        $edit->product_price = $request->product_price;
+        $edit->product_price750 = $request->product_price750;
+        $edit->product_price375 = $request->product_price375;
+        $edit->product_price250 = $request->product_price250;
+        $edit->product_category = $request->category;
+        $edit->product_category1 = $request->category1;
+        $edit->product_category2 = $request->category2;
+        $edit->product_category3 = $request->category3;
+
+
+        $edit->save();
+
+        return redirect(url('productList'))->with('success','Product Updated Successfully');
+
+    }
+    public function editProductDetails($id){
+        $getProduct = Product::find($id);
+        return view('admin.editProduct',[
+            'getProduct'=>$getProduct
+        ]);
     }
 }

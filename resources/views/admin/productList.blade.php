@@ -38,20 +38,16 @@
                                 <div class="product-front">
                                     <img src="{{asset('uploads/product/'.$productList->product_image)}}" class="img-fluid  " alt="product">
                                 </div>
-                                <div class="product-back">
-                                    <img src="{{asset('uploads/product/'.$productList->product_image2)}}" class="img-fluid  " alt="product">
-                                </div>
                                 <div class="product-icon icon-inline">
                                     <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
                                         <i class="ti-search view" id="{{$productList->id}}" aria-hidden="true"></i>
                                     </a>
                                 </div>
-                                <div class="new-label1">
-                                    <div>new</div>
+                                @if($productList->product_status==1)
+                                <div class="on-sale1" style="color: #ff0520">
+                                    Out Stock
                                 </div>
-                                <div class="on-sale1">
-                                    on sale
-                                </div>
+                                @endif
                             </div>
                             <div class="product-detail detail-inline p-0">
                                 <div class="detail-title">
@@ -83,6 +79,19 @@
                         </div>
                     </div>
                 </div>
+                <form action="{{url('editProduct')}}" method="post">
+                    @csrf
+                    <input type="hidden" name="productId" value="{{$productList->id}}">
+                    @if($productList->product_status==0)
+                <button type="submit" class="btn btn-danger">Out of Stock</button>
+                    @else
+                        <button type="submit" class="btn btn-secondary">On Stock</button>
+
+                    @endif
+                </form>
+                <br>
+                <a href="{{url('editProductDetails',$productList->id)}}"> <button class="btn btn-info">Edit</button></a>
+
             </div>
             @endforeach
 
@@ -100,15 +109,15 @@
                 <div class="modal-body">
 
                 </div>
-                <div class="row">>
+                <div class="row">
                     <div class="col-lg-6 rtl-text">
                         <div class="product-right">
-                            <a href="javascript:document.getElementById('delProduct').submit();"class="btn btn-normal">Delete Product</a>
+                            <a href="javascript:document.getElementById('delProduct').submit();"class="btn btn-danger">Delete Product</a>
                         </div>
+
                     </div>
                 </div>
             </div>
-
         </form>
         </div>
     </div>

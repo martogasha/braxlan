@@ -73,22 +73,78 @@
                                             <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" name="product_desc" type="textarea" required="">
                                         </div>
                                         <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price :</label>
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price:</label>
                                             <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price" type="text" required="">
                                         </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price750ML :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price750" type="text">
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price375ML :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price375" type="text">
+                                        </div><div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price250ML :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price250" type="text">
                                     </div>
                                     <div class="form">
                                         <div class="form-group row">
                                             <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
                                             <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category">
-                                                <option value="supermarket">Supermarket</option>
-                                                <option value="saftey">Safety Essentials</option>
-                                                <option value="kitchen">Homestead Essentials</option>
-                                                <option value="drinks">Drinks</option>
+                                                <option value="whisky">Whisky</option>
+                                                <option value="vodka">Vodka</option>
+                                                <option value="gin">Gin</option>
+                                                <option value="mostSold">Most Sold</option>
+                                                <option value="mostSold">Extras</option>
+                                                <option value="mostSold">Cigarette</option>
+                                                <option value="mostSold">Condoms</option>
+
+
 
                                             </select>
                                         </div>
                                     </div>
+                                <div class="form">
+                                    <div class="form-group row">
+                                        <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
+                                        <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category1">
+                                            <option value="">Select Category1</option>
+                                            <option value="mostSold">Most Sold</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form">
+                                    <div class="form-group row">
+                                        <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
+                                        <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category2">
+                                            <option value="">Select Category2</option>
+                                            <option value="under1000">Under Ksh: 1000</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                        <div class="form">
+                                            <div class="form-group row">
+                                                <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
+                                                <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category3">
+                                                    <option value="">Select Category3</option>
+                                                    <option value="trending">Trending</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form">
+                                            <div class="form-group row">
+                                                <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
+                                                <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category4">
+                                                    <option value="">Select Category4</option>
+                                                    <option value="trending">Special Offers</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
                                     <div class="offset-xl-3 offset-sm-4">
                                         <button type="submit" class="btn btn-primary">Add</button>
                                         <a href="{{url('admin')}}"> <button type="button" class="btn btn-light">Discard</button></a>

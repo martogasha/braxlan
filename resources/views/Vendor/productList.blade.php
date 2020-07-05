@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="product-icon icon-inline">
                                     <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
+                                        <i class="ti-eye" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="new-label1">

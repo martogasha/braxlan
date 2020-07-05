@@ -54,6 +54,16 @@
                                                 <input type="text" name="quantity" class="form-control input-number" value="1" id="quantity"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
                                         </div>
                                     </div>
+                                    <div class="col-md-12 form-group">
+                                        <label for="exampleFormControlSelect1">Size:</label>
+                                        <select class="form-control" name="size">
+                                            <option value="1LITRE">1Litre Ksh: {{$productDetail->product_price}}</option>
+                                            <option value="750ML">750ML Ksh: {{$productDetail->product_price750}}</option>
+                                            <option value="375ML">375ML Ksh: {{$productDetail->product_price375}}</option>
+                                            <option value="250ML">250ML Ksh: {{$productDetail->product_price250}}</option>
+
+                                        </select>
+                                    </div>
 
                                         <input type="hidden" name="productId" value="{{$productDetail->id}}">
                                         <div class="product-buttons"><a href="javascript:document.getElementById('formCart').submit();" class="btn btn-normal">Add to Cart</a>
@@ -96,7 +106,7 @@
                                     </ul>
                                     <div class="tab-content nav-material" id="top-tabContent">
                                         <div class="tab-pane fade show active" id="top-home" role="tabpanel" aria-labelledby="top-home-tab">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                            <p>{{$productDetail->product_desc}}</p>
                                         </div>
                                         <div class="tab-pane fade" id="top-review" role="tabpanel" aria-labelledby="review-top-tab">
                                             <form class="theme-form">
@@ -140,19 +150,8 @@
                 <div class="col-sm-3 collection-filter">
                     <div class="collection-filter-block creative-card creative-inner">
                         <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left" aria-hidden="true"></i> back</span></div>
-                        <div class="collection-collapse-block border-0 open">
-                            <h3 class="collapse-block-title">brand</h3>
-                            <div class="collection-collapse-block-content">
-                                <div class="collection-brand-filter">
-                                    <ul class="category-list">
-                                        <li><a href="#">clothing</a></li>
-                                        <li><a href="#">bags</a></li>
-                                        <li><a href="#">footwear</a></li>
-                                        <li><a href="#">watches</a></li>
-                                        <li><a href="#">accessories</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="collection-sidebar-banner">
+                            <a href="#"><img src="{{asset('assets/images/g6pack.png')}}" class="img-fluid " alt=""></a>
                         </div>
                     </div>
                     <div class="collection-filter-block creative-card creative-inner">
@@ -220,7 +219,13 @@
                                 </div>
                             </div>
                         </div>
+{{--                        <div class="collection-sidebar-banner">--}}
+{{--                            <a href="#"><img src="{{asset('assets/images/g6pack.png')}}" class="img-fluid " alt=""></a>--}}
+{{--                        </div>--}}
+
                     </div>
+
+
                     <!-- side-bar single product slider start -->
                     <div class="theme-card creative-card creative-inner">
                         <h5 class="title-border">new product</h5>
@@ -267,12 +272,15 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- side-bar single product slider end -->
                 </div>
+
             </div>
         </div>
     </div>
 </section>
+
 <!-- Add to cart bar -->
 @include('CPartials.cart')
 <!-- Add to cart bar end-->

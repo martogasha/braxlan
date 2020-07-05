@@ -96,7 +96,7 @@
                                                             <ul class="contact-list">
                                                                 <li><i class="fa fa-map-marker"></i><span>Kikuyu <br> <span> Kenya-79604</span></span></li>
                                                                 <li><i class="fa fa-phone"></i><span>call us: 0754238704</span></li>
-                                                                <li><i class="fa fa-envelope-o"></i><span>email us: support@braxlan.com</span></li>
+                                                                <li><i class="fa fa-envelope-o"></i><span>email us: braxlanonlineshopping.com</span></li>
                                                                 <li><i class="fa fa-fax"></i><span>fax 0100108466</span></li>
                                                             </ul>
                                                         </div>
@@ -146,7 +146,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="sub-footer-contain">
-                        <p><span>2018 - 19 </span>braxlan.com</p>
+                        <p><span>2020 - 50 </span>braxlanonlineshopping.com</p>
                     </div>
                 </div>
             </div>

@@ -43,6 +43,7 @@
                                 <th>Name</th>
                                 <th>Phone</th>
                                 <th>Status</th>
+                                <th>State</th>
                                 <th>Action</th>
                                 <th>Delete Order</th>
                             </tr>
@@ -54,6 +55,7 @@
                                 <td><span class="badge badge-secondary">{{$order->user->name}}</span></td>
                                 <td><span class="badge badge-secondary">{{$order->user->phone}}</span></td>
                                 <td><span class="badge badge-primary">{{$order->order_status}}</span></td>
+                                <td><span class="badge badge-secondary">{{$order->order_stats}}</span></td>
                                 <td><button type="button" class="btn btn-success view" name="view" id="{{$order->user_id}}" data-toggle="modal" data-target="#exampleModal">View</button> </td>
                                 <form action="{{url('deleteOrder',$order->id)}}" method="post">
                                     @csrf
@@ -112,7 +114,8 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     @csrf
-                <button type="submit" class="btn btn-primary">Complete Order</button>
+
+                <button type="submit" class="btn btn-primary">Confirm/Complete Order</button>
             </div>
         </div>
         </form>
