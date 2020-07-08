@@ -56,6 +56,7 @@
                                 @endswitch
                                     <div class="col-xs-3">
                                     <form action="{{url('cartDelete',$cart->product_id)}}" method="post">
+                                        <input type="hidden" name="size" value="{{$cart->size}}">
                                         @csrf
                                         <button type="submit"><i class="ti-close"></i></button>
                                     </form>
