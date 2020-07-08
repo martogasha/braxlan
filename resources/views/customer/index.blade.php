@@ -6423,7 +6423,7 @@
             <div class="col">
                 <div class="contact-banner-contain">
                     <div class="contact-banner-img"><img src="assets/images/layout-1/call-img.png" class="  img-fluid" alt="call-banner"></div>
-                    <div> <h3>if you have any question please call us</h3></div>
+                    <div> <h3>if you have any question please call/whatsapp us</h3></div>
                     <div><h2>0754-238-704</h2></div>
                 </div>
             </div>

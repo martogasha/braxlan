@@ -47,8 +47,8 @@
                         </div>
                     </div>
                     <!-- silde-bar colleps block end here -->
-                    @include('APartials.trending')
-                    <!-- side-bar single product slider start -->
+                @include('APartials.trending')
+                <!-- side-bar single product slider start -->
                     <!-- side-bar single product slider end -->
                     <!-- side-bar banner start here -->
                     <!-- side-bar banner end here -->
@@ -105,55 +105,55 @@
                                         <div class="row">
                                             @foreach($whiskys as $whisky)
                                                 <a href="{{url('productDetail',$whisky->id)}}">
-                                            <div class="col-xl-3 col-md-4 col-6  col-grid-box">
-                                                <div class="product">
-                                                    <div class="product-box">
-                                                        <div class="product-imgbox">
-                                                            <div class="product-front">
-                                                                <img src="{{asset('uploads/product/'.$whisky->product_image)}}" class="img-fluid  " alt="product">
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-detail detail-center ">
-                                                            <div class="detail-title">
-                                                                <div class="detail-left">
-                                                                    <div class="rating-star">
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
+                                                    <div class="col-xl-3 col-md-4 col-6  col-grid-box">
+                                                        <div class="product">
+                                                            <div class="product-box">
+                                                                <div class="product-imgbox">
+                                                                    <div class="product-front">
+                                                                        <img src="{{asset('uploads/product/'.$whisky->product_image)}}" class="img-fluid  " alt="product">
                                                                     </div>
-                                                                    <a href="#">
-                                                                        <h6 class="price-title">
-                                                                            {{$whisky->product_name}}.
-                                                                        </h6>
-                                                                    </a>
                                                                 </div>
-                                                                <div class="detail-right">
-                                                                    <div class="check-price">
-                                                                    </div>
-                                                                    <div class="price">
-                                                                        <div class="price">
-                                                                            Ksh: {{$whisky->product_price}}
+                                                                <div class="product-detail detail-center ">
+                                                                    <div class="detail-title">
+                                                                        <div class="detail-left">
+                                                                            <div class="rating-star">
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                            </div>
+                                                                            <a href="#">
+                                                                                <h6 class="price-title">
+                                                                                    {{$whisky->product_name}}.
+                                                                                </h6>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="detail-right">
+                                                                            <div class="check-price">
+                                                                            </div>
+                                                                            <div class="price">
+                                                                                <div class="price">
+                                                                                    Ksh: {{$whisky->product_price}}
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="icon-detail">
+                                                                    <div class="icon-detail">
 
-                                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                                    <i class="ti-eye view" id="{{$whisky->id}}" aria-hidden="true"></i>
-                                                                </a>
+                                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                                            <i class="ti-eye view" id="{{$whisky->id}}" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
                                                 </a>
                                             @endforeach
+
                                         </div>
                                     </div>
-
                                     <div class="product-pagination">
                                         <div class="theme-paggination-block">
                                             <div class="row">
@@ -179,38 +179,36 @@
                             </div>
                         </div>
                     </div>
-                </<div class="modal fade bd-example-modal-lg theme-modal" id="quick-view" tabindex="-1" role="dialog" aria-hidden="true">
-                    <form action="{{route('cart.store')}}" method="post" id="cart">
-                        @csrf
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-
-                            <div class="modal-content quick-view-modal">
-                                <div class="modal-body">
-                                    <div id="modalBody">
-
-                                    </div>
-
-                                    <div class="row">>
-                                        <div class="col-lg-6 rtl-text">
-                                            <div class="product-right">
-                                                <div class="product-buttons">
-                                                    <a href="javascript:document.getElementById('cart').submit();"class="btn btn-normal">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
                 </div>
-                div>
             </div>
         </div>
     </div>
 </section>
+<div class="modal fade bd-example-modal-lg theme-modal" id="quick-view" tabindex="-1" role="dialog" aria-hidden="true">
+    <form action="{{route('cart.store')}}" method="post" id="cart">
+        @csrf
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 
+            <div class="modal-content quick-view-modal">
+                <div class="modal-body">
+                    <div id="modalBody">
 
+                    </div>
+
+                    <div class="row">>
+                        <div class="col-lg-6 rtl-text">
+                            <div class="product-right">
+                                <div class="product-buttons">
+                                    <a href="javascript:document.getElementById('cart').submit();"class="btn btn-normal">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 <!-- section End -->
 <div id="mySetting" class="add_to_cart right">
     <a href="javascript:void(0)" class="overlay" onclick="closeSetting()"></a>
@@ -242,6 +240,7 @@
     </div>
 </div>
 @include('CPartials.login')
+
 
 @include('CPartials.footer1')
 @include('CPartials.footer')
