@@ -97,11 +97,8 @@
                                                 <option value="wines">Wines</option>
                                                 <option value="RUM">Rum</option>
                                                 <option value="mostSold">Most Sold</option>
-                                                <option value="mostSold">Extras</option>
-                                                <option value="mostSold">Cigarette</option>
-                                                <option value="mostSold">Condoms</option>
-
-
+                                                <option value="soft">Soft Drinks</option>
+                                                <option value="extra">Extras</option>
 
                                             </select>
                                         </div>

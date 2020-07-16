@@ -112,8 +112,10 @@
                             <li><a href="{{url('whisky')}}">Whisky</a></li>
                             <li><a href="{{url('vodka')}}">Vodka</a></li>
                             <li><a href="{{url('gin')}}">Gin</a></li>
-                            <li><a href="{{url('softDrink')}}">Soft Drinks</a></li>
-                            <li><a href="{{url('water')}}">Water</a></li>
+                            <li><a href="{{url('rum')}}">Rum</a></li>
+                            <li><a href="{{url('wine')}}">Wines</a></li>
+                            <li><a href="{{url('softDrinks')}}">Soft Drinks</a></li>
+                            <li><a href="{{url('extras')}}">Extras</a></li>
 
 
                             <li>
@@ -144,8 +146,9 @@
                                             <option>Vodka</option>
                                             <option>Gin</option>
                                             <option>Rum</option>
+                                            <option>Wines</option>
                                             <option>Soft Drinks</option>
-                                            <option>Water</option>
+                                            <option>Extras</option>
 
 
                                         </select>
@@ -206,8 +209,9 @@
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/02.png')}}" alt="category-product"> <a href="{{url('vodka')}}">Vodka</a></li>
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/09.png')}}" alt="category-product"> <a href="{{url('gin')}}">Gin</a></li>
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('rum')}}">Rum</a></li>
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('softDrink')}}">Soft Drink</a></li>
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('water')}}">Water</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('wine')}}">Wines</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('softDrinks')}}">Soft Drink</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('extras')}}">Extras</a></li>
 
 
                                             <li>
@@ -245,7 +249,13 @@
                                         <li><a href="{{url('rum')}}" class="dark-menu-item">Rum</a>
 
                                         </li>
+                                        <li><a href="{{url('wine')}}" class="dark-menu-item">Wine</a>
+
+                                        </li>
                                         <li><a href="{{url('softDrinks')}}" class="dark-menu-item">Soft Drinks</a>
+
+                                        </li>
+                                        <li><a href="{{url('extras')}}" class="dark-menu-item">Extras</a>
 
                                         </li>
                                         @if(\Illuminate\Support\Facades\Auth::check())

@@ -84,6 +84,18 @@ Route::get('getWhisky','CategoryController@getWhisky');
 Route::get('vodka','CategoryController@vodka');
 Route::get('getVodka','CategoryController@getVodka');
 
+Route::get('rum','CategoryController@rum');
+Route::get('getRum','CategoryController@getRum');
+
+Route::get('wine','CategoryController@wine');
+Route::get('getWine','CategoryController@getWine');
+
+Route::get('softDrinks','CategoryController@soft');
+Route::get('getSoft','CategoryController@getSoft');
+
+Route::get('extras','CategoryController@extra');
+Route::get('getExtra','CategoryController@getExtra');
+
 Route::get('gin','CategoryController@gin');
 Route::get('getGin','CategoryController@getGin');
 

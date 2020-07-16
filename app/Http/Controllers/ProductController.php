@@ -14,6 +14,10 @@ class ProductController extends Controller
         $whiskys = Product::where('product_category','whisky')->get();
         $vodkas = Product::where('product_category','vodka')->get();
         $gins = Product::where('product_category','gin')->get();
+        $rums = Product::where('product_category','RUM')->get();
+        $wines = Product::where('product_category','wines')->get();
+        $softs = Product::where('product_category','soft')->get();
+        $extras = Product::where('product_category','extra')->get();
         $mostSolds = Product::where('product_category1','mostSold')->get();
         $poster = Poster::where('poster_category','first')->first();
         $poster2 = Poster::where('poster_category','second')->first();
@@ -23,6 +27,10 @@ class ProductController extends Controller
             'whiskys'=>$whiskys,
             'vodkas'=>$vodkas,
             'gins'=>$gins,
+            'rums'=>$rums,
+            'wines'=>$wines,
+            'softs'=>$softs,
+            'extras'=>$extras,
             'mostSolds'=>$mostSolds,
             'poster'=>$poster,
             'poster2'=>$poster2,
