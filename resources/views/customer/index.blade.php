@@ -139,7 +139,7 @@
                                                     </div>
                                                     <div class="price">
                                                         <div class="price">
-                                                            Ksh: {{$mostSold->product_price}}
+                                                            Ksh: {{$mostSold->product_price750}}
 
                                                         </div>
                                                     </div>
