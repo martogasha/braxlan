@@ -95,6 +95,7 @@
                                                 <option value="vodka">Vodka</option>
                                                 <option value="gin">Gin</option>
                                                 <option value="wines">Wines</option>
+                                                <option value="RUM">Rum</option>
                                                 <option value="mostSold">Most Sold</option>
                                                 <option value="mostSold">Extras</option>
                                                 <option value="mostSold">Cigarette</option>
