@@ -139,7 +139,7 @@
                                                     </div>
                                                     <div class="price">
                                                         <div class="price">
-                                                            Ksh: {{$mostSold->product_price750}}
+                                                            Ksh: {{$mostSold->product_price750    }}
 
                                                         </div>
                                                     </div>
@@ -231,7 +231,7 @@
                                                             </div>
                                                             <div class="price">
                                                                 <div class="price">
-                                                                    Ksh: {{$whisky->product_price}}
+                                                                    Ksh: {{$whisky->product_price750}}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2318,7 +2318,7 @@
                                                             </div>
                                                             <div class="price">
                                                                 <div class="price">
-                                                                    Ksh: {{$vodka->product_price}}
+                                                                    Ksh: {{$vodka->product_price750}}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4398,7 +4398,7 @@
                                                             </div>
                                                             <div class="price">
                                                                 <div class="price">
-                                                                    Ksh: {{$gin->product_price}}
+                                                                    Ksh: {{$gin->product_price750}}
                                                                 </div>
                                                             </div>
                                                         </div>
