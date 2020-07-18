@@ -84,18 +84,18 @@ class CheckoutController extends Controller
         }
         $deleteCart = Cart::where('user_id',Auth::user()->id)->delete();
         $deleteCheckout = Checkout::where('user_id',Auth::user()->id)->delete();
-//        $username = 'sandbox'; // use 'sandbox' for development in the test environment
-//        $apiKey   = '44a616cdbb47adafaa4e62f34003aca52733a2a61403200e174b7e73913bc4af'; // use your sandbox app API key for development in the test environment
-//        $AT       = new AfricasTalking($username, $apiKey);
-//
-//// Get one of the services
-//        $sms      = $AT->sms();
-//
-//// Use the service
-//        $result   = $sms->send([
-//            'to'      => '0790268795',
-//            'message' => 'Hello World!'
-//        ]);
+        $username = 'bull'; // use 'sandbox' for development in the test environment
+        $apiKey   = '0aa4a7a4e921d26292c7d1f511f8cadcfca2a28d86e8e83d76c1863ad58ea9d0'; // use your sandbox app API key for development in the test environment
+        $AT       = new AfricasTalking($username, $apiKey);
+
+// Get one of the services
+        $sms = $AT->sms();
+
+// Use the service
+        $result = $sms->send([
+            'to'      => '0791471317',
+            'message' => 'Mipango Naona kama itachange ntakushow kama sitaenda ni Bull'
+        ]);
 
 
         return redirect(url('success'))->with('success','Order Placed Successfully');

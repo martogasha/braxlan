@@ -11,7 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function admin(){
-        return view('admin.index');
+        if (Auth::check()) {
+            return view('admin.index');
+        }
+        else{
+            return redirect(url('login'));
+        }
     }
     public function productList(){
         if (Auth::user()->role == 'admin') {

@@ -1,5 +1,5 @@
 @include('CPartials.header')
-<title>Drinks</title>
+<title>Most Sold</title>
 
 <!-- breadcrumb start -->
 <!-- breadcrumb End -->
@@ -15,6 +15,9 @@
                         <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left" aria-hidden="true"></i> back</span></div>
                         <!-- color filter start here -->
                         <!-- price filter start here -->
+                        <div class="collection-sidebar-banner">
+                            <a href="{{url('beer')}}"><img src="{{asset('assets/images/6pack.jpg')}}" class="img-fluid " alt=""></a>
+                        </div>
                         <div class="collection-collapse-block border-0 open">
                             <h3 class="collapse-block-title">price</h3>
                             <div class="collection-collapse-block-content">
@@ -99,17 +102,17 @@
                                     </div>
                                     <div class="product-wrapper-grid">
                                         <div class="row">
-                                            @foreach($drinks as $drink)
-                                                <a href="{{url('productDetail',$drink->id)}}">
+                                            @foreach($mostSolds as $mostSold)
+                                                <a href="{{url('productDetail',$mostSold->id)}}">
                                             <div class="col-xl-3 col-md-4 col-6  col-grid-box">
                                                 <div class="product">
                                                     <div class="product-box">
                                                         <div class="product-imgbox">
                                                             <div class="product-front">
-                                                                <img src="{{asset('uploads/product/'.$drink->product_image)}}" class="img-fluid  " alt="product">
+                                                                <img src="{{asset('uploads/product/'.$mostSold->product_image)}}" class="img-fluid  " alt="product">
                                                             </div>
                                                             <div class="product-back">
-                                                                <img src="{{asset('uploads/product/'.$drink->product_image1)}}" class="img-fluid  " alt="product">
+                                                                <img src="{{asset('uploads/product/'.$mostSold->product_image1)}}" class="img-fluid  " alt="product">
                                                             </div>
                                                         </div>
                                                         <div class="product-detail detail-center ">
@@ -125,7 +128,7 @@
                                                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
                                                                     <a href="#">
                                                                         <h6 class="price-title">
-                                                                            {{$drink->product_name}}.
+                                                                            {{$mostSold->product_name}}.
                                                                         </h6>
                                                                     </a>
                                                                 </div>
@@ -134,7 +137,7 @@
                                                                     </div>
                                                                     <div class="price">
                                                                         <div class="price">
-                                                                            Ksh: {{$drink->product_price}}
+                                                                            Ksh: {{$mostSold->product_price}}
                                                                         </div>
                                                                     </div>
                                                                 </div>

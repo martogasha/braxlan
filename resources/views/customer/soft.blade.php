@@ -15,7 +15,7 @@
                         <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left" aria-hidden="true"></i> back</span></div>
                         <!-- color filter start here -->
                         <div class="collection-sidebar-banner">
-                            <a href="#"><img src="{{asset('assets/images/6pack.jpg')}}" class="img-fluid " alt=""></a>
+                            <a href="{{url('beer')}}"><img src="{{asset('assets/images/6pack.jpg')}}" class="img-fluid " alt=""></a>
                         </div>
                         <!-- price filter start here -->
                         <div class="collection-collapse-block border-0 open">
@@ -247,7 +247,7 @@
         $value = $(this).attr('id');
         $.ajax({
             type:"get",
-            url:"{{url('getVodka')}}",
+            url:"{{url('getSoft')}}",
             data:{'product':$value},
             success:function (data) {
                 $('#modalBody').html(data);

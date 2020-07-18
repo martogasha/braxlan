@@ -1,7 +1,8 @@
 @include('CPartials.header')
 <title>Checkout</title>
-@include('flash-message')
-
+<div class="alert alert-danger" role="alert">
+    ORDER BELOW KSH:500 WILL BE CHARGED DELIVERY FEE OF KSH:100
+</div>
 
 <!-- section start -->
 <section class="section-big-py-space bg-light">
@@ -69,10 +70,19 @@
                                     </ul>
                                     <ul class="sub-total">
                                         <li>Subtotal <span class="count">Ksh: {{$totalSum}}</span></li>
-                                        <li>Delivery Fee <span class="count">Ksh: 150</span></li>
+                                        @if($totalSum < 500)
+                                        <li>Delivery Fee <span class="count">Ksh: 100</span></li>
+                                        @else
+                                            <li>Delivery Fee <span class="count">Ksh: Free</span></li>
+                                        @endif
                                     </ul>
                                     <ul class="total">
-                                        <li>Total <span class="count" style="color: #0b0b0b">Ksh: {{$totalSum + 150}}</span></li>
+                                        @if($totalSum < 500)
+                                        <li>Total <span class="count" style="color: #0b0b0b">Ksh: {{$totalSum+100}}</span></li>
+                                        @else
+                                            <li>Total <span class="count" style="color: #0b0b0b">Ksh: {{$totalSum}}</span></li>
+
+                                        @endif
                                     </ul>
                                 </div>
                                 <div class="payment-box">

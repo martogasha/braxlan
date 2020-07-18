@@ -69,11 +69,21 @@
                     <div class="total-sec">
                         <ul>
                             <li>subtotal <span>Ksh: {{$totalSum}}</span></li>
-                            <li>Delivery Fee <span>Ksh: 150</span></li>
+                            @if($totalSum<500)
+                            <li>Delivery Fee <span>Ksh: 100</span></li>
+                            @else
+                                <li>Delivery Fee <span>Free</span></li>
+
+                            @endif
                         </ul>
                     </div>
                     <div class="final-total">
-                        <h3>total <span>{{$totalSum + 150}}</span></h3></div>
+                        @if($totalSum<500)
+                        <h3>total <span>{{$totalSum+100}}</span></h3></div>
+                    @else
+                        <h3>total <span>{{$totalSum}}</span></h3></div>
+
+                @endif
                 </div>
             </div>
             <div class="col-lg-6">
@@ -92,7 +102,7 @@
                     <div class="col-md-12">
                         <div class="delivery-sec">
                             <h3>expected Time of delivery to your doorstep</h3>
-                            <h2>2hrs Maximum</h2></div>
+                            <h2>30min - 70min</h2></div>
                     </div>
                 </div>
             </div>

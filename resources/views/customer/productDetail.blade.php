@@ -56,11 +56,17 @@
                                     <div class="col-md-12 form-group">
                                         <label for="exampleFormControlSelect1">Size:</label>
                                         <select class="form-control" name="size">
-                                            <option value="1LITRE">1Litre Ksh: {{$productDetail->product_price}}</option>
+
                                             <option value="750ML">750ML Ksh: {{$productDetail->product_price750}}</option>
+                                            <option value="1LITRE">1LITRE Ksh: {{$productDetail->product_price}}</option>
                                             <option value="375ML">375ML Ksh: {{$productDetail->product_price375}}</option>
                                             <option value="250ML">250ML Ksh: {{$productDetail->product_price250}}</option>
-
+                                            <option value="330ML">330ML Ksh: {{$productDetail->product_price330}}</option>
+                                            <option value="350ML">350ML Ksh: {{$productDetail->product_price350}}</option>
+                                            <option value="500ML">500ML Ksh: {{$productDetail->product_price500}}</option>
+                                            <option value="1.5LITRES">1.5Litres Ksh: {{$productDetail->product_price1500}}</option>
+                                            <option value="4.5LITRES">4.5Litres Ksh: {{$productDetail->product_price4500}}</option>
+                                            <option value="5LITRES">4Litres Ksh: {{$productDetail->product_price5000}}</option>
                                         </select>
                                     </div>
 
@@ -150,7 +156,7 @@
                     <div class="collection-filter-block creative-card creative-inner">
                         <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left" aria-hidden="true"></i> back</span></div>
                         <div class="collection-sidebar-banner">
-                            <a href="#"><img src="{{asset('assets/images/g6pack.png')}}" class="img-fluid " alt=""></a>
+                            <a href="{{url('beer')}}"><img src="{{asset('assets/images/g6pack.png')}}" class="img-fluid " alt=""></a>
                         </div>
                     </div>
                     <div class="collection-filter-block creative-card creative-inner">

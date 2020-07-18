@@ -81,6 +81,9 @@ Route::post('vAddProduct','VendorController@addProduct');
 Route::get('whisky','CategoryController@whisky');
 Route::get('getWhisky','CategoryController@getWhisky');
 
+Route::get('beer','CategoryController@beer');
+Route::get('getBeer','CategoryController@getBeer');
+
 Route::get('vodka','CategoryController@vodka');
 Route::get('getVodka','CategoryController@getVodka');
 
@@ -100,6 +103,8 @@ Route::get('gin','CategoryController@gin');
 Route::get('getGin','CategoryController@getGin');
 
 Route::get('mostSold','CategoryController@mostSold');
+Route::get('under1000','CategoryController@under1000');
+
 Route::post('buyNow','OrderController@buyNow');
 Route::get('sendSms','SmsController@sendSms');
 Route::post('editUserDetail','UserController@editUser');

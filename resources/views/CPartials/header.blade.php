@@ -110,6 +110,7 @@
                                 </div>
                             </li>
                             <li><a href="{{url('whisky')}}">Whisky</a></li>
+                            <li><a href="{{url('beer')}}">Beer</a></li>
                             <li><a href="{{url('vodka')}}">Vodka</a></li>
                             <li><a href="{{url('gin')}}">Gin</a></li>
                             <li><a href="{{url('rum')}}">Rum</a></li>
@@ -142,14 +143,14 @@
                                     <div class="input-group-prepend">
                                         <select>
                                             <option>All Category</option>
-                                            <option>Whisky</option>
-                                            <option>Vodka</option>
-                                            <option>Gin</option>
-                                            <option>Rum</option>
-                                            <option>Wines</option>
-                                            <option>Soft Drinks</option>
-                                            <option>Extras</option>
-
+                                            <option value="whisky">Whisky</option>
+                                            <a href="{{url('beer')}}"><option>Beer</option></a>
+                                            <a href="{{url('vodka')}}"><option>Vodka</option></a>
+                                            <a href="{{url('gin')}}"><option>Gin</option></a>
+                                            <a href="{{url('rum')}}"><option>Rum</option></a>
+                                            <a href="{{url('wine')}}"><option>Wines</option></a>
+                                            <a href="{{url('soft')}}"><option>Soft Drinks</option></a>
+                                            <a href="{{url('extra')}}"><option>Extra</option></a>
 
                                         </select>
                                     </div>
@@ -205,7 +206,8 @@
                                     </nav>
                                     <div class="collapse  nav-desk" id="navbarToggleExternalContent">
                                         <ul class="nav-cat title-font">
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/07.png')}}" alt="category-product"> <a href="{{url('whisky')}}">Whisky </a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/01.png')}}" alt="category-product"> <a href="{{url('whisky')}}">Whisky </a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/07.png')}}" alt="category-product"> <a href="{{url('beer')}}">Beer </a></li>
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/02.png')}}" alt="category-product"> <a href="{{url('vodka')}}">Vodka</a></li>
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/09.png')}}" alt="category-product"> <a href="{{url('gin')}}">Gin</a></li>
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('rum')}}">Rum</a></li>
@@ -234,6 +236,10 @@
                                         <!--SHOP-->
                                         <li>
                                             <a href="{{url('whisky')}}" class="dark-menu-item">Whisky</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{url('beer')}}" class="dark-menu-item">Beer</a>
                                         </li>
                                         <!--SHOP-END-->
 

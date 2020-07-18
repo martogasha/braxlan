@@ -12,6 +12,7 @@ class ProductController extends Controller
 {
     public function index(){
         $whiskys = Product::where('product_category','whisky')->get();
+        $beers = Product::where('product_category','beer')->get();
         $vodkas = Product::where('product_category','vodka')->get();
         $gins = Product::where('product_category','gin')->get();
         $rums = Product::where('product_category','RUM')->get();
@@ -19,12 +20,14 @@ class ProductController extends Controller
         $softs = Product::where('product_category','soft')->get();
         $extras = Product::where('product_category','extra')->get();
         $mostSolds = Product::where('product_category1','mostSold')->get();
+        $under1000s = Product::where('product_category2','under1000')->get();
         $poster = Poster::where('poster_category','first')->first();
         $poster2 = Poster::where('poster_category','second')->first();
         $poster3 = Poster::where('poster_category','third')->first();
 
         return view('customer.index',[
             'whiskys'=>$whiskys,
+            'beers'=>$beers,
             'vodkas'=>$vodkas,
             'gins'=>$gins,
             'rums'=>$rums,
@@ -32,6 +35,7 @@ class ProductController extends Controller
             'softs'=>$softs,
             'extras'=>$extras,
             'mostSolds'=>$mostSolds,
+            'under1000s'=>$under1000s,
             'poster'=>$poster,
             'poster2'=>$poster2,
             'poster3'=>$poster3
@@ -109,14 +113,22 @@ class ProductController extends Controller
         $pictures = new Product();
         $pictures->product_name = $request->input('product_name');
         $pictures->product_desc = $request->input('product_desc');
+        $pictures->product_price1500 = $request->input('product_price1500');
+        $pictures->product_price5000 = $request->input('product_price5000');
+        $pictures->product_price4500 = $request->input('product_price4500');
         $pictures->product_price = $request->input('product_price');
         $pictures->product_price750 = $request->input('product_price750');
+        $pictures->product_price500 = $request->input('product_price500');
         $pictures->product_price375 = $request->input('product_price375');
+        $pictures->product_price350 = $request->input('product_price350');
+        $pictures->product_price330 = $request->input('product_price330');
         $pictures->product_price250 = $request->input('product_price250');
         $pictures->product_category = $request->input('category');
         $pictures->product_category1 = $request->input('category1');
+        $pictures->product_category2 = $request->input('category2');
         $pictures->product_category3 = $request->input('category3');
         $pictures->product_category4 = $request->input('category4');
+
 
 
         $pictures->product_status = 0;
@@ -201,10 +213,17 @@ class ProductController extends Controller
                             <div class="col-md-12 form-group">
                                         <label for="exampleFormControlSelect1">Size:</label>
                                         <select class="form-control" name="size">
+                                            <option value="750ML">750ML Ksh:'.$product->product_price750.'</option>
                                             <option value="1LITRE">1Litre Ksh: '.$product->product_price.'</option>
-                                            <option value="750ML">750ML Ksh: '.$product->product_price750.'</option>
                                             <option value="375ML">375ML Ksh: '.$product->product_price375.'</option>
-                                            <option value="250ML">250ML Ksh: '.$product->product_price250.'</option>
+                                           <option value="250ML">250ML Ksh: '.$product->product_price250.'</option>
+                                            <option value="330ML">330ML Ksh: '.$product->product_price330.'</option>
+                                            <option value="350ML">350ML Ksh: '.$product->product_price350.'</option>
+                                            <option value="500ML">500ML Ksh: '.$product->product_price500.'</option>
+                                            <option value="1.5LITRES">1.5Litres Ksh: '.$product->product_price1500.'</option>
+                                            <option value="4.5LITRES">4.5Litres Ksh: '.$product->product_price4500.'</option>
+                                            <option value="5LITRES">5Litres Ksh: '.$product->product_price5000.'</option>
+
 
                                         </select>
                                     </div>

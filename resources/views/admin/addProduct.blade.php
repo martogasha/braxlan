@@ -81,17 +81,44 @@
                                             <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price750" type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price500ML :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price500" type="text">
+                                        </div>
+
+                                        <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price375ML :</label>
                                             <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price375" type="text">
-                                        </div><div class="form-group mb-3 row">
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price350ML :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price350" type="text">
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price330ML :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price330" type="text">
+                                        </div>
+                                        <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price250ML :</label>
                                             <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price250" type="text">
-                                    </div>
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price1.5L :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price1500" type="text">
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price4.5L :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price4500" type="text">
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price5L :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price5000" type="text">
+                                        </div>
                                     <div class="form">
                                         <div class="form-group row">
                                             <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
                                             <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category">
                                                 <option value="whisky">Whisky</option>
+                                                <option value="beer">Beer</option>
                                                 <option value="vodka">Vodka</option>
                                                 <option value="gin">Gin</option>
                                                 <option value="wines">Wines</option>
@@ -99,7 +126,6 @@
                                                 <option value="mostSold">Most Sold</option>
                                                 <option value="soft">Soft Drinks</option>
                                                 <option value="extra">Extras</option>
-
                                             </select>
                                         </div>
                                     </div>
