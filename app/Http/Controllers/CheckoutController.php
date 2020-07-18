@@ -69,6 +69,7 @@ class CheckoutController extends Controller
         return redirect(url('checkout'));
     }
     public function placeOrder(){
+        $phone = Auth::user()->phone;
         $Checkouts = Checkout::where('user_id',auth()->user()->id)->get();
         foreach ($Checkouts as $Checkout) {
             $placeOrder = Order::create([
@@ -94,7 +95,7 @@ class CheckoutController extends Controller
 // Use the service
         $result = $sms->send([
             'to'      => '0791471317',
-            'message' => 'Available Order'
+            'message' => 'Available Order + '.$phone.''
         ]);
 
 
