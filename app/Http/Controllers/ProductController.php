@@ -261,10 +261,16 @@ class ProductController extends Controller
         }
         $edit->product_name = $request->product_name;
         $edit->product_desc = $request->product_desc;
-        $edit->product_price = $request->product_price;
-        $edit->product_price750 = $request->product_price750;
-        $edit->product_price375 = $request->product_price375;
-        $edit->product_price250 = $request->product_price250;
+        $edit->product_price1500 = $request->input('product_price1500');
+        $edit->product_price5000 = $request->input('product_price5000');
+        $edit->product_price4500 = $request->input('product_price4500');
+        $edit->product_price = $request->input('product_price');
+        $edit->product_price750 = $request->input('product_price750');
+        $edit->product_price500 = $request->input('product_price500');
+        $edit->product_price375 = $request->input('product_price375');
+        $edit->product_price350 = $request->input('product_price350');
+        $edit->product_price330 = $request->input('product_price330');
+        $edit->product_price250 = $request->input('product_price250');
         $edit->product_category = $request->category;
         $edit->product_category1 = $request->category1;
         $edit->product_category2 = $request->category2;

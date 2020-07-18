@@ -134,7 +134,7 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    Ksh: {{$rum->product_price}}
+                                                                                    Ksh: {{$rum->product_price750}}
                                                                                 </div>
                                                                             </div>
                                                                         </div>

@@ -134,7 +134,7 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    Ksh: {{$gin->product_price}}
+                                                                                    Ksh: {{$gin->product_price750}}
                                                                                 </div>
                                                                             </div>
                                                                         </div>
