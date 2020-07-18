@@ -70,6 +70,24 @@
                         @case($cart->size =='750ML')
                         <h2>Ksh: {{$cart->product->product_price750}}</h2>
                         @break
+                                @case($cart->size =='500ML')
+                                <h2>Ksh: {{$cart->product->product_price500}}</h2>
+                                @break
+                                @case($cart->size =='330ML')
+                                <h2>Ksh: {{$cart->product->product_price330}}</h2>
+                                @break
+                                @case($cart->size =='350ML')
+                                <h2>Ksh: {{$cart->product->product_price350}}</h2>
+                                @break
+                                @case($cart->size =='1.5L')
+                                <h2>Ksh: {{$cart->product->product_price1500}}</h2>
+                                @break
+                                @case($cart->size =='4.5L')
+                                <h2>Ksh: {{$cart->product->product_price4500}}</h2>
+                                @break
+                                @case($cart->size =='5L')
+                                <h2>Ksh: {{$cart->product->product_price5000}}</h2>
+                                @break
                         @case($cart->size =='375ML')
                         <h2>Ksh: {{$cart->product->product_price375}}</h2>
                         @break
@@ -92,11 +110,29 @@
                         </td>
                         <td>
                             @switch($cart)
+                                @case($cart->size =='1.5L')
+                                <h2 class="td-color">Ksh: {{$cart->product->product_price1500*$cart->quantity}}</h2>
+                                @break
+                                @case($cart->size =='4.5L')
+                                <h2 class="td-color">Ksh: {{$cart->product->product_price4500*$cart->quantity}}</h2>
+                                @break
+                                @case($cart->size =='5L')
+                                <h2 class="td-color">Ksh: {{$cart->product->product_price5000*$cart->quantity}}</h2>
+                                @break
                                 @case($cart->size =='1LITRE')
                                 <h2 class="td-color">Ksh: {{$cart->product->product_price*$cart->quantity}}</h2>
                                 @break
                                 @case($cart->size =='750ML')
                                 <h2 class="td-color">Ksh: {{$cart->product->product_price750*$cart->quantity}}</h2>
+                                @break
+                                @case($cart->size =='500ML')
+                                <h2 class="td-color">Ksh: {{$cart->product->product_price500*$cart->quantity}}</h2>
+                                @break
+                                @case($cart->size =='350ML')
+                                <h2 class="td-color">Ksh: {{$cart->product->product_price350*$cart->quantity}}</h2>
+                                @break
+                                @case($cart->size =='330ML')
+                                <h2 class="td-color">Ksh: {{$cart->product->product_price330*$cart->quantity}}</h2>
                                 @break
                                 @case($cart->size =='375ML')
                                 <h2 class="td-color">Ksh: {{$cart->product->product_price375*$cart->quantity}}</h2>

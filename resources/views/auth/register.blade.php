@@ -11,32 +11,20 @@
                         @csrf
                         <div class="form-row">
                             <div class="col-md-12 form-group">
-                                <label for="review">Full Name</label>
-                                <input type="text" class="form-control" name="name"  placeholder="Full Name" required>
+                                <label for="review">Name</label>
+                                <input type="text" class="form-control" name="name"  placeholder="Name" required="">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-12 form-group">
                                 <label for="email">email</label>
-                                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="Email" required="">
                             </div>
-                                <div class="col-md-12 form-group">
-                                    <label for="review">Phone Number</label>
-                                    <input type="text" class="form-control" name="phone"  placeholder="0700000000" required>
-                                </div>
                             <div class="col-md-12 form-group">
                                 <label for="exampleFormControlSelect1">Location:</label>
                                 <select class="form-control" name="location">
                                     <option value="Embakasi">Embakasi</option>
                                     <option value="Kikuyu">Kikuyu</option>
-
-                                </select>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <label for="exampleFormControlSelect1">Role:</label>
-                                <select class="form-control" name="role">
-                                    <option value="customer">Customer</option>
-                                    <option value="vendor">Vendor</option>
 
                                 </select>
                             </div>
