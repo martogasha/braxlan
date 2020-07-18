@@ -67,45 +67,53 @@
                             <div class="col-xl-7">
                                     <div class="form">
                                         <div class="form-group mb-3 row">
+                                            <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Title :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" name="product_name" value="{{$getProduct->product_name}}" type="text" required="">
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Describe :</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" name="product_desc" value="{{$getProduct->product_desc}}" required="">
+                                        </div>
+                                        <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price:</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price" value="{{$getProduct->product_price}}" type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price750ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price750" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price750" value="{{$getProduct->product_price750}}"type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price500ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price500" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price500" value="{{$getProduct->product_price500}}"type="text">
                                         </div>
 
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price375ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price375" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price375" value="{{$getProduct->product_price375}}"type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price350ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price350" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price350" value="{{$getProduct->product_price350}}"type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price330ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price330" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price330" value="{{$getProduct->product_price330}}"type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price250ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price250" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price250" value="{{$getProduct->product_price250}}"type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price1.5L :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price1500" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price1500" value="{{$getProduct->product_price1500}}"type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price4.5L :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price4500" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price4500" value="{{$getProduct->product_price4500}}"type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price5L :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price5000" type="text">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price5000" value="{{$getProduct->product_price5000}}"type="text">
                                         </div>
                                     <div class="form">
                                         <div class="form-group row">
