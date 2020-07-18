@@ -12,8 +12,10 @@ class ProductDetailController extends Controller
     }
     public function show($id){
         $productDetail = Product::where('id',$id)->first();
+        $newProducts = Product::where('product_category3','trending')->get();
         return view('customer.productDetail',[
-            'productDetail'=>$productDetail
+            'productDetail'=>$productDetail,
+            'newProducts'=>$newProducts
         ]);
 
     }
