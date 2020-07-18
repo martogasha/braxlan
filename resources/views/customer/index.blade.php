@@ -14794,7 +14794,7 @@
                                                             </div>
                                                             <div class="price">
                                                                 <div class="price">
-                                                                    Ksh: {{$under1000->product_price7500}}
+                                                                    Ksh: {{$under1000->product_price750}}
                                                                 </div>
                                                             </div>
                                                         </div>
