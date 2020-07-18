@@ -117,16 +117,10 @@ class CategoryController extends Controller
                             <div class="col-md-12 form-group">
                                         <label for="exampleFormControlSelect1">Size:</label>
                                         <select class="form-control" name="size">
-                                            <option value="750ML">750ML Ksh:'.$product->product_price750.'</option>
-                                            <option value="1LITRE">1Litre Ksh: '.$product->product_price.'</option>
-                                            <option value="375ML">375ML Ksh: '.$product->product_price375.'</option>
-                                           <option value="250ML">250ML Ksh: '.$product->product_price250.'</option>
-                                            <option value="330ML">330ML Ksh: '.$product->product_price330.'</option>
-                                            <option value="350ML">350ML Ksh: '.$product->product_price350.'</option>
+
                                             <option value="500ML">500ML Ksh: '.$product->product_price500.'</option>
-                                            <option value="1.5LITRES">1.5Litres Ksh: '.$product->product_price1500.'</option>
-                                            <option value="4.5LITRES">4.5Litres Ksh: '.$product->product_price4500.'</option>
-                                            <option value="5LITRES">5Litres Ksh: '.$product->product_price5000.'</option>
+                                            <option value="330ML">330ML Ksh: '.$product->product_price330.'</option>
+
 
                                         </select>
                                     </div>

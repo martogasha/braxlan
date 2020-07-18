@@ -247,7 +247,7 @@
         $value = $(this).attr('id');
         $.ajax({
             type:"get",
-            url:"{{url('getVodka')}}",
+            url:"{{url('getBeer')}}",
             data:{'product':$value},
             success:function (data) {
                 $('#modalBody').html(data);
