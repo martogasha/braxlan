@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price:</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price" value="{{$getProduct->product_price}}"type="text" required="">
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price" value="{{$getProduct->product_price}}"type="text">
                                         </div>
                                         <div class="form-group mb-3 row">
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price750ML :</label>
