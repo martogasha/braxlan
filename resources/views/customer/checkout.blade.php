@@ -1,8 +1,10 @@
 @include('CPartials.header')
 <title>Checkout</title>
+@if($totalSum<500)
 <div class="alert alert-danger" role="alert">
     ORDER BELOW KSH:500 WILL BE CHARGED DELIVERY FEE OF KSH:100
 </div>
+@endif
 
 <!-- section start -->
 <section class="section-big-py-space bg-light">
