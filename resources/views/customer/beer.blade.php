@@ -139,12 +139,6 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="icon-detail">
-
-                                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                                            <i class="ti-eye view" id="{{$beer->id}}" aria-hidden="true"></i>
-                                                                        </a>
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

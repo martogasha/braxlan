@@ -10,6 +10,14 @@ class LoginCustomController extends Controller
 {
     public function login(Request $request)
     {
+        if ($request->email ==null){
+            return  redirect(url('login'))->with('error','Email Required');
+
+        }
+        if ($request->password ==null){
+            return  redirect(url('login'))->with('error','Password Required');
+
+        }
         if (Auth::attempt([
             'email' => $request->email,
             'password' => $request->password,

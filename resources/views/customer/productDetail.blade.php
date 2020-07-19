@@ -306,10 +306,10 @@
                 <h4 class="modal-title">ADD TO CART</h4>
             </div>
             <div class="modal-body">
-                Do you want to add item to cart and continue shopping?
+                Do you want to add item to cart?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <a href="{{url('/')}}" ><button type="button" class="btn btn-default">Continue Shopping</button></a>
                 <button type="submit" form="formCart" class="btn btn-primary">Add to Cart</button>
             </div>
         </div><!-- /.modal-content -->

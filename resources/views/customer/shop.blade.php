@@ -115,13 +115,7 @@
                                                                 <div class="product-front">
                                                                     <img src="{{asset('uploads/product/'.$searchProduct->product_image)}}" class="img-fluid  " alt="product">
                                                                 </div>
-                                                                <div class="product-icon icon-inline">
 
-                                                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                                        <i class="ti-eye view" id="{{$searchProduct->id}}" aria-hidden="true"></i>
-                                                                    </a>
-
-                                                                </div>
                                                             </div>
                                                             <div class="product-detail detail-inline">
                                                                 <div class="detail-title">

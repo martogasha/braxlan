@@ -1,5 +1,6 @@
 @include('CPartials.header')
 <title>Checkout</title>
+@include('flash-message')
 @if($totalSum<500)
 <div class="alert alert-danger" role="alert">
     ORDER BELOW KSH:500 WILL BE CHARGED DELIVERY FEE OF KSH:100
@@ -19,27 +20,18 @@
                                 <input type="hidden" name="userId" value="{{\Illuminate\Support\Facades\Auth::id()}}">
                                 @csrf
                             <div class="theme-form">
+                                <h4 class="text-danger"><b>If you would like to change Phone Number Please save below before placing Order</b></h4>
                                 <div class="row check-out ">
-
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <label>Full Name</label>
-                                        <input type="text" name="name" value="{{$user->name}}" placeholder="">
-                                    </div>
-
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Phone</label>
-                                        <input type="text" name="phone" value="{{$user->phone}}" placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <label class="field-label">Email Address</label>
-                                        <input type="text" name="email" value="{{$user->email}}" placeholder="">
+                                        <input type="text" name="phone" value="{{$user->phone}}" placeholder="" required>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Location</label>
-                                        <input type="text" name="location" value="{{$user->location}}" placeholder="">
+                                        <input type="text" name="location" value="{{$user->location}}"  placeholder="{{$user->location}}">
 
                                     </div>
-                                    <button class="btn btn-secondary">Edit</button>
+                                    <button class="btn btn-success">Save</button>
                                 </div>
                             </div>
                             </form>

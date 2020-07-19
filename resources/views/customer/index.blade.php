@@ -105,13 +105,6 @@
                                                 <img src="{{asset('uploads/product/'.$mostSold->product_image1)}}" class="img-fluid  " alt="product">
                                             </div>
                                                 @endif
-                                            <div class="product-icon icon-inline">
-
-                                                <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                    <i class="ti-eye view" id="{{$mostSold->id}}" aria-hidden="true"></i>
-                                                </a>
-
-                                            </div>
                                             @if($mostSold->product_status==1)
                                             <div class="on-sale1" style="color: #ff0520">
                                                 Out of Stock
@@ -202,13 +195,7 @@
                                                             <img src="{{asset('uploads/product/'.$whisky->product_image1)}}" class="img-fluid  " alt="product">
                                                         </div>
                                                     @endif
-                                                    <div class="product-icon icon-inline">
 
-                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye view" id="{{$whisky->id}}" aria-hidden="true"></i>
-                                                        </a>
-
-                                                    </div>
                                                 </div>
                                                 <div class="product-detail detail-inline">
                                                     <div class="detail-title">
@@ -2281,13 +2268,6 @@
                                                             <img src="{{asset('uploads/product/'.$beer->product_image1)}}" class="img-fluid  " alt="product">
                                                         </div>
                                                     @endif
-                                                    <div class="product-icon icon-inline">
-
-                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye view" id="{{$beer->id}}" aria-hidden="true"></i>
-                                                        </a>
-
-                                                    </div>
                                                 </div>
                                                 <div class="product-detail detail-inline">
                                                     <div class="detail-title">
@@ -4366,13 +4346,7 @@
                                                         <img src="{{asset('uploads/product/'.$vodka->product_image1)}}" class="img-fluid  " alt="product">
                                                     </div>
                                                     @endif
-                                                    <div class="product-icon icon-inline">
 
-                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye view" id="{{$vodka->id}}" aria-hidden="true"></i>
-                                                        </a>
-
-                                                    </div>
                                                 </div>
                                                 <div class="product-detail detail-inline">
                                                     <div class="detail-title">
@@ -6446,13 +6420,7 @@
                                                             <img src="{{asset('uploads/product/'.$gin->product_image1)}}" class="img-fluid  " alt="product">
                                                         </div>
                                                     @endif
-                                                    <div class="product-icon icon-inline">
 
-                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye view" id="{{$gin->id}}" aria-hidden="true"></i>
-                                                        </a>
-
-                                                    </div>
                                                 </div>
                                                 <div class="product-detail detail-inline">
                                                     <div class="detail-title">
@@ -8526,13 +8494,6 @@
                                                             <img src="{{asset('uploads/product/'.$rum->product_image1)}}" class="img-fluid  " alt="product">
                                                         </div>
                                                     @endif
-                                                    <div class="product-icon icon-inline">
-
-                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye view" id="{{$rum->id}}" aria-hidden="true"></i>
-                                                        </a>
-
-                                                    </div>
                                                 </div>
                                                 <div class="product-detail detail-inline">
                                                     <div class="detail-title">
@@ -10606,13 +10567,6 @@
                                                             <img src="{{asset('uploads/product/'.$wine->product_image1)}}" class="img-fluid  " alt="product">
                                                         </div>
                                                     @endif
-                                                    <div class="product-icon icon-inline">
-
-                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye view" id="{{$wine->id}}" aria-hidden="true"></i>
-                                                        </a>
-
-                                                    </div>
                                                 </div>
                                                 <div class="product-detail detail-inline">
                                                     <div class="detail-title">
@@ -12686,13 +12640,6 @@
                                                             <img src="{{asset('uploads/product/'.$soft->product_image1)}}" class="img-fluid  " alt="product">
                                                         </div>
                                                     @endif
-                                                    <div class="product-icon icon-inline">
-
-                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye view" id="{{$soft->id}}" aria-hidden="true"></i>
-                                                        </a>
-
-                                                    </div>
                                                 </div>
                                                 <div class="product-detail detail-inline">
                                                     <div class="detail-title">
@@ -14765,13 +14712,6 @@
                                                             <img src="{{asset('uploads/product/'.$under1000->product_image1)}}" class="img-fluid  " alt="product">
                                                         </div>
                                                     @endif
-                                                    <div class="product-icon icon-inline">
-
-                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                                            <i class="ti-eye view" id="{{$under1000->id}}" aria-hidden="true"></i>
-                                                        </a>
-
-                                                    </div>
                                                 </div>
                                                 <div class="product-detail detail-inline">
                                                     <div class="detail-title">
@@ -16968,9 +16908,18 @@
                         <div class="offer-content">
                             <div>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                @if(\Illuminate\Support\Facades\Auth::check())
+                                    <h2>FREE DELIVERY!!! AND AMAIZING OFFERS FOR YOU</h2>
+                                @else
                                 <h2>FREE DELIVERY!!! REGISTER NOW</h2>
+                                @endif
                                 <p>Braxlan Liquor store brings you best liquor prices and amaizing Offers, Just for you!</p>
+                                @if(\Illuminate\Support\Facades\Auth::check())
+                                    <a href="{{url('offer')}}" class="btn btn-normal ml-3">SPECIAL OFFERS</a>
+
+                                @else
                                 <a href="{{url('register')}}" class="btn btn-normal ml-3">REGISTER</a>
+                                    @endif
                             </div>
                         </div>
                     </div>

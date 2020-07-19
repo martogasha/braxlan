@@ -69,6 +69,10 @@ class CheckoutController extends Controller
         return redirect(url('checkout'));
     }
     public function placeOrder(){
+        $userPhone = User::where('id',Auth::user()->id)->first();
+        if ($userPhone->phone==null){
+            return redirect(url('checkout'))->with('error','PHONE NUMBER REQUIRED');
+        }
         $phone = Auth::user()->phone;
         $Checkouts = Checkout::where('user_id',auth()->user()->id)->get();
         foreach ($Checkouts as $Checkout) {

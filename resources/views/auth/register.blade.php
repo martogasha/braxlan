@@ -1,5 +1,6 @@
 @include('CPartials.header')
 <title>Braxlan - Register</title>
+@include('flash-message')
 <!--section start-->
 <section class="login-page section-big-py-space bg-light">
     <div class="custom-container">

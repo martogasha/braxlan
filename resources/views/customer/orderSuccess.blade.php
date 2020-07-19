@@ -92,6 +92,9 @@
                         <h4>shipping address</h4>
                         <ul class="order-detail">
                             <li>{{\Illuminate\Support\Facades\Auth::user()->location}}</li>
+                        </ul>
+                        <h4><Contact></Contact></h4>
+                        <ul class="order-detail">
                             <li>Contact No. {{\Illuminate\Support\Facades\Auth::user()->phone}}</li>
                         </ul>
                     </div>
