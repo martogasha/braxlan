@@ -56,23 +56,43 @@
                                     <div class="col-md-12 form-group">
                                         <label for="exampleFormControlSelect1">Size:</label>
                                         <select class="form-control" name="size">
-
-                                            <option value="750ML">750ML Ksh: {{$productDetail->product_price750}}</option>
-                                            <option value="1LITRE">1LITRE Ksh: {{$productDetail->product_price}}</option>
-                                            <option value="375ML">375ML Ksh: {{$productDetail->product_price375}}</option>
-                                            <option value="250ML">250ML Ksh: {{$productDetail->product_price250}}</option>
-                                            <option value="330ML">330ML Ksh: {{$productDetail->product_price330}}</option>
-                                            <option value="350ML">350ML Ksh: {{$productDetail->product_price350}}</option>
-                                            <option value="500ML">500ML Ksh: {{$productDetail->product_price500}}</option>
-                                            <option value="1.5LITRES">1.5Litres Ksh: {{$productDetail->product_price1500}}</option>
+                                            @if(isset($productDetail->product_price5000))
+                                            <option value="5LITRES">5Litres Ksh: {{$productDetail->product_price5000}}</option>
+                                            @endif
+                                            @if(isset($productDetail->product_price4500))
                                             <option value="4.5LITRES">4.5Litres Ksh: {{$productDetail->product_price4500}}</option>
-                                            <option value="5LITRES">4Litres Ksh: {{$productDetail->product_price5000}}</option>
+                                                @endif
+
+                                            @if(isset($productDetail->product_price1500))
+                                            <option value="1.5LITRES">1.5Litres Ksh: {{$productDetail->product_price1500}}</option>
+                                                @endif
+                                            @if(isset($productDetail->product_price))
+                                            <option value="1LITRE">1LITRE Ksh: {{$productDetail->product_price}}</option>
+                                                @endif
+                                            @if(isset($productDetail->product_price750))
+                                            <option value="750ML">750ML Ksh: {{$productDetail->product_price750}}</option>
+                                                @endif
+                                            @if(isset($productDetail->product_price500))
+                                            <option value="500ML">500ML Ksh: {{$productDetail->product_price500}}</option>
+                                                @endif
+                                            @if(isset($productDetail->product_price375))
+                                            <option value="375ML">375ML Ksh: {{$productDetail->product_price375}}</option>
+                                                @endif
+                                            @if(isset($productDetail->product_price350))
+                                            <option value="350ML">350ML Ksh: {{$productDetail->product_price350}}</option>
+                                                @endif
+                                            @if(isset($productDetail->product_price330))
+                                            <option value="330ML">330ML Ksh: {{$productDetail->product_price330}}</option>
+                                                @endif
+                                            @if(isset($productDetail->product_price250))
+                                             <option value="250ML">250ML Ksh: {{$productDetail->product_price250}}</option>
+                                                @endif
                                         </select>
                                     </div>
 
                                         <input type="hidden" name="productId" value="{{$productDetail->id}}">
                                         <div class="product-buttons"><a href="javascript:document.getElementById('formCart').submit();" class="btn btn-normal">Add to Cart</a>
-                                            <a href="{{url('/')}}" class="btn btn-normal">Continue Shopping</a>
+                                            <a href="#myModal" data-toggle="modal" class="btn btn-normal">Continue Shopping</a>
 
                                     </div>
                                     <div class="border-product">
@@ -275,6 +295,26 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">ADD TO CART</h4>
+            </div>
+            <div class="modal-body">
+                Do you want to add item to cart and continue shopping?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" form="formCart" class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 </div>
 @include('CPartials.login')
 <!-- Add to account bar end-->

@@ -16968,8 +16968,9 @@
                         <div class="offer-content">
                             <div>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                <h2>FREE DELIVERY!!!</h2>
+                                <h2>FREE DELIVERY!!! REGISTER NOW</h2>
                                 <p>Braxlan Liquor store brings you best liquor prices and amaizing Offers, Just for you!</p>
+                                <a href="{{url('register')}}" class="btn btn-normal ml-3">REGISTER</a>
                             </div>
                         </div>
                     </div>
