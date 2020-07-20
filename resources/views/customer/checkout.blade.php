@@ -16,11 +16,10 @@
                         <div class="col-lg-6 col-sm-12 col-xs-12">
                             <div class="checkout-title">
                                 <h3>Billing Details</h3></div>
-                            <form action="{{url('editUserDetail')}}" method="post">
+                            <form action="{{url('placeOrder')}}" method="post" id="placeOrder">
                                 <input type="hidden" name="userId" value="{{\Illuminate\Support\Facades\Auth::id()}}">
                                 @csrf
                             <div class="theme-form">
-                                <h4 class="text-danger"><b>If you would like to change Phone Number Please save below before placing Order</b></h4>
                                 <div class="row check-out ">
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Phone</label>
@@ -31,10 +30,8 @@
                                         <input type="text" name="location" value="{{$user->location}}"  placeholder="{{$user->location}}">
 
                                     </div>
-                                    <button class="btn btn-success">Save</button>
                                 </div>
                             </div>
-                            </form>
                         </div>
                         <div class="col-lg-6 col-sm-12 col-xs-12">
                             <div class="checkout-details theme-form  section-big-mt-space">
@@ -99,7 +96,6 @@
                                         </div>
                                     </div>
 
-                                    <form action="{{url('placeOrder')}}" method="post" id="placeOrder">
                                         @csrf
                                         <div class="row cart-buttons">
                                             <div class="col-12"><a href="{{url('cart')}}" class="btn btn-normal">Edit Cart</a> <a href="javascript:document.getElementById('placeOrder').submit();" class="btn btn-normal ml-3">Place Order</a></div>
