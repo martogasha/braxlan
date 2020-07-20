@@ -23,11 +23,7 @@
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="exampleFormControlSelect1">Location:</label>
-                                <select class="form-control" name="location">
-                                    <option value="Embakasi">Embakasi</option>
-                                    <option value="Kikuyu">Kikuyu</option>
-
-                                </select>
+                                <input type="text" class="form-control" name="location" id="location" placeholder="Location">
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="review">Password</label>
