@@ -19,7 +19,7 @@
                         <div class="form-row">
                             <div class="col-md-12 form-group">
                                 <label for="email">email</label>
-                                <input type="text" class="form-control" name="email" id="email" placeholder="Email" required="">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="exampleFormControlSelect1">Location:</label>

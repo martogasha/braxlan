@@ -322,4 +322,7 @@
 
 @include('CPartials.footer1')
 @include('CPartials.footer')
+<script>
+    alert(res.ip)
+</script>
 
