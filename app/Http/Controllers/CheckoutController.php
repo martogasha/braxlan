@@ -59,7 +59,7 @@ class CheckoutController extends Controller
             ]);
         }
         else{
-            return redirect(url('login'));
+            return redirect(url('loginUser'));
         }
     }
     public function store(Request $request){

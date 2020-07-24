@@ -18,6 +18,12 @@ Route::get('/h', function () {
 });
 Route::post('Login','LoginCustomController@login')->name('loginCustom');
 Route::post('Register','RegisterCustomController@register')->name('registerCustom');
+
+Route::post('LoginUser','LoginCustomOneController@login')->name('loginCustomOne');
+Route::post('RegisterUser','RegisterCustomOneController@register')->name('registerCustomOne');
+Route::get('loginUser','LoginCustomOneController@index');
+Route::get('registerUser','RegisterCustomOneController@index');
+
 Route::get('password/reset/{token}','Auth\ResetPasswordController@showResetForm');
 Route::post('password/email','ForgotPasswordController@sendResetLinkEmail');
 Route::post('password/reset','ResetPasswordController@reset');
