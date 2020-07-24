@@ -206,6 +206,14 @@ class CategoryController extends Controller
             'newProducts'=>$newProducts
         ]);
     }
+    public function brandy(){
+        $brandys = Product::where('product_category','brandy')->get();
+        $newProducts = Product::where('product_category3','trending')->get();
+        return view('customer.gin',[
+            'brandy'=>$brandys,
+            'newProducts'=>$newProducts
+        ]);
+    }
     public function getGin(Request $request){
         if ($request->ajax()){
             $output = "";

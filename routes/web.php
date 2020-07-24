@@ -99,6 +99,9 @@ Route::get('getVodka','CategoryController@getVodka');
 Route::get('rum','CategoryController@rum');
 Route::get('getRum','CategoryController@getRum');
 
+Route::get('brandy','CategoryController@brandy');
+
+
 Route::get('wine','CategoryController@wine');
 Route::get('getWine','CategoryController@getWine');
 

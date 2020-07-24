@@ -17,7 +17,9 @@ class ProductController extends Controller
             $vodkas = Product::where('product_category', 'vodka')->get();
             $gins = Product::where('product_category', 'gin')->get();
             $rums = Product::where('product_category', 'RUM')->get();
-            $wines = Product::where('product_category', 'wines')->get();
+             $brandys = Product::where('product_category', 'brandy')->get();
+
+             $wines = Product::where('product_category', 'wines')->get();
             $softs = Product::where('product_category', 'soft')->get();
             $extras = Product::where('product_category', 'extra')->get();
             $mostSolds = Product::where('product_category1', 'mostSold')->get();
@@ -32,6 +34,7 @@ class ProductController extends Controller
                 'vodkas' => $vodkas,
                 'gins' => $gins,
                 'rums' => $rums,
+                'brandys'=>$brandys,
                 'wines' => $wines,
                 'softs' => $softs,
                 'extras' => $extras,
