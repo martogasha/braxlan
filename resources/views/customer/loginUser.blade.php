@@ -29,6 +29,8 @@
         </div>
     </div>
 </section>
+@include('CPartials.settings')
+
 <!--Section ends-->
 @include('CPartials.login')
 

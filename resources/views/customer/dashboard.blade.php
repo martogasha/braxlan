@@ -63,6 +63,8 @@
         </div>
     </div>
 </section>
+@include('CPartials.settings')
+
 <script>
     $('.col-lg-9').hide();
 

@@ -27,5 +27,7 @@
         </div>
     </div>
 </section>
+@include('CPartials.settings')
+
 @include('CPartials.footer1')
 @include('CPartials.footer')
