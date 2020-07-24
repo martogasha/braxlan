@@ -113,7 +113,7 @@
     </div>
 </section>
 <script>
-    alert('PING YOUR LOCATION TO 0754-238-704 USING WHATSAPP')
+    alert('PING YOUR LOCATION TO 0790268795 USING WHATSAPP')
 </script>
 <!-- Section ends -->
 @include('CPartials.settings')
