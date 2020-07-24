@@ -24,6 +24,8 @@
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Phone</label>
                                         <input type="text" name="phone" value="{{$user->phone}}" placeholder="" required>
+                                        <h5 class="text-danger">You Can Edit Phone Number that Suits You</h5>
+
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Location</label>
