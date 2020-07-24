@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <a href="javascript:document.getElementById('form').submit();" class="btn btn-rounded btn-block">Sign In</a>
-                <a href="{{url('login/google')}}" class="btn btn-rounded btn-block">Sign In with Google</a>
+                <a href="#" class="btn btn-rounded btn-block">Sign In with Google</a>
 
             </div>
             <div>

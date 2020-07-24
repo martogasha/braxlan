@@ -9,7 +9,7 @@
             <div class="col-xl-4 col-lg-6 col-md-8 offset-xl-4 offset-lg-3 offset-md-2">
                 <div class="theme-card">
                     <h3 class="text-center">Login</h3>
-                    <form class="theme-form" action="{{route('loginCustomOne')}}" method="post" id="loginForm">
+                    <form class="theme-form" action="{{route('loginCustom')}}" method="post" id="loginForm">
                         @csrf
                         <div class="form-group">
                             <label for="email">Email</label>
