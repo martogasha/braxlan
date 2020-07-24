@@ -137,7 +137,36 @@
                                                                     </div>
                                                                     <div class="price">
                                                                         <div class="price">
-                                                                            Ksh: {{$mostSold->product_price750}}
+                                                                            @if(isset($mostSold->product_price5000))
+                                                                                5Litres Ksh: {{$mostSold->product_price750}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price4500))
+                                                                                4.5Litres Ksh: {{$mostSold->product_price4500}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price1500))
+                                                                                1.5Litres Ksh: {{$mostSold->product_price1500}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price))
+                                                                                1Litre Ksh: {{$mostSold->product_price}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price750))
+                                                                                750ML Ksh: {{$mostSold->product_price750}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price500))
+                                                                                500ML Ksh: {{$mostSold->product_price500}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price375))
+                                                                                375ML Ksh: {{$mostSold->product_price375}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price350))
+                                                                                350ML Ksh: {{$mostSold->product_price350}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price330))
+                                                                                330ML Ksh: {{$mostSold->product_price330}}<br>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_price250))
+                                                                                250ML Ksh: {{$mostSold->product_price250}}<br>
+                                                                            @endif
                                                                         </div>
                                                                     </div>
                                                                 </div>

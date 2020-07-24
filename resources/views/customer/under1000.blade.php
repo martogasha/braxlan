@@ -134,7 +134,36 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    Ksh: {{$under1000->product_price750}}
+                                                                                    @if(isset($under1000->product_price5000))
+                                                                                        5Litres Ksh: {{$under1000->product_price750}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price4500))
+                                                                                        4.5Litres Ksh: {{$under1000->product_price4500}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price1500))
+                                                                                        1.5Litres Ksh: {{$under1000->product_price1500}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price))
+                                                                                        1Litre Ksh: {{$under1000->product_price}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price750))
+                                                                                        750ML Ksh: {{$under1000->product_price750}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price500))
+                                                                                        500ML Ksh: {{$under1000->product_price500}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price375))
+                                                                                        375ML Ksh: {{$under1000->product_price375}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price350))
+                                                                                        350ML Ksh: {{$under1000->product_price350}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price330))
+                                                                                        330ML Ksh: {{$under1000->product_price330}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_price250))
+                                                                                        250ML Ksh: {{$under1000->product_price250}}<br>
+                                                                                    @endif
                                                                                 </div>
                                                                             </div>
                                                                         </div>

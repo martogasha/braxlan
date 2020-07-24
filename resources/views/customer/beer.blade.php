@@ -134,7 +134,36 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    Ksh: {{$beer->product_price500}}
+                                                                                    @if(isset($beer->product_price5000))
+                                                                                        5Litres Ksh: {{$beer->product_price750}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price4500))
+                                                                                        4.5Litres Ksh: {{$beer->product_price4500}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price1500))
+                                                                                        1.5Litres Ksh: {{$beer->product_price1500}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price))
+                                                                                        1Litre Ksh: {{$beer->product_price}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price750))
+                                                                                        750ML Ksh: {{$beer->product_price750}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price500))
+                                                                                        500ML Ksh: {{$beer->product_price500}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price375))
+                                                                                        375ML Ksh: {{$beer->product_price375}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price350))
+                                                                                        350ML Ksh: {{$beer->product_price350}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price330))
+                                                                                        330ML Ksh: {{$beer->product_price330}}<br>
+                                                                                    @endif
+                                                                                    @if(isset($beer->product_price250))
+                                                                                        250ML Ksh: {{$beer->product_price250}}<br>
+                                                                                    @endif
                                                                                 </div>
                                                                             </div>
                                                                         </div>

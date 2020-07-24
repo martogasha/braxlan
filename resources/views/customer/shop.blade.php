@@ -138,7 +138,36 @@
                                                                         </div>
                                                                         <div class="price">
                                                                             <div class="price">
-                                                                                Ksh: {{$searchProduct->product_price750}}
+                                                                                @if(isset($searchProduct->product_price5000))
+                                                                                    5Litres Ksh: {{$searchProduct->product_price750}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price4500))
+                                                                                    4.5Litres Ksh: {{$searchProduct->product_price4500}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price1500))
+                                                                                    1.5Litres Ksh: {{$searchProduct->product_price1500}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price))
+                                                                                    1Litre Ksh: {{$searchProduct->product_price}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price750))
+                                                                                    750ML Ksh: {{$searchProduct->product_price750}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price500))
+                                                                                    500ML Ksh: {{$searchProduct->product_price500}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price375))
+                                                                                    375ML Ksh: {{$searchProduct->product_price375}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price350))
+                                                                                    350ML Ksh: {{$searchProduct->product_price350}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price330))
+                                                                                    330ML Ksh: {{$searchProduct->product_price330}}<br>
+                                                                                @endif
+                                                                                @if(isset($searchProduct->product_price250))
+                                                                                    250ML Ksh: {{$searchProduct->product_price250}}<br>
+                                                                                @endif
 
                                                                             </div>
                                                                         </div>

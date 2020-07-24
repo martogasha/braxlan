@@ -137,7 +137,36 @@
                                                                                     @if($wine->product_price)
                                                                                         Ksh: {{$wine->product_price}}
                                                                                     @else
-                                                                                        Ksh: {{$wine->product_price750}}
+                                                                                        @if(isset($wine->product_price5000))
+                                                                                            5Litres Ksh: {{$wine->product_price750}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price4500))
+                                                                                            4.5Litres Ksh: {{$wine->product_price4500}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price1500))
+                                                                                            1.5Litres Ksh: {{$wine->product_price1500}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price))
+                                                                                            1Litre Ksh: {{$wine->product_price}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price750))
+                                                                                            750ML Ksh: {{$wine->product_price750}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price500))
+                                                                                            500ML Ksh: {{$wine->product_price500}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price375))
+                                                                                            375ML Ksh: {{$wine->product_price375}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price350))
+                                                                                            350ML Ksh: {{$wine->product_price350}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price330))
+                                                                                            330ML Ksh: {{$wine->product_price330}}<br>
+                                                                                        @endif
+                                                                                        @if(isset($wine->product_price250))
+                                                                                            250ML Ksh: {{$wine->product_price250}}<br>
+                                                                                        @endif
                                                                                     @endif
                                                                                 </div>
                                                                             </div>
