@@ -91,7 +91,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="radio-option paypal">
-                                                        <input type="radio" name="payment-group" id="payment-3">
+                                                        <input type="radio" name="payment-group" id="payment-3" disabled>
                                                         <label for="payment-3">Mpesa<span class="image"><img src="assets/images/paypal.html" alt=""></span></label>
                                                     </div>
                                                 </li>
