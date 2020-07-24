@@ -10,37 +10,39 @@ use function GuzzleHttp\Promise\all;
 
 class ProductController extends Controller
 {
-    public function index(){
-        $whiskys = Product::where('product_category','whisky')->get();
-        $beers = Product::where('product_category','beer')->get();
-        $vodkas = Product::where('product_category','vodka')->get();
-        $gins = Product::where('product_category','gin')->get();
-        $rums = Product::where('product_category','RUM')->get();
-        $wines = Product::where('product_category','wines')->get();
-        $softs = Product::where('product_category','soft')->get();
-        $extras = Product::where('product_category','extra')->get();
-        $mostSolds = Product::where('product_category1','mostSold')->get();
-        $under1000s = Product::where('product_category2','under1000')->get();
-        $poster = Poster::where('poster_category','first')->first();
-        $poster2 = Poster::where('poster_category','second')->first();
-        $poster3 = Poster::where('poster_category','third')->first();
+    public function index()
+    {
+            $whiskys = Product::where('product_category', 'whisky')->get();
+            $beers = Product::where('product_category', 'beer')->get();
+            $vodkas = Product::where('product_category', 'vodka')->get();
+            $gins = Product::where('product_category', 'gin')->get();
+            $rums = Product::where('product_category', 'RUM')->get();
+            $wines = Product::where('product_category', 'wines')->get();
+            $softs = Product::where('product_category', 'soft')->get();
+            $extras = Product::where('product_category', 'extra')->get();
+            $mostSolds = Product::where('product_category1', 'mostSold')->get();
+            $under1000s = Product::where('product_category2', 'under1000')->get();
+            $poster = Poster::where('poster_category', 'first')->first();
+            $poster2 = Poster::where('poster_category', 'second')->first();
+            $poster3 = Poster::where('poster_category', 'third')->first();
 
-        return view('customer.index',[
-            'whiskys'=>$whiskys,
-            'beers'=>$beers,
-            'vodkas'=>$vodkas,
-            'gins'=>$gins,
-            'rums'=>$rums,
-            'wines'=>$wines,
-            'softs'=>$softs,
-            'extras'=>$extras,
-            'mostSolds'=>$mostSolds,
-            'under1000s'=>$under1000s,
-            'poster'=>$poster,
-            'poster2'=>$poster2,
-            'poster3'=>$poster3
-        ]);
+            return view('customer.index', [
+                'whiskys' => $whiskys,
+                'beers' => $beers,
+                'vodkas' => $vodkas,
+                'gins' => $gins,
+                'rums' => $rums,
+                'wines' => $wines,
+                'softs' => $softs,
+                'extras' => $extras,
+                'mostSolds' => $mostSolds,
+                'under1000s' => $under1000s,
+                'poster' => $poster,
+                'poster2' => $poster2,
+                'poster3' => $poster3
+            ]);
     }
+
     public function shopping(){
         return view('customer.shop');
     }

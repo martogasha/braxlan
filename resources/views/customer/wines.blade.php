@@ -134,7 +134,11 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    Ksh: {{$wine->product_price}}
+                                                                                    @if($wine->product_price)
+                                                                                        Ksh: {{$wine->product_price}}
+                                                                                    @else
+                                                                                        Ksh: {{$wine->product_price750}}
+                                                                                    @endif
                                                                                 </div>
                                                                             </div>
                                                                         </div>
