@@ -20,6 +20,6 @@ class UserController extends Controller
     }
     public function userDetails(){
         $getIp = UserSystemInfoHelper::get_ip();
-        dd($getIp);
+
     }
 }

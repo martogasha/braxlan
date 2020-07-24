@@ -14,48 +14,53 @@ use Illuminate\Support\Facades\Auth;
 class CheckoutController extends Controller
 {
     public function index(){
-        $checkouts =Checkout::where('user_id',Auth::user()->id)->get();
-        $checks =Checkout::where('user_id',Auth::user()->id)->get();
-        $user = User::where('id',Auth::user()->id)->first();
-        $totalSum=0;
-        foreach ($checks as $check){
-            switch ($check){
-                case($check->size=='1LITRE'):
-                    $sum = $check->product->product_price;
-                    $quant = $check->quantity;
+        if (Auth::check()) {
+            $checkouts = Checkout::where('user_id', Auth::user()->id)->get();
+            $checks = Checkout::where('user_id', Auth::user()->id)->get();
+            $user = User::where('id', Auth::user()->id)->first();
+            $totalSum = 0;
+            foreach ($checks as $check) {
+                switch ($check) {
+                    case($check->size == '1LITRE'):
+                        $sum = $check->product->product_price;
+                        $quant = $check->quantity;
 
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case ($check->size=='750ML'):
-                    $sum = $check->product->product_price750;
-                    $quant = $check->quantity;
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case ($check->size == '750ML'):
+                        $sum = $check->product->product_price750;
+                        $quant = $check->quantity;
 
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case ($check->size=='375ML'):
-                    $sum = $check->product->product_price375;
-                    $quant = $check->quantity;
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case ($check->size == '375ML'):
+                        $sum = $check->product->product_price375;
+                        $quant = $check->quantity;
 
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case ($check->size=='250ML'):
-                    $sum = $check->product->product_price250;
-                    $quant = $check->quantity;
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case ($check->size == '250ML'):
+                        $sum = $check->product->product_price250;
+                        $quant = $check->quantity;
 
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                }
             }
-        }
 
-        return view('customer.checkout',[
-            'user'=>$user,
-            'checkouts'=>$checkouts,
-            'totalSum'=>$totalSum
-        ]);
+            return view('customer.checkout', [
+                'user' => $user,
+                'checkouts' => $checkouts,
+                'totalSum' => $totalSum
+            ]);
+        }
+        else{
+            return redirect(url('login'));
+        }
     }
     public function store(Request $request){
         $Checkout = Cart::where('user_id',auth()->user()->id)->get();

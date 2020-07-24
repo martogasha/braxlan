@@ -164,7 +164,12 @@
                                 @if(\App\Cart::where('user_id',\Illuminate\Support\Facades\Auth::user()->id)->count()==0)
                                 @else
                                     <span class="cart-product">{{\App\Cart::where('user_id',\Illuminate\Support\Facades\Auth::user()->id)->count()}}</span>
-                            @endif
+                                @endif
+                            @else
+                                @if(\App\Cart::where('ip',\App\Helpers\UserSystemInfoHelper::get_ip())->count()==0)
+                                @else
+                                    <span class="cart-product">{{\App\Cart::where('ip',\App\Helpers\UserSystemInfoHelper::get_ip())->count()}}</span>
+                                @endif
                             @endif
                             <ul>
                                 <li class="mobile-cart  ">

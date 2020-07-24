@@ -23,6 +23,7 @@ Route::post('password/email','ForgotPasswordController@sendResetLinkEmail');
 Route::post('password/reset','ResetPasswordController@reset');
 Route::view('rrr','customer.forgetPassword');
 Route::get('userDetail','UserController@userDetails');
+Route::get('header','CartController@header');
 
 
 

@@ -28,6 +28,7 @@
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Location</label>
                                         <input type="text" name="location" value="{{$user->location}}"  placeholder="{{$user->location}}">
+                                        <h5 class="text-danger">You Can Edit to Location that Suits You</h5>
 
                                     </div>
                                 </div>
