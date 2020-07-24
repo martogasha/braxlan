@@ -123,6 +123,7 @@
                                                 <option value="whisky">Whisky</option>
                                                 <option value="vodka">Vodka</option>
                                                 <option value="gin">Gin</option>
+                                                <option value="brandy">Brandy</option>
                                                 <option value="mostSold">Most Sold</option>
                                                 <option value="mostSold">Extras</option>
                                                 <option value="mostSold">Cigarette</option>
