@@ -120,13 +120,6 @@
                                                             <div class="product-detail detail-inline">
                                                                 <div class="detail-title">
                                                                     <div class="detail-left">
-                                                                        <div class="rating-star">
-                                                                            <i class="fa fa-star"></i>
-                                                                            <i class="fa fa-star"></i>
-                                                                            <i class="fa fa-star"></i>
-                                                                            <i class="fa fa-star"></i>
-                                                                            <i class="fa fa-star"></i>
-                                                                        </div>
                                                                         <a href="#">
                                                                             <h6 class="price-title">
                                                                                 {{$searchProduct->product_name}}.
