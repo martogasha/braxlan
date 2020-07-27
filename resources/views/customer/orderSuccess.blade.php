@@ -30,7 +30,7 @@
                         <div class="col-3"><img src="{{asset('uploads/product/'.$order->product->product_image)}}" alt="" class="img-fluid "></div>
                         <div class="col-3 order_detail">
                             <div>
-                                <h4>{{$order->product->product_name}}</h4>
+                                <h4>{{$order->product->product_name}}({{$order->flavour}})</h4>
                                 <h5>cotton shirt</h5></div>
                         </div>
                         <div class="col-3 order_detail">

@@ -89,6 +89,7 @@ class CheckoutController extends Controller
                 'product_id'=>$Checkout->product_id,
                 'user_id'=>Auth::user()->id,
                 'size' => $Checkout->size,
+                'flavour'=>$Checkout->flavour,
                 'quantity'=>$Checkout->quantity,
                 'order_status' => 'cash on delivery',
                 'order_stats' => 'Awaiting Confirmation',

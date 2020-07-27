@@ -39,7 +39,6 @@
                             <div class="col-lg-6 rtl-text">
                                 <div class="product-right">
                                     <h2>{{$productDetail->product_name}}</h2>
-                                    <h3>Ksh: {{$productDetail->product_price}}</h3>
                                     <ul class="color-variant">
                                         <li class="bg-light0"></li>
                                         <li class="bg-light1"></li>

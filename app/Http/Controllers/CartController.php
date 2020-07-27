@@ -117,7 +117,6 @@ class CartController extends Controller
 
                 return redirect(url('cart'))->with('success', 'Item Added to Cart Successfully');
 
-
             }
             else {
                 $addCart = Cart::create([
@@ -125,12 +124,15 @@ class CartController extends Controller
                     'quantity' => $request->input('quantity'),
                     'size' => $request->input('size'),
                     'user_id' => Auth::user()->id,
+                    'flavour'=>$request->input('flavour'),
                 ]);
                 $addCart = Checkout::create([
                     'product_id' => $request->input('productId'),
                     'quantity' => $request->input('quantity'),
                     'size' => $request->input('size'),
                     'user_id' => Auth::user()->id,
+                    'flavour'=>$request->input('flavour'),
+
                 ]);
                 return redirect(url('cart'))->with('success', 'Item Added to Cart Successfully');
             }
@@ -155,12 +157,16 @@ class CartController extends Controller
                     'quantity' => $request->input('quantity'),
                     'size' => $request->input('size'),
                     'ip' => $getIp,
+                    'flavour'=>$request->input('flavour'),
+
                 ]);
                 $addCart = Checkout::create([
                     'product_id' => $request->input('productId'),
                     'quantity' => $request->input('quantity'),
                     'size' => $request->input('size'),
                     'ip' => $getIp,
+                    'flavour'=>$request->input('flavour'),
+
                 ]);
                 return redirect(url('cart'))->with('success', 'Item Added to Cart Successfully');
 

@@ -143,14 +143,6 @@
                                                             @endif
                                                         </h6>
                                                     </a>
-                                                    <div class="rating-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </div>
 
                                                 <div class="detail-right">
                                                     <div class="check-price">
@@ -189,6 +181,14 @@
                                                                 @endif
 
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                    <div class="rating-star">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
                                                     </div>
                                                 </div>
                                             </div>
@@ -300,7 +300,7 @@
                                                                         5Litres Ksh: {{$liq->product_price750}}<br>
                                                                     @endif
                                                                     @if(isset($liq->product_price4500))
-                                                                        4.5Litres Ksh: {{$whisky->product_price4500}}<br>
+                                                                        4.5Litres Ksh: {{$liq->product_price4500}}<br>
                                                                     @endif
                                                                     @if(isset($liq->product_price1500))
                                                                         1.5Lit$mostSoldres Ksh: {{$liq->product_price1500}}<br>
@@ -2390,7 +2390,9 @@
                                                                 <h6 class="price-title">
                                                                     {{$whisky->product_name}}.
                                                                     <br>
+                                                                    @if($whisky->product_flavour)
                                                                     <h6 class="text-dark"><b>FLAVOURS</b></h6>
+                                                                    @endif
                                                                     @if(isset($whisky->product_flavour))
                                                                         {{$whisky->product_flavour}}
                                                                     @endif

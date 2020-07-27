@@ -137,7 +137,7 @@ class OrderController extends Controller
                             </div>
                         </td>
                         <input type="hidden" name="userId" value='.$order->user_id.' id="userId">
-                        <td>'.$order->product->product_name.'</td>
+                        <td>'.$order->product->product_name.'('.$order->flavour.')</td>
                         <td><span class="badge badge-primary">Cash on Delivery</span></td>
                         <td><span class="badge badge-secondary">'.$order->size.'</span></td>
 
