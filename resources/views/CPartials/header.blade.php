@@ -277,7 +277,7 @@
                                     @endif
                                         <!--blog-meu end-->
 
-                                        <li><a href="#" class="dark-menu-item"><button class="btn-danger">CALL TO ORDER</button></a>
+                                        <li><a href="#" class="dark-menu-item"><button class="btn-danger"><b>0754238704</b> Order</button></a>
 
                                         </li>
                                     </ul>
