@@ -18,7 +18,7 @@ class ProductController extends Controller
             $gins = Product::where('product_category', 'gin')->get();
             $rums = Product::where('product_category', 'RUM')->get();
              $brandys = Product::where('product_category', 'brandy')->get();
-
+        $liqs = Product::where('product_category', 'liq')->get();
              $wines = Product::where('product_category', 'wines')->get();
             $softs = Product::where('product_category', 'soft')->get();
             $extras = Product::where('product_category', 'extra')->get();
@@ -35,6 +35,7 @@ class ProductController extends Controller
                 'gins' => $gins,
                 'rums' => $rums,
                 'brandys'=>$brandys,
+                'liqs'=>$liqs,
                 'wines' => $wines,
                 'softs' => $softs,
                 'extras' => $extras,

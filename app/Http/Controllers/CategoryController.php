@@ -15,6 +15,14 @@ class CategoryController extends Controller
             'newProducts'=>$newProducts
         ]);
     }
+    public function liqs(){
+        $liqs = Product::where('product_category','liq')->get();
+        $newProducts = Product::where('product_category3','trending')->get();
+        return view('customer.brandy',[
+            'liqs'=>$liqs,
+            'newProducts'=>$newProducts
+        ]);
+    }
     public function getWhisky(Request $request){
         if ($request->ajax()){
             $output = "";

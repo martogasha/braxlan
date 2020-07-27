@@ -100,6 +100,8 @@ Route::get('rum','CategoryController@rum');
 Route::get('getRum','CategoryController@getRum');
 
 Route::get('brandy','CategoryController@brandy');
+Route::get('liqueur','CategoryController@liqs');
+
 
 
 Route::get('wine','CategoryController@wine');

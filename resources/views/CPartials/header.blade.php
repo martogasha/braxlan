@@ -260,7 +260,7 @@
                                         <li><a href="{{url('rum')}}" class="dark-menu-item">Rum</a>
 
                                         </li>
-                                        <li><a href="{{url('wine')}}" class="dark-menu-item">Wine</a>
+                                        <li><a href="{{url('wine')}}" class="dark-menu-item">Wines</a>
 
                                         </li>
                                         <li><a href="{{url('softDrinks')}}" class="dark-menu-item">Soft Drinks</a>
@@ -276,10 +276,6 @@
                                         </li>
                                     @endif
                                         <!--blog-meu end-->
-
-                                        <li><a href="#" class="dark-menu-item"><button class="btn-danger"><b>0754238704</b> Order</button></a>
-
-                                        </li>
                                     </ul>
                                 </nav>
                             </div>

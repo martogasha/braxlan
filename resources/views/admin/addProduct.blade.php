@@ -124,6 +124,7 @@
                                                 <option value="wines">Wines</option>
                                                 <option value="RUM">Rum</option>
                                                 <option value="brandy">Brandy</option>
+                                                <option value="liq">Liqueur</option>
                                                 <option value="mostSold">Most Sold</option>
                                                 <option value="soft">Soft Drinks</option>
                                                 <option value="extra">Extras</option>
