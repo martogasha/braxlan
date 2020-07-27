@@ -276,6 +276,10 @@
                                         </li>
                                     @endif
                                         <!--blog-meu end-->
+
+                                        <li><a href="#" class="dark-menu-item"><button class="btn-danger">CALL TO ORDER</button></a>
+
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>

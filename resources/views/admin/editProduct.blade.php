@@ -121,15 +121,15 @@
                                             <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1" name="category">
                                                 <option value="{{$getProduct->product_category}}">{{$getProduct->product_category}}</option>
                                                 <option value="whisky">Whisky</option>
+                                                <option value="beer">Beer</option>
                                                 <option value="vodka">Vodka</option>
                                                 <option value="gin">Gin</option>
+                                                <option value="wines">Wines</option>
+                                                <option value="RUM">Rum</option>
                                                 <option value="brandy">Brandy</option>
                                                 <option value="mostSold">Most Sold</option>
-                                                <option value="mostSold">Extras</option>
-                                                <option value="mostSold">Cigarette</option>
-                                                <option value="mostSold">Condoms</option>
-
-
+                                                <option value="soft">Soft Drinks</option>
+                                                <option value="extra">Extras</option>
 
                                             </select>
                                         </div>
