@@ -117,8 +117,9 @@
                                                     <a href="#">
                                                         <h6 class="price-title">
                                                             {{$mostSold->product_name}}.
-                                                            <br>
                                                             @if(isset($mostSold->product_flavour))
+
+                                                            <br>
                                                                 <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                             @endif
                                                             @if(isset($mostSold->product_flavour))
