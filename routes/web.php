@@ -101,6 +101,7 @@ Route::get('getRum','CategoryController@getRum');
 
 Route::get('brandy','CategoryController@brandy');
 Route::get('liqueur','CategoryController@liqs');
+Route::get('tequila','CategoryController@tequila');
 
 
 

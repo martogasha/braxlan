@@ -113,6 +113,27 @@
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price5L :</label>
                                             <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price5000" type="text">
                                         </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour" type="text">
+                                        </div>
+                                        <div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour1</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour1" type="text">
+                                        </div><div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour2</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour2" type="text">
+                                        </div><div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour3</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour3" type="text">
+                                        </div><div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour4</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour4" type="text">
+                                        </div><div class="form-group mb-3 row">
+                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour5</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour5" type="text">
+                                        </div>
+
                                     <div class="form">
                                         <div class="form-group row">
                                             <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
@@ -125,6 +146,7 @@
                                                 <option value="RUM">Rum</option>
                                                 <option value="brandy">Brandy</option>
                                                 <option value="liq">Liqueur</option>
+                                                <option value="tequila">Tequila</option>
                                                 <option value="mostSold">Most Sold</option>
                                                 <option value="soft">Soft Drinks</option>
                                                 <option value="extra">Extras</option>

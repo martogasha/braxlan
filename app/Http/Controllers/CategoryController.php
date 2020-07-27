@@ -18,8 +18,16 @@ class CategoryController extends Controller
     public function liqs(){
         $liqs = Product::where('product_category','liq')->get();
         $newProducts = Product::where('product_category3','trending')->get();
-        return view('customer.brandy',[
+        return view('customer.liqs',[
             'liqs'=>$liqs,
+            'newProducts'=>$newProducts
+        ]);
+    }
+    public function tequila(){
+        $teqs = Product::where('product_category','tequila')->get();
+        $newProducts = Product::where('product_category3','trending')->get();
+        return view('customer.tequila',[
+            'teqs'=>$teqs,
             'newProducts'=>$newProducts
         ]);
     }

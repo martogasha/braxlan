@@ -134,8 +134,11 @@ class ProductController extends Controller
         $pictures->product_category2 = $request->input('category2');
         $pictures->product_category3 = $request->input('category3');
         $pictures->product_category4 = $request->input('category4');
-
-
+        $pictures->product_flavour = $request->input('product_flavour');
+        $pictures->product_flavour1 = $request->input('product_flavour1');
+        $pictures->product_flavour2 = $request->input('product_flavour2');
+        $pictures->product_flavour3 = $request->input('product_flavour3');
+        $pictures->product_flavour4 = $request->input('product_flavour4');
 
         $pictures->product_status = 0;
 
@@ -281,6 +284,11 @@ class ProductController extends Controller
         $edit->product_category1 = $request->category1;
         $edit->product_category2 = $request->category2;
         $edit->product_category3 = $request->category3;
+        $edit->product_flavour = $request->input('product_flavour');
+        $edit->product_flavour1 = $request->input('product_flavour1');
+        $edit->product_flavour2 = $request->input('product_flavour2');
+        $edit->product_flavour3 = $request->input('product_flavour3');
+        $edit->product_flavour4 = $request->input('product_flavour4');
 
 
         $edit->save();

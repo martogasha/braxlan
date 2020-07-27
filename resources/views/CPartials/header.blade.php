@@ -110,6 +110,7 @@
                                 </div>
                             </li>
                             <li><a href="{{url('whisky')}}">Whisky</a></li>
+                            <li><a href="{{url('liqueur')}}">Liqueur</a></li>
                             <li><a href="{{url('beer')}}">Beer</a></li>
                             <li><a href="{{url('vodka')}}">Vodka</a></li>
                             <li><a href="{{url('gin')}}">Gin</a></li>
@@ -143,7 +144,7 @@
                                     <div class="input-group-prepend">
                                         <select>
                                             <option>All Category</option>
-                                            <option value="whisky">Whisky</option>
+                                            <a href="{{url('whisky')}}"><option>Whisky</option></a>
                                             <a href="{{url('beer')}}"><option>Beer</option></a>
                                             <a href="{{url('vodka')}}"><option>Vodka</option></a>
                                             <a href="{{url('gin')}}"><option>Gin</option></a>
@@ -260,6 +261,9 @@
                                         <li><a href="{{url('rum')}}" class="dark-menu-item">Rum</a>
 
                                         </li>
+                                        <li>
+                                            <a href="{{url('tequila')}}" class="dark-menu-item">Tequila</a>
+                                        </li>
                                         <li><a href="{{url('wine')}}" class="dark-menu-item">Wines</a>
 
                                         </li>
@@ -275,6 +279,7 @@
                                             <a href="{{url('login')}}" class="dark-menu-item">Login</a>
                                         </li>
                                     @endif
+
                                         <!--blog-meu end-->
                                     </ul>
                                 </nav>
