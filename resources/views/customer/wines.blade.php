@@ -151,9 +151,6 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    @if($wine->product_price)
-                                                                                        Ksh: {{$wine->product_price}}
-                                                                                    @else
                                                                                         @if(isset($wine->product_price5000))
                                                                                             5Litres Ksh: {{$wine->product_price750}}<br>
                                                                                         @endif
@@ -184,12 +181,10 @@
                                                                                         @if(isset($wine->product_price250))
                                                                                             250ML Ksh: {{$wine->product_price250}}<br>
                                                                                         @endif
-                                                                                    @endif
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-
 
                                                                 </div>
                                                             </div>
