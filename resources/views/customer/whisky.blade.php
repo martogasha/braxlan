@@ -120,6 +120,30 @@
                                                                             <a href="#">
                                                                                 <h6 class="price-title">
                                                                                     {{$whisky->product_name}}.
+                                                                                    @if(isset($whisky->product_flavour))
+                                                                                        <br>
+                                                                                        <h6 class="text-dark"><b>FLAVOURS</b></h6>
+                                                                                    @endif
+                                                                                    @if(isset($whisky->product_flavour))
+                                                                                        {{$whisky->product_flavour}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($whisky->product_flavour1))
+                                                                                        {{$whisky->product_flavour1}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($whisky->product_flavour2))
+                                                                                        {{$whisky->product_flavour2}}
+                                                                                    @endif
+                                                                                    @if(isset($whisky->product_flavour3))
+                                                                                        {{$whisky->product_flavour3}}
+                                                                                    @endif
+                                                                                    @if(isset($whisky->product_flavour4))
+                                                                                        {{$whisky->product_flavour4}}
+                                                                                    @endif
+                                                                                    @if(isset($whisky->product_flavour5))
+                                                                                        {{$whisky->product_flavour5}}
+                                                                                    @endif
                                                                                 </h6>
                                                                             </a>
                                                                         </div>

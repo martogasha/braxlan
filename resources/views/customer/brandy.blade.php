@@ -120,6 +120,30 @@
                                                                             <a href="#">
                                                                                 <h6 class="price-title">
                                                                                     {{$brandy->product_name}}.
+                                                                                    @if(isset($brandy->product_flavour))
+                                                                                        <br>
+                                                                                        <h6 class="text-dark"><b>FLAVOURS</b></h6>
+                                                                                    @endif
+                                                                                    @if(isset($brandy->product_flavour))
+                                                                                        {{$brandy->product_flavour}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($brandy->product_flavour1))
+                                                                                        {{$brandy->product_flavour1}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($brandy->product_flavour2))
+                                                                                        {{$brandy->product_flavour2}}
+                                                                                    @endif
+                                                                                    @if(isset($brandy->product_flavour3))
+                                                                                        {{$brandy->product_flavour3}}
+                                                                                    @endif
+                                                                                    @if(isset($brandy->product_flavour4))
+                                                                                        {{$brandy->product_flavour4}}
+                                                                                    @endif
+                                                                                    @if(isset($brandy->product_flavour5))
+                                                                                        {{$brandy->product_flavour5}}
+                                                                                    @endif
                                                                                 </h6>
                                                                             </a>
                                                                         </div>

@@ -117,7 +117,6 @@
                                                         <h6 class="price-title">
                                                             {{$mostSold->product_name}}.
                                                             @if(isset($mostSold->product_flavour))
-
                                                             <br>
                                                                 <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                             @endif
@@ -254,7 +253,6 @@
                                                             <h6 class="price-title">
                                                                 {{$liq->product_name}}.
                                                                 @if(isset($liq->product_flavour))
-
                                                                     <br>
                                                                     <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                                 @endif
@@ -2379,7 +2377,6 @@
                                                             <h6 class="price-title">
                                                                 {{$whisky->product_name}}.
                                                                 @if(isset($whisky->product_flavour))
-
                                                                     <br>
                                                                     <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                                 @endif
@@ -6637,7 +6634,6 @@
                                                             <h6 class="price-title">
                                                                 {{$vodka->product_name}}.
                                                                 @if(isset($vodka->product_flavour))
-
                                                                     <br>
                                                                     <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                                 @endif
@@ -8757,7 +8753,6 @@
                                                             <h6 class="price-title">
                                                                 {{$gin->product_name}}.
                                                                 @if(isset($gin->product_flavour))
-
                                                                     <br>
                                                                     <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                                 @endif
@@ -12996,7 +12991,6 @@
                                                             <h6 class="price-title">
                                                                 {{$brandy->product_name}}.
                                                                 @if(isset($brandy->product_flavour))
-
                                                                     <br>
                                                                     <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                                 @endif
@@ -15115,7 +15109,6 @@
                                                             <h6 class="price-title">
                                                                 {{$wine->product_name}}.
                                                                 @if(isset($wine->product_flavour))
-
                                                                     <br>
                                                                     <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                                 @endif
@@ -19329,7 +19322,6 @@
                                                             <h6 class="price-title">
                                                                 {{$under1000->product_name}}.
                                                                 @if(isset($under1000->product_flavour))
-
                                                                     <br>
                                                                     <h6 class="text-dark"><b>FLAVOURS</b></h6>
                                                                 @endif

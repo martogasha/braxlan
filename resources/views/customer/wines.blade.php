@@ -119,6 +119,30 @@
                                                                             <a href="#">
                                                                                 <h6 class="price-title">
                                                                                     {{$wine->product_name}}.
+                                                                                    @if(isset($wine->product_flavour))
+                                                                                        <br>
+                                                                                        <h6 class="text-dark"><b>FLAVOURS</b></h6>
+                                                                                    @endif
+                                                                                    @if(isset($wine->product_flavour))
+                                                                                        {{$wine->product_flavour}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($wine->product_flavour1))
+                                                                                        {{$wine->product_flavour1}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($wine->product_flavour2))
+                                                                                        {{$wine->product_flavour2}}
+                                                                                    @endif
+                                                                                    @if(isset($wine->product_flavour3))
+                                                                                        {{$wine->product_flavour3}}
+                                                                                    @endif
+                                                                                    @if(isset($wine->product_flavour4))
+                                                                                        {{$wine->product_flavour4}}
+                                                                                    @endif
+                                                                                    @if(isset($wine->product_flavour5))
+                                                                                        {{$wine->product_flavour5}}
+                                                                                    @endif
                                                                                 </h6>
                                                                             </a>
                                                                         </div>

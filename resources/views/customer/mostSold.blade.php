@@ -121,6 +121,30 @@
                                                                     <a href="#">
                                                                         <h6 class="price-title">
                                                                             {{$mostSold->product_name}}.
+                                                                            @if(isset($mostSold->product_flavour))
+                                                                                <br>
+                                                                                <h6 class="text-dark"><b>FLAVOURS</b></h6>
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_flavour))
+                                                                                {{$mostSold->product_flavour}}
+                                                                            @endif
+                                                                            <br>
+                                                                            @if(isset($mostSold->product_flavour1))
+                                                                                {{$mostSold->product_flavour1}}
+                                                                            @endif
+                                                                            <br>
+                                                                            @if(isset($mostSold->product_flavour2))
+                                                                                {{$mostSold->product_flavour2}}
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_flavour3))
+                                                                                {{$mostSold->product_flavour3}}
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_flavour4))
+                                                                                {{$mostSold->product_flavour4}}
+                                                                            @endif
+                                                                            @if(isset($mostSold->product_flavour5))
+                                                                                {{$mostSold->product_flavour5}}
+                                                                            @endif
                                                                         </h6>
                                                                     </a>
                                                                 </div>

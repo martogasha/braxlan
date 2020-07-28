@@ -120,6 +120,30 @@
                                                                             <a href="#">
                                                                                 <h6 class="price-title">
                                                                                     {{$under1000->product_name}}.
+                                                                                    @if(isset($under1000->product_flavour))
+                                                                                        <br>
+                                                                                        <h6 class="text-dark"><b>FLAVOURS</b></h6>
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_flavour))
+                                                                                        {{$under1000->product_flavour}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($under1000->product_flavour1))
+                                                                                        {{$under1000->product_flavour1}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($under1000->product_flavour2))
+                                                                                        {{$under1000->product_flavour2}}
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_flavour3))
+                                                                                        {{$under1000->product_flavour3}}
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_flavour4))
+                                                                                        {{$under1000->product_flavour4}}
+                                                                                    @endif
+                                                                                    @if(isset($under1000->product_flavour5))
+                                                                                        {{$under1000->product_flavour5}}
+                                                                                    @endif
                                                                                 </h6>
                                                                             </a>
                                                                         </div>

@@ -119,6 +119,30 @@
                                                                             <a href="#">
                                                                                 <h6 class="price-title">
                                                                                     {{$gin->product_name}}.
+                                                                                    @if(isset($gin->product_flavour))
+                                                                                        <br>
+                                                                                        <h6 class="text-dark"><b>FLAVOURS</b></h6>
+                                                                                    @endif
+                                                                                    @if(isset($gin->product_flavour))
+                                                                                        {{$gin->product_flavour}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($gin->product_flavour1))
+                                                                                        {{$gin->product_flavour1}}
+                                                                                    @endif
+                                                                                    <br>
+                                                                                    @if(isset($gin->product_flavour2))
+                                                                                        {{$gin->product_flavour2}}
+                                                                                    @endif
+                                                                                    @if(isset($gin->product_flavour3))
+                                                                                        {{$gin->product_flavour3}}
+                                                                                    @endif
+                                                                                    @if(isset($gin->product_flavour4))
+                                                                                        {{$gin->product_flavour4}}
+                                                                                    @endif
+                                                                                    @if(isset($gin->product_flavour5))
+                                                                                        {{$gin->product_flavour5}}
+                                                                                    @endif
                                                                                 </h6>
                                                                             </a>
                                                                         </div>
