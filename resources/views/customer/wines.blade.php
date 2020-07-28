@@ -152,7 +152,7 @@
                                                                             <div class="price">
                                                                                 <div class="price">
                                                                                         @if(isset($wine->product_price5000))
-                                                                                            5Litres Ksh: {{$wine->product_price750}}<br>
+                                                                                            5Litres Ksh: {{$wine->product_price5000}}<br>
                                                                                         @endif
                                                                                         @if(isset($wine->product_price4500))
                                                                                             4.5Litres Ksh: {{$wine->product_price4500}}<br>
