@@ -122,13 +122,13 @@
                         </td>
                         <td>
                             @switch($cart)
-                                @case($cart->size =='1.5L')
+                                @case($cart->size =='1.5LITRES')
                                 <h2 class="td-color">Ksh: {{$cart->product->product_price1500*$cart->quantity}}</h2>
                                 @break
-                                @case($cart->size =='4.5L')
+                                @case($cart->size =='4.5LITRES')
                                 <h2 class="td-color">Ksh: {{$cart->product->product_price4500*$cart->quantity}}</h2>
                                 @break
-                                @case($cart->size =='5L')
+                                @case($cart->size =='5LITRES')
                                 <h2 class="td-color">Ksh: {{$cart->product->product_price5000*$cart->quantity}}</h2>
                                 @break
                                 @case($cart->size =='1LITRE')
