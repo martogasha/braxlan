@@ -13,7 +13,6 @@ class CartController extends Controller
 {
     public function index()
     {
-        $getIp = UserSystemInfoHelper::get_ip();
         if (Auth::check()) {
             $carts = Cart::where('user_id', Auth::user()->id)->get();
             $cartTotals = Cart::where('user_id', Auth::user()->id)->get();
@@ -54,6 +53,8 @@ class CartController extends Controller
         }
 
         else{
+            $getIp = UserSystemInfoHelper::get_ip();
+
             $carts = Cart::where('ip',$getIp)->get();
             $cartTotals = Cart::where('ip',$getIp)->get();
             $totalSum=0;
