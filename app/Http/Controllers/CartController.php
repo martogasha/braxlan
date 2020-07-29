@@ -54,6 +54,7 @@ class CartController extends Controller
 
         else{
             $getIp = UserSystemInfoHelper::get_ip();
+            dd($getIp);
 
             $carts = Cart::where('ip',$getIp)->get();
             $cartTotals = Cart::where('ip',$getIp)->get();
