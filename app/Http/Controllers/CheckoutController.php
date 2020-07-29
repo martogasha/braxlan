@@ -166,7 +166,6 @@ class CheckoutController extends Controller
             'message' => 'Available Order '.$phone.''
         ]);
 
-
         return redirect(url('success'))->with('success','Order Placed Successfully');
     }
 }
