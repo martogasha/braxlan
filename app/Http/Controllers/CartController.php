@@ -92,8 +92,29 @@ class CartController extends Controller
                         $total = $sum * $quant;
                         $totalSum += $total;
                         break;
+                    case ($cartTotal->size=='500ML'):
+                        $sum = $cartTotal->product->product_price500;
+                        $quant = $cartTotal->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
                     case ($cartTotal->size=='375ML'):
                         $sum = $cartTotal->product->product_price375;
+                        $quant = $cartTotal->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case ($cartTotal->size=='350ML'):
+                        $sum = $cartTotal->product->product_price350;
+                        $quant = $cartTotal->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case ($cartTotal->size=='330ML'):
+                        $sum = $cartTotal->product->product_price330;
                         $quant = $cartTotal->quantity;
 
                         $total = $sum * $quant;

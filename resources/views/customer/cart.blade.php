@@ -41,13 +41,13 @@
                                 </div>
                                 <h2>{{$cart->size}}</h2>
                                 @switch($cart)
-                                    @case($cart->size =='1.5LITRE')
+                                    @case($cart->size =='1.5LITRES')
                                     <h2 class="td-color">Ksh: {{$cart->product->product_price1500*$cart->quantity}} </h2>
                                     @break
-                                    @case($cart->size =='4.5LITRE')
+                                    @case($cart->size =='4.5LITRES')
                                     <h2 class="td-color">Ksh: {{$cart->product->product_price4500*$cart->quantity}} </h2>
                                     @break
-                                    @case($cart->size =='5LITRE')
+                                    @case($cart->size =='5LITRES')
                                     <h2 class="td-color">Ksh: {{$cart->product->product_price5000*$cart->quantity}} </h2>
                                     @break
                                     @case($cart->size =='1LITRE')
@@ -88,13 +88,16 @@
                                 @case($cart->size =='350ML')
                                 <h2>Ksh: {{$cart->product->product_price350}}</h2>
                                 @break
-                                @case($cart->size =='1.5LITRE')
+                                @case($cart->size =='330ML')
+                                <h2>Ksh: {{$cart->product->product_price330}}</h2>
+                                @break
+                                @case($cart->size =='1.5LITRES')
                                 <h2>Ksh: {{$cart->product->product_price1500}}</h2>
                                 @break
-                                @case($cart->size =='4.5LITRE')
+                                @case($cart->size =='4.5LITRES')
                                 <h2>Ksh: {{$cart->product->product_price4500}}</h2>
                                 @break
-                                @case($cart->size =='5LITRE')
+                                @case($cart->size =='5LITRES')
                                 <h2>Ksh: {{$cart->product->product_price5000}}</h2>
                                 @break
                         @case($cart->size =='375ML')

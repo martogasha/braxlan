@@ -49,10 +49,28 @@
                                         <li>{{$checkout->product->product_name}} × {{$checkout->quantity}}
                                             @switch($checkout)
                                                 @case($checkout->size=='1LITRE')
-                                            <span>Ksh: {{$checkout->product->product_price*$checkout->quantity}}</span>
+                                                <span>Ksh: {{$checkout->product->product_price*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='1.5LITRES')
+                                                <span>Ksh: {{$checkout->product->product_price1500*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='4.5LITRES')
+                                                <span>Ksh: {{$checkout->product->product_price4500*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='5LITRES')
+                                            <span>Ksh: {{$checkout->product->product_price5000*$checkout->quantity}}</span>
                                                 @break
                                                 @case($checkout->size=='750ML')
                                                 <span>Ksh: {{$checkout->product->product_price750*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='500ML')
+                                                <span>Ksh: {{$checkout->product->product_price500*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='350ML')
+                                                <span>Ksh: {{$checkout->product->product_price350*$checkout->quantity}}</span>
+                                                @break
+                                                @case($checkout->size=='330ML')
+                                                <span>Ksh: {{$checkout->product->product_price330*$checkout->quantity}}</span>
                                                 @break
                                                 @case($checkout->size=='375ML')
                                                 <span>Ksh: {{$checkout->product->product_price375*$checkout->quantity}}</span>

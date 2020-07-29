@@ -112,9 +112,6 @@
                                                                     <div class="product-front">
                                                                         <img src="{{asset('uploads/product/'.$beer->product_image)}}" class="img-fluid  " alt="product">
                                                                     </div>
-                                                                    <div class="product-back">
-                                                                        <img src="{{asset('uploads/product/'.$beer->product_image)}}" class="img-fluid  " alt="product">
-                                                                    </div>
                                                                 </div>
                                                                 <div class="product-detail detail-center ">
                                                                     <div class="detail-title">
@@ -164,11 +161,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="icon-detail">
-                                                                        <div class="row cart-buttons">
-                                                                            <div class="col-12"><a href="{{url('checkout')}}" class="btn btn-normal ml-3">ADD TO CART</a></div>
-                                                                        </div>
-                                                                    </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>
