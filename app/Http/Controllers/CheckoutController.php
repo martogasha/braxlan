@@ -137,11 +137,11 @@ class CheckoutController extends Controller
         $customerPhone = Customer::where('ip',$getIp)->first();
 
         $phone = $customerPhone->phone;
-        $Checkouts = Checkout::where('ip',$getIp)->get();
+        $Checkouts = Checkout::where('ip',$customerPhone->ip)->get();
         foreach ($Checkouts as $Checkout) {
             $placeOrder = Order::create([
                 'product_id'=>$Checkout->product_id,
-                'ip'=>$getIp,
+                'ip'=>$customerPhone->ip,
                 'size' => $Checkout->size,
                 'flavour'=>$Checkout->flavour,
                 'customer_id'=>$customerPhone->id,
@@ -152,8 +152,8 @@ class CheckoutController extends Controller
             ]);
 
         }
-        $deleteCart = Cart::where('ip',$getIp)->delete();
-        $deleteCheckout = Checkout::where('ip',$getIp)->delete();
+        $deleteCart = Cart::where('ip',$customerPhone->ip)->delete();
+        $deleteCheckout = Checkout::where('ip',$customerPhone->ip)->delete();
         $username = 'bull'; // use 'sandbox' for development in the test environment
         $apiKey   = '0aa4a7a4e921d26292c7d1f511f8cadcfca2a28d86e8e83d76c1863ad58ea9d0'; // use your sandbox app API key for development in the test environment
         $AT       = new AfricasTalking($username, $apiKey);
