@@ -17,6 +17,7 @@ class CheckoutController extends Controller
 {
     public function index(){
         $getIp = UserSystemInfoHelper::get_ip();
+        dd($getIp);
 
         $checkouts = Checkout::where('ip', $getIp)->get();
             $checks = Checkout::where('ip', $getIp)->get();
