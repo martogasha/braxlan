@@ -24,6 +24,27 @@ class OrderController extends Controller
 
             foreach ($orderSums as $orderSum){
                 switch ($orderSum){
+                    case($orderSum->size=='1.5LITRES'):
+                        $sum = $orderSum->product->product_price1500;
+                        $quant = $orderSum->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case($orderSum->size=='4.5LITRES'):
+                        $sum = $orderSum->product->product_price4500;
+                        $quant = $orderSum->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case($orderSum->size=='5LITRES'):
+                        $sum = $orderSum->product->product_price5000;
+                        $quant = $orderSum->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
                     case($orderSum->size=='1LITRE'):
                         $sum = $orderSum->product->product_price;
                         $quant = $orderSum->quantity;
@@ -94,6 +115,27 @@ class OrderController extends Controller
         $totalSum=0;
         foreach ($checks as $check){
             switch ($check){
+                case($check->size=='1.5LITRES'):
+                    $sum = $check->product->product_price1500;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
+                case($check->size=='4.5LITRES'):
+                    $sum = $check->product->product_price4500;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
+                case($check->size=='5LITRES'):
+                    $sum = $check->product->product_price5000;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
                 case($check->size=='1LITRE'):
                     $sum = $check->product->product_price;
                     $quant = $check->quantity;
@@ -108,8 +150,29 @@ class OrderController extends Controller
                     $total = $sum * $quant;
                     $totalSum += $total;
                     break;
+                case ($check->size=='500ML'):
+                    $sum = $check->product->product_price500;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
                 case ($check->size=='375ML'):
                     $sum = $check->product->product_price375;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
+                case ($check->size=='350ML'):
+                    $sum = $check->product->product_price350;
+                    $quant = $check->quantity;
+
+                    $total = $sum * $quant;
+                    $totalSum += $total;
+                    break;
+                case ($check->size=='330ML'):
+                    $sum = $check->product->product_price330;
                     $quant = $check->quantity;
 
                     $total = $sum * $quant;
