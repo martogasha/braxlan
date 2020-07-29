@@ -24,7 +24,8 @@ class CompleteOrderController extends Controller
 
         }
         else{
-            $deleteOrder = Order::where('ip', $request->userId)->where('order_stats','Order on the Way')->update(['order_stats' => ('Delivered')]);
+            $customerIp = Customer::where('id',$request->userId)->first();
+            $deleteOrder = Order::where('ip', $customerIp->ip)->where('order_stats','Order on the Way')->update(['order_stats' => ('Delivered')]);
             return redirect(url('orders'))->with('success','Order Completed Successfully');
 
 
