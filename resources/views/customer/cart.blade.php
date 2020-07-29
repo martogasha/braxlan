@@ -88,13 +88,13 @@
                                 @case($cart->size =='350ML')
                                 <h2>Ksh: {{$cart->product->product_price350}}</h2>
                                 @break
-                                @case($cart->size =='1.5L')
+                                @case($cart->size =='1.5LITRE')
                                 <h2>Ksh: {{$cart->product->product_price1500}}</h2>
                                 @break
-                                @case($cart->size =='4.5L')
+                                @case($cart->size =='4.5LITRE')
                                 <h2>Ksh: {{$cart->product->product_price4500}}</h2>
                                 @break
-                                @case($cart->size =='5L')
+                                @case($cart->size =='5LITRE')
                                 <h2>Ksh: {{$cart->product->product_price5000}}</h2>
                                 @break
                         @case($cart->size =='375ML')

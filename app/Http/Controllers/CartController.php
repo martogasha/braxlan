@@ -57,6 +57,27 @@ class CartController extends Controller
             $totalSum=0;
             foreach ($cartTotals as $cartTotal) {
                 switch ($cartTotal){
+                    case($cartTotal->size=='5LITRE'):
+                        $sum = $cartTotal->product->product_price5000;
+                        $quant = $cartTotal->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case($cartTotal->size=='4.5LITRE'):
+                        $sum = $cartTotal->product->product_price4500;
+                        $quant = $cartTotal->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case($cartTotal->size=='1.5LITRE'):
+                        $sum = $cartTotal->product->product_price1500;
+                        $quant = $cartTotal->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
                     case($cartTotal->size=='1LITRE'):
                         $sum = $cartTotal->product->product_price;
                         $quant = $cartTotal->quantity;
