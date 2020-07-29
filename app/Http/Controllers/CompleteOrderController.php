@@ -17,15 +17,14 @@ class CompleteOrderController extends Controller
         ]);
     }
     public function store(Request $request){
-        dd($request->all());
         if ($request->orderStats=='Awaiting') {
-            $customerIp = Customer::where()
-            $deleteOrder = Order::where('ip', )->where('order_stats','Awaiting Confirmation')->update(['order_stats' => ('Order on the Way')]);
+            $customerIp = Customer::where('id',$request->userId)->first();
+            $deleteOrder = Order::where('ip', $customerIp->ip)->where('order_stats','Awaiting Confirmation')->update(['order_stats' => ('Order on the Way')]);
             return redirect(url('orders'))->with('success','Order Confirmed Successfully');
 
         }
         else{
-            $deleteOrder = Order::where('user_id', $request->userId)->where('order_stats','Order on the Way')->update(['order_stats' => ('Delivered')]);
+            $deleteOrder = Order::where('ip', $request->userId)->where('order_stats','Order on the Way')->update(['order_stats' => ('Delivered')]);
             return redirect(url('orders'))->with('success','Order Completed Successfully');
 
 
