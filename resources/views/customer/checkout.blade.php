@@ -17,20 +17,22 @@
                             <div class="checkout-title">
                                 <h3>Billing Details</h3></div>
                             <form action="{{url('placeOrder')}}" method="post" id="placeOrder">
-                                <input type="hidden" name="userId" value="{{\Illuminate\Support\Facades\Auth::id()}}">
                                 @csrf
                             <div class="theme-form">
                                 <div class="row check-out ">
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <label class="field-label">Name</label>
+                                        <input type="text" name="name" id="name" placeholder="" required="">
+
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Phone</label>
-                                        <input type="text" name="phone" value="{{$user->phone}}" placeholder="" required>
-                                        <h5 class="text-danger">You Can Edit Phone Number that Suits You</h5>
+                                        <input type="text" name="phone" value="" placeholder="" required>
 
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Location</label>
-                                        <input type="text" name="location" value="{{$user->location}}"  placeholder="{{$user->location}}">
-                                        <h5 class="text-danger">You Can Edit to Location that Suits You</h5>
+                                        <input type="text" name="location" value=""  placeholder="" required>
 
                                     </div>
                                 </div>
@@ -99,11 +101,9 @@
                                         </div>
                                     </div>
 
-                                        @csrf
                                         <div class="row cart-buttons">
                                             <div class="col-12"><a href="{{url('cart')}}" class="btn btn-normal">Edit Cart</a> <a href="javascript:document.getElementById('placeOrder').submit();" class="btn btn-normal ml-3">Place Order</a></div>
                                         </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -117,3 +117,20 @@
 <!-- section end -->
 @include('CPartials.footer1')
 @include('CPartials.footer')
+<script>
+    $(document).ready(function () {
+
+        $('#placeOrder').validate({ // initialize the plugin
+            rules: {
+                name: {
+                    required: true,
+                },
+                phone: {
+                    required: true,
+                    minlength: 5
+                }
+            }
+        });
+
+    });
+</script>

@@ -100,11 +100,9 @@
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$mostSold->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
-                                            @if(isset($mostSold->product_image1))
                                             <div class="product-back">
-                                                <img src="{{asset('uploads/product/'.$mostSold->product_image1)}}" class="img-fluid  " alt="product">
+                                                <img src="{{asset('uploads/product/'.$mostSold->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
-                                                @endif
                                             @if($mostSold->product_status==1)
                                             <div class="on-sale1" style="color: #ff0520">
                                                 Out of Stock
@@ -182,6 +180,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
+                                            </div>
+                                            <div class="icon-detail">
+                                                <div class="row cart-buttons">
+                                                    <div class="col-12"><a href="{{url('checkout')}}" class="btn btn-normal ml-3">ADD TO CART</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -21551,18 +21554,9 @@
                         <div class="offer-content">
                             <div>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                @if(\Illuminate\Support\Facades\Auth::check())
                                     <h2>FREE DELIVERY!!! AND AMAIZING OFFERS FOR YOU</h2>
-                                @else
-                                <h2>FREE DELIVERY!!! REGISTER NOW</h2>
-                                @endif
                                 <p>Braxlan Liquor store brings you best liquor prices and amaizing Offers, Just for you!</p>
-                                @if(\Illuminate\Support\Facades\Auth::check())
-                                    <a href="{{url('offer')}}" class="btn btn-normal ml-3">SPECIAL OFFERS</a>
 
-                                @else
-                                <a href="{{url('register')}}" class="btn btn-normal ml-3">REGISTER</a>
-                                    @endif
                             </div>
                         </div>
                     </div>

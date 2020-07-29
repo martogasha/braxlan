@@ -30,7 +30,7 @@
                         <div class="col-3"><img src="{{asset('uploads/product/'.$order->product->product_image)}}" alt="" class="img-fluid "></div>
                         <div class="col-3 order_detail">
                             <div>
-                                <h4>{{$order->product->product_name}}({{$order->flavour}})</h4>
+                                <h4>{{$order->product->product_name}}@if($order->flavour)({{$order->flavour}})@endif</h4>
                                 <h5>cotton shirt</h5></div>
                         </div>
                         <div class="col-3 order_detail">
@@ -91,11 +91,11 @@
                     <div class="col-sm-6">
                         <h4>shipping address</h4>
                         <ul class="order-detail">
-                            <li>{{\Illuminate\Support\Facades\Auth::user()->location}}</li>
+                            <li>{{$customer->location}}</li>
                         </ul>
-                        <h4><Contact></Contact></h4>
+                        <h4>Phone Number</h4>
                         <ul class="order-detail">
-                            <li>Contact No. {{\Illuminate\Support\Facades\Auth::user()->phone}}</li>
+                            <li>{{$customer->phone}}</li>
                         </ul>
                     </div>
                     <div class="col-sm-12 payment-mode">

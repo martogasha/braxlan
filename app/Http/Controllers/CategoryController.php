@@ -172,7 +172,6 @@ class CategoryController extends Controller
                     <div class="col-lg-6 rtl-text">
                         <div class="product-right">
                             <h2>'.$product->product_name.'</h2>
-                            <h3>Ksh: '.$product->product_price.'</h3>
                             <ul class="color-variant">
                                 <li class="bg-light0"></li>
                                 <li class="bg-light1"></li>
@@ -193,9 +192,18 @@ class CategoryController extends Controller
                             <div class="col-md-12 form-group">
                                         <label for="exampleFormControlSelect1">Size:</label>
                                         <select class="form-control" name="size">
+                                        @if('.$product->product_price750.')
                                             <option value="750ML">750ML Ksh:'.$product->product_price750.'</option>
-                                            <option value="1LITRE">1Litre Ksh: '.$product->product_price.'</option>
-                                            <option value="375ML">375ML Ksh: '.$product->product_price375.'</option>
+                                            @endif
+                                            @if(null)
+                                            <option value="1L">1Litre Ksh:{{$wine->product_price}}</option>
+                                            @endif
+                                             @if('.$product->product_price375.')
+                                            <option value="375ML">375ML Ksh:'.$product->product_price375.'</option>
+                                            @endif
+                                             @if('.$product->product_price.')
+                                            <option value="250ML">1Litre Ksh:'.$product->product_price.'</option>
+                                            @endif
                                            <option value="250ML">250ML Ksh: '.$product->product_price250.'</option>
                                             <option value="330ML">330ML Ksh: '.$product->product_price330.'</option>
                                             <option value="350ML">350ML Ksh: '.$product->product_price350.'</option>

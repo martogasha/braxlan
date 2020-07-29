@@ -52,11 +52,11 @@
                             @foreach($orders as $order)
                             <tr>
                                 <td id="getOrder">#00{{$order->id}}</td>
-                                <td><span class="badge badge-secondary">{{$order->user->name}}</span></td>
-                                <td><span class="badge badge-secondary">{{$order->user->phone}}</span></td>
+                                <td><span class="badge badge-secondary">{{$order->customer->name}}</span></td>
+                                <td><span class="badge badge-secondary">{{$order->customer->phone}}</span></td>
                                 <td><span class="badge badge-primary">{{$order->order_status}}</span></td>
                                 <td><span class="badge badge-secondary">{{$order->order_stats}}</span></td>
-                                <td><button type="button" class="btn btn-success view" name="view" id="{{$order->user_id}}" data-toggle="modal" data-target="#exampleModal">View</button> </td>
+                                <td><button type="button" class="btn btn-success view" name="view" id="{{$order->customer_id}}" data-toggle="modal" data-target="#exampleModal">View</button> </td>
                                 <form action="{{url('deleteOrder',$order->id)}}" method="post">
                                     @csrf
                                 <td><button type="submit" class="btn btn-danger">Cancel Order</button></td>

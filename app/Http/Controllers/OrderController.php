@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Checkout;
+use App\Customer;
+use App\Helpers\UserSystemInfoHelper;
 use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,12 +13,14 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
     public function index(){
-        if (Auth::check()) {
-            $orders = Order::where('user_id', Auth::user()->id)->where('order_stats','Awaiting Confirmation')->get();
-            $orderSums = Order::where('user_id', Auth::user()->id)->where('order_stats','Awaiting Confirmation')->get();
+        $getIp = UserSystemInfoHelper::get_ip();
+        $orders = Order::where('ip', $getIp)->where('order_stats','Awaiting Confirmation')->get();
+            $orderSums = Order::where('ip', $getIp)->where('order_stats','Awaiting Confirmation')->get();
+        $customer = Customer::where('ip', $getIp)->first();
 
 
-            $totalSum=0;
+
+        $totalSum=0;
 
             foreach ($orderSums as $orderSum){
                 switch ($orderSum){
@@ -52,16 +56,13 @@ class OrderController extends Controller
             }
             return view('customer.orderSuccess', [
                 'orders' => $orders,
-                'totalSum'=>$totalSum
+                'totalSum'=>$totalSum,
+                'customer'=>$customer
             ]);
-        }
-        else{
-            return redirect(url('login'));
-        }
     }
     public function orders(){
         if (Auth::user()->role =='admin') {
-            $orders = Order::where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get()->unique('user_id');
+            $orders = Order::where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get()->unique('ip');
             return view('admin.orders', [
                 'orders' => $orders
             ]);
@@ -89,7 +90,7 @@ class OrderController extends Controller
         }
     }
     public function getOrderDetails(Request $request){
-        $checks = Order::where('user_id',$request->order)->where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get();
+        $checks = Order::where('customer_id',$request->order)->where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get();
         $totalSum=0;
         foreach ($checks as $check){
             switch ($check){
@@ -125,7 +126,7 @@ class OrderController extends Controller
         }
         if ($request->ajax()){
             $output="";
-            $orders = Order::where('user_id',$request->order)->where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get();
+            $orders = Order::where('customer_id',$request->order)->where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get();
         }
         foreach ($orders as $order) {
             $output .= '<tbody>
@@ -136,7 +137,7 @@ class OrderController extends Controller
                                 <img src="uploads/product/'.$order->product->product_image.'" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded">
                             </div>
                         </td>
-                        <input type="hidden" name="userId" value='.$order->user_id.' id="userId">
+                        <input type="hidden" name="userId" value='.$order->customer_id.' id="userId">
                         <td>'.$order->product->product_name.'('.$order->flavour.')</td>
                         <td><span class="badge badge-primary">Cash on Delivery</span></td>
                         <td><span class="badge badge-secondary">'.$order->size.'</span></td>

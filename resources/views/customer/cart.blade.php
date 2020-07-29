@@ -30,7 +30,7 @@
                         <td>
                             <a href="#"><img src="{{asset('uploads/product/'.$cart->product->product_image)}}" alt="cart" class=" "></a>
                         </td>
-                        <td><a href="#">{{$cart->product->product_name}}@if(isset($cart->product->product_flavour))(<b>{{$cart->product->product_flavour}}</b>)@endif</a>
+                        <td><a href="#">{{$cart->product->product_name}}@if(isset($cart->flavour))(<b>{{$cart->flavour}}</b>)@endif</a>
                             <div class="mobile-cart-content row">
                                 <div class="col-xs-3">
                                     <div class="qty-box">

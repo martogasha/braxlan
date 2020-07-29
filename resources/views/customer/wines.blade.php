@@ -112,6 +112,7 @@
                                                                     <div class="product-front">
                                                                         <img src="{{asset('uploads/product/'.$wine->product_image)}}" class="img-fluid  " alt="product">
                                                                     </div>
+
                                                                 </div>
                                                                 <div class="product-detail detail-center ">
                                                                     <div class="detail-title">
@@ -191,6 +192,32 @@
                                                         </div>
                                                     </div>
                                                 </a>
+                                                <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <form action="{{route('cart.store')}}" method="post" id="cart">
+                                                        @csrf
+                                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+                                                            <div class="modal-content quick-view-modal">
+                                                                <div class="modal-body">
+                                                                    <div id="modalBody">
+
+                                                                    </div>
+
+                                                                    <div class="row">>
+                                                                        <div class="col-lg-6 rtl-text">
+                                                                            <div class="product-right">
+                                                                                <div class="product-buttons">
+                                                                                    <a href="javascript:document.getElementById('cart').submit();"class="btn btn-normal">Add to Cart</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
                                             @endforeach
                                         </div>
                                     </div>
@@ -224,31 +251,6 @@
         </div>
     </div>
 </section>
-<div class="modal fade bd-example-modal-lg theme-modal" id="quick-view" tabindex="-1" role="dialog" aria-hidden="true">
-    <form action="{{route('cart.store')}}" method="post" id="cart">
-        @csrf
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-
-            <div class="modal-content quick-view-modal">
-                <div class="modal-body">
-                    <div id="modalBody">
-
-                    </div>
-
-                    <div class="row">>
-                        <div class="col-lg-6 rtl-text">
-                            <div class="product-right">
-                                <div class="product-buttons">
-                                    <a href="javascript:document.getElementById('cart').submit();"class="btn btn-normal">Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
 <!-- section End -->
 @include('CPartials.settings')
 
