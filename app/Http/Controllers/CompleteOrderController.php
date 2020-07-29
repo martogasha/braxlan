@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use App\Order;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\DeclareDeclare;
@@ -16,8 +17,10 @@ class CompleteOrderController extends Controller
         ]);
     }
     public function store(Request $request){
+        dd($request->all());
         if ($request->orderStats=='Awaiting') {
-            $deleteOrder = Order::where('user_id', $request->userId)->where('order_stats','Awaiting Confirmation')->update(['order_stats' => ('Order on the Way')]);
+            $customerIp = Customer::where()
+            $deleteOrder = Order::where('ip', )->where('order_stats','Awaiting Confirmation')->update(['order_stats' => ('Order on the Way')]);
             return redirect(url('orders'))->with('success','Order Confirmed Successfully');
 
         }
