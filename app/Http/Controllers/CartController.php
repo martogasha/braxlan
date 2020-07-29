@@ -149,7 +149,6 @@ class CartController extends Controller
         ]);
     }
     public function store(Request $request){
-        $getIp = UserSystemInfoHelper::get_ip();
         if (Auth::check()){
             $getProductId =Cart::where('product_id',$request->productId)->where('user_id',Auth::user()->id)->where('size',$request->size)->first();
             if (isset($getProductId)){
@@ -183,6 +182,7 @@ class CartController extends Controller
             }
         }
         else{
+            $getIp = UserSystemInfoHelper::get_ip();
             $getProductId =Cart::where('product_id',$request->productId)->where('ip',$getIp)->where('size',$request->size)->first();
             if (isset($getProductId)){
                 $productId = $getProductId->product_id;
@@ -197,6 +197,7 @@ class CartController extends Controller
 
             }
             else {
+                $getIp = UserSystemInfoHelper::get_ip();
                 $addCart = Cart::create([
                     'product_id' => $request->input('productId'),
                     'quantity' => $request->input('quantity'),
