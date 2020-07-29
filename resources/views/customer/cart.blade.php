@@ -41,6 +41,15 @@
                                 </div>
                                 <h2>{{$cart->size}}</h2>
                                 @switch($cart)
+                                    @case($cart->size =='1.5LITRE')
+                                    <h2 class="td-color">Ksh: {{$cart->product->product_price1500*$cart->quantity}} </h2>
+                                    @break
+                                    @case($cart->size =='4.5LITRE')
+                                    <h2 class="td-color">Ksh: {{$cart->product->product_price4500*$cart->quantity}} </h2>
+                                    @break
+                                    @case($cart->size =='5LITRE')
+                                    <h2 class="td-color">Ksh: {{$cart->product->product_price5000*$cart->quantity}} </h2>
+                                    @break
                                     @case($cart->size =='1LITRE')
                                     <h2 class="td-color">Ksh: {{$cart->product->product_price*$cart->quantity}} </h2>
                                 @break
