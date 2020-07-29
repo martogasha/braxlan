@@ -18,7 +18,8 @@
         "laravel/socialite": "^4.4",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "pnlinh/laravel-infobip-sms": "^1.0"
+        "pnlinh/laravel-infobip-sms": "^1.0",
+      "ext-http": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

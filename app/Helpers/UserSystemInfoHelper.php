@@ -4,6 +4,8 @@
  *
  */
 namespace App\Helpers;
+use http\Env\Request;
+
 class UserSystemInfoHelper
 {
     private static function get_user_agent(){
@@ -14,7 +16,7 @@ class UserSystemInfoHelper
 
         $ipaddress = '';
         if (isset($_SERVER['SERVER_ADDR']))
-            $ipaddress = $_SERVER['SERVER_ADDR'];
+            $ipaddress = Request::getClientIp();
         else
             $ipaddress = 'UNKNOWN';
         return $ipaddress;
