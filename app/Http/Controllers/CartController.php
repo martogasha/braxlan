@@ -11,47 +11,48 @@ use App\Helpers\UserSystemInfoHelper;
 
 class CartController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $getIp = UserSystemInfoHelper::get_ip();
-        dd($getIp);
-        if (Auth::check()){
-        $carts = Cart::where('user_id',Auth::user()->id)->get();
-        $cartTotals = Cart::where('user_id',Auth::user()->id)->get();
-        $totalSum=0;
+        if (Auth::check()) {
+            $carts = Cart::where('user_id', Auth::user()->id)->get();
+            $cartTotals = Cart::where('user_id', Auth::user()->id)->get();
+            $totalSum = 0;
             foreach ($cartTotals as $cartTotal) {
-                switch ($cartTotal){
-                    case($cartTotal->size=='1LITRE'):
+                switch ($cartTotal) {
+                    case($cartTotal->size == '1LITRE'):
                         $sum = $cartTotal->product->product_price;
                         $quant = $cartTotal->quantity;
 
                         $total = $sum * $quant;
                         $totalSum += $total;
-                    break;
-                    case ($cartTotal->size=='750ML'):
-                            $sum = $cartTotal->product->product_price750;
-                            $quant = $cartTotal->quantity;
-
-                            $total = $sum * $quant;
-                            $totalSum += $total;
                         break;
-                    case ($cartTotal->size=='375ML'):
-                                $sum = $cartTotal->product->product_price375;
-                                $quant = $cartTotal->quantity;
+                    case ($cartTotal->size == '750ML'):
+                        $sum = $cartTotal->product->product_price750;
+                        $quant = $cartTotal->quantity;
 
-                                $total = $sum * $quant;
-                                $totalSum += $total;
-                            break;
-                    case ($cartTotal->size=='250ML'):
-                                    $sum = $cartTotal->product->product_price250;
-                                    $quant = $cartTotal->quantity;
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case ($cartTotal->size == '375ML'):
+                        $sum = $cartTotal->product->product_price375;
+                        $quant = $cartTotal->quantity;
 
-                                    $total = $sum * $quant;
-                                    $totalSum += $total;
-                                break;
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
+                    case ($cartTotal->size == '250ML'):
+                        $sum = $cartTotal->product->product_price250;
+                        $quant = $cartTotal->quantity;
+
+                        $total = $sum * $quant;
+                        $totalSum += $total;
+                        break;
                 }
 
             }
         }
+
         else{
             $carts = Cart::where('ip',$getIp)->get();
             $cartTotals = Cart::where('ip',$getIp)->get();
