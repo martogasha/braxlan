@@ -13,7 +13,7 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
-        $getIp = $request->getClientIp();
+        $getIp = $request->ip();
         dd($getIp);
         if (Auth::check()) {
             $carts = Cart::where('user_id', Auth::user()->id)->get();
