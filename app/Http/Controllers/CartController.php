@@ -11,10 +11,9 @@ use App\Helpers\UserSystemInfoHelper;
 
 class CartController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $getIp = $request->ip();
-        dd($getIp);
+        $getIp = UserSystemInfoHelper::get_ip();
         if (Auth::check()) {
             $carts = Cart::where('user_id', Auth::user()->id)->get();
             $cartTotals = Cart::where('user_id', Auth::user()->id)->get();
