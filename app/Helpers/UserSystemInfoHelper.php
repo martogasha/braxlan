@@ -13,8 +13,8 @@ class UserSystemInfoHelper
     public static function get_ip(){
 
         $ipaddress = '';
-        if(isset($_SERVER['REMOTE_HOST']))
-            $ipaddress = $_SERVER['REMOTE_HOST'];
+        if(isset($_SERVER['REMOTE_ADDR']))
+            $ipaddress = $_SERVER['REMOTE_ADDR'];
         else
             $ipaddress = 'UNKNOWN';
         return $ipaddress;
