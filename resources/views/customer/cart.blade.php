@@ -183,8 +183,5 @@
 <!-- latest jquery-->
 @include('CPartials.footer1')
 @include('CPartials.footer')
-<script>
 
-    alert('ok')
-</script>
 
