@@ -147,8 +147,7 @@
                                             @else
                                                 <div class="container-fluid text-center">
                                                     <div class="card px-5 py-5">
-                                                        <h1 class="not-found">404</h1>
-                                                        <h3>Oops, Page you are looking for is not found</h3>
+                                                        <h2 class="not-found">No Results Found</h2>
                                                         <div class="text-center mt-4 mb-5"> <a href="{{url('/')}}"><button class="btn btn-success send px-3"><i class="fa fa-long-arrow-left mr-1"></i> Back to home page</button></a> </div>
                                                     </div>
                                                 </div>
