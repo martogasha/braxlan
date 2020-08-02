@@ -106,6 +106,7 @@
                                     </div>
                                     <div class="product-wrapper-grid">
                                         <div class="row">
+                                            @if(count($searchProducts))
                                             @foreach($searchProducts as $searchProduct)
                                             <div class="col-xl-3 col-md-4 col-6  col-grid-box">
                                                 <div class="product">
@@ -143,8 +144,21 @@
                                                 </div>
                                             </div>
                                             @endforeach
+                                            @else
+                                                <div class="container-fluid text-center">
+                                                    <div class="card px-5 py-5">
+                                                        <h1 class="not-found">404</h1>
+                                                        <h3>Oops, Page you are looking for is not found</h3>
+                                                        <div class="text-center mt-4 mb-5"> <a href="{{url('/')}}"><button class="btn btn-success send px-3"><i class="fa fa-long-arrow-left mr-1"></i> Back to home page</button></a> </div>
+                                                    </div>
+                                                </div>
+                                            @endif
+
                                         </div>
+
+
                                     </div>
+
                                     <div class="product-pagination">
                                         <div class="theme-paggination-block">
                                             <div class="row">
