@@ -549,7 +549,7 @@ class CategoryController extends Controller
         ]);
     }
     public function under1000(){
-        $under1000s = Product::where('product_price','<',1000)->inRandomOrder()->get();
+        $under1000s = Product::where('product_price','<',1000)->where('product_category','!=','soft')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
         return view('customer.under1000',[
             'under1000s'=>$under1000s,
