@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-            $whiskys = Product::where('product_category', 'whisky')->get();
+            $whiskys = Product::where('product_category', 'whisky')->inRandomOrder()->get();
             $beers = Product::where('product_category', 'beer')->get();
             $vodkas = Product::where('product_category', 'vodka')->get();
             $gins = Product::where('product_category', 'gin')->get();
