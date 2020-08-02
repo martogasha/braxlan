@@ -19,150 +19,67 @@
                         <th scope="col">product name</th>
                         <th scope="col">price</th>
                         <th scope="col">quantity</th>
-                        <th scope="col">Size</th>
                         <th scope="col">action</th>
                         <th scope="col">total</th>
                     </tr>
                     </thead>
-                    @foreach($carts as $cart)
+                    @if(\Illuminate\Support\Facades\Session::has('cat'))
+                    @foreach($products as $product)
                     <tbody>
                     <tr>
                         <td>
-                            <a href="#"><img src="{{asset('uploads/product/'.$cart->product->product_image)}}" alt="cart" class=" "></a>
+                            <a href="#"><img src="{{asset('uploads/product/'.$product['item']['product_image'])}}" alt="cart" class=" "></a>
                         </td>
-                        <td><a href="#">{{$cart->product->product_name}}@if(isset($cart->flavour))(<b>{{$cart->flavour}}</b>)@endif</a>
+                        <td><a href="#">{{$product['item']['product_name']}}</a>
                             <div class="mobile-cart-content row">
                                 <div class="col-xs-3">
                                     <div class="qty-box">
                                         <div class="input-group">
-                                            <input type="number" name="quantity" class="form-control input-number" value="{{$cart->quantity}}">
+                                            <input type="number" name="quantity" class="form-control input-number" value="{{$product['quantity']}}">
                                         </div>
                                     </div>
                                 </div>
-                                <h2>{{$cart->size}}</h2>
-                                @switch($cart)
-                                    @case($cart->size =='1.5LITRES')
-                                    <h2 class="td-color">Ksh: {{$cart->product->product_price1500*$cart->quantity}} </h2>
-                                    @break
-                                    @case($cart->size =='4.5LITRES')
-                                    <h2 class="td-color">Ksh: {{$cart->product->product_price4500*$cart->quantity}} </h2>
-                                    @break
-                                    @case($cart->size =='5LITRES')
-                                    <h2 class="td-color">Ksh: {{$cart->product->product_price5000*$cart->quantity}} </h2>
-                                    @break
-                                    @case($cart->size =='1LITRE')
-                                    <h2 class="td-color">Ksh: {{$cart->product->product_price*$cart->quantity}} </h2>
-                                @break
-                                    @case($cart->size =='750ML')
-                                    <h2 class="td-color">Ksh: {{$cart->product->product_price750*$cart->quantity}} </h2>
-                                    @break
-                                    @case($cart->size =='375ML')
-                                    <h2 class="td-color">Ksh: {{$cart->product->product_price375*$cart->quantity}}</h2>
-                                    @break
-                                    @case($cart->size =='250ML')
-                                    <h2 class="td-color">Ksh: {{$cart->product->product_price250*$cart->quantity}}</h2>
-                                    @break
-                                @endswitch
+
+                                    <h2 class="td-color">Ksh: {{$product['item']['product_price']*$product['quantity']}} </h2>
+
                                     <div class="col-xs-3">
-                                    <form action="{{url('cartDelete',$cart->product_id)}}" method="post">
-                                        <input type="hidden" name="size" value="{{$cart->size}}">
+                                    <form action="" method="post">
+                                        <input type="hidden" name="size" value="">
                                         @csrf
                                         <button type="submit"><i class="ti-close"></i></button>
                                     </form>
                                 </div>
 
                         <td>
-                            @switch($cart)
-                        @case($cart->size =='1LITRE')
-                        <h2>Ksh: {{$cart->product->product_price}}</h2>
-                        @break
-                        @case($cart->size =='750ML')
-                        <h2>Ksh: {{$cart->product->product_price750}}</h2>
-                        @break
-                                @case($cart->size =='500ML')
-                                <h2>Ksh: {{$cart->product->product_price500}}</h2>
-                                @break
-                                @case($cart->size =='330ML')
-                                <h2>Ksh: {{$cart->product->product_price330}}</h2>
-                                @break
-                                @case($cart->size =='350ML')
-                                <h2>Ksh: {{$cart->product->product_price350}}</h2>
-                                @break
-                                @case($cart->size =='330ML')
-                                <h2>Ksh: {{$cart->product->product_price330}}</h2>
-                                @break
-                                @case($cart->size =='1.5LITRES')
-                                <h2>Ksh: {{$cart->product->product_price1500}}</h2>
-                                @break
-                                @case($cart->size =='4.5LITRES')
-                                <h2>Ksh: {{$cart->product->product_price4500}}</h2>
-                                @break
-                                @case($cart->size =='5LITRES')
-                                <h2>Ksh: {{$cart->product->product_price5000}}</h2>
-                                @break
-                        @case($cart->size =='375ML')
-                        <h2>Ksh: {{$cart->product->product_price375}}</h2>
-                        @break
-                        @case($cart->size =='250ML')
-                        <h2>Ksh: {{$cart->product->product_price250}}</h2>
-                        @break
 
-                        @endswitch
+                        <h2>Ksh: {{$product['item']['product_price']}}</h2>
+
                         </td>
                         <td>
-                            <h2>{{$cart->quantity}}</h2>
+                            <h2>{{$product['quantity']}}</h2>
                         </td>
-                        <td><h2>{{$cart->size}}</h2></td>
                         <td>
-                            <form action="{{url('cartDelete',$cart->product_id)}}" method="post">
-                                <input type="hidden" name="size" value="{{$cart->size}}">
+                            <form action="" method="post">
+                                <input type="hidden" name="size" value="">
                                 @csrf
                                 <button type="submit"><i class="ti-close"></i></button>
                             </form>
                         </td>
                         <td>
-                            @switch($cart)
-                                @case($cart->size =='1.5LITRES')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price1500*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='4.5LITRES')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price4500*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='5LITRES')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price5000*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='1LITRE')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='750ML')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price750*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='500ML')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price500*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='350ML')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price350*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='330ML')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price330*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='375ML')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price375*$cart->quantity}}</h2>
-                                @break
-                                @case($cart->size =='250ML')
-                                <h2 class="td-color">Ksh: {{$cart->product->product_price250*$cart->quantity}}</h2>
-                                @break
-                        @endswitch
+
+                                <h2 class="td-color">Ksh: {{$product['item']['product_price']*$product['quantity']}}</h2>
+
                     </tr>
                     </tbody>
                     @endforeach
+                        @endif
                 </table>
                 <table class="table cart-table table-responsive-md">
                     <tfoot>
                     <tr>
                         <td>total price :</td>
                         <td>
-                            <h2>Ksh: {{$totalSum}}</h2></td>
+                            <h2>Ksh: {{$totalPrice}}</h2></td>
                     </tr>
                     </tfoot>
                 </table>

@@ -32,6 +32,7 @@ class RegisterCustomOneController extends Controller
         $register = User::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),
+            'phone'=>$request->input('phone'),
             'location'=>$request->input('location'),
             'password' => Hash::make($request['password']),
         ]);

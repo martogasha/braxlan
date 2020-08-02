@@ -40,7 +40,7 @@ class LoginCustomOneController extends Controller
 
         }
         else{
-            return redirect(url('login'))->with('error', 'CREDENTIALS DOES NOT MATCH');
+            return redirect(url('loginUser'))->with('error', 'CREDENTIALS DOES NOT MATCH');
         }
     }
 }

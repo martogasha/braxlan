@@ -45,17 +45,7 @@
                                         <div class="col-xl-3 xl-50 col-sm-6 col-3">
                                             <ul class="file-upload-product">
                                                 <li><input class="upload" name="product_image" type="file"></li>
-                                                <br>
-                                                <br>
-                                                <li><input class="upload" name="product_image1" type="file"></li>
-                                                <br>
-                                                <br>
-                                                <li><input class="upload" name="product_image2" type="file"></li>
-                                                <br>
-                                                <br>
-                                                <li><input class="upload" name="product_image3" type="file"></li>
-                                                <br>
-                                                <br>
+
                                             </ul>
                                         </div>
 
@@ -78,63 +68,7 @@
                                             <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price:</label>
                                             <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price" value="{{$getProduct->product_price}}" type="text">
                                         </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price750ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price750" value="{{$getProduct->product_price750}}"type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price500ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price500" value="{{$getProduct->product_price500}}"type="text">
-                                        </div>
 
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price375ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price375" value="{{$getProduct->product_price375}}"type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price350ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price350" value="{{$getProduct->product_price350}}"type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price330ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price330" value="{{$getProduct->product_price330}}"type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price250ML :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price250" value="{{$getProduct->product_price250}}"type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price1.5L :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price1500" value="{{$getProduct->product_price1500}}"type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price4.5L :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price4500" value="{{$getProduct->product_price4500}}"type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price5L :</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_price5000" value="{{$getProduct->product_price5000}}"type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour" type="text">
-                                        </div>
-                                        <div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour1</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour1" type="text">
-                                        </div><div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour2</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour2" type="text">
-                                        </div><div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour3</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour3" type="text">
-                                        </div><div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour4</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour4" type="text">
-                                        </div><div class="form-group mb-3 row">
-                                            <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Flavour5</label>
-                                            <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name="product_flavour5" type="text">
-                                        </div>
                                     <div class="form">
                                         <div class="form-group row">
                                             <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>

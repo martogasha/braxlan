@@ -25,20 +25,12 @@
                                     <div><img src="{{asset('uploads/product/'.$productDetail->product_image2)}}" alt="" class="img-fluid  image_zoom_cls-2"></div>
                                     <div><img src="{{asset('uploads/product/'.$productDetail->product_image3)}}" alt="" class="img-fluid  image_zoom_cls-3"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12 p-0">
-                                        <div class="slider-nav">
-                                            <div><img src="{{asset('uploads/product/'.$productDetail->product_image)}}" alt="" class="img-fluid  image_zoom_cls-0"></div>
-                                            <div><img src="{{asset('uploads/product/'.$productDetail->product_image1)}}" alt="" class="img-fluid  image_zoom_cls-1"></div>
-                                            <div><img src="{{asset('uploads/product/'.$productDetail->product_image2)}}" alt="" class="img-fluid  image_zoom_cls-2"></div>
-                                            <div><img src="{{asset('uploads/product/'.$productDetail->product_image3)}}" alt="" class="img-fluid  image_zoom_cls-3"></div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="col-lg-6 rtl-text">
                                 <div class="product-right">
                                     <h2>{{$productDetail->product_name}}</h2>
+                                    <h3>Ksh: {{$productDetail->product_price}}</h3>
                                     <ul class="color-variant">
                                         <li class="bg-light0"></li>
                                         <li class="bg-light1"></li>
@@ -52,67 +44,6 @@
                                                 <input type="text" name="quantity" class="form-control input-number" value="1" id="quantity"> <span class="input-group-prepend"><button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""><i class="ti-angle-right"></i></button></span></div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 form-group">
-                                        <label for="exampleFormControlSelect1">Size:</label>
-                                        <select class="form-control" name="size">
-                                            @if(isset($productDetail->product_price5000))
-                                            <option value="5LITRES">5Litres Ksh: {{$productDetail->product_price5000}}</option>
-                                            @endif
-                                            @if(isset($productDetail->product_price4500))
-                                            <option value="4.5LITRES">4.5Litres Ksh: {{$productDetail->product_price4500}}</option>
-                                                @endif
-
-                                            @if(isset($productDetail->product_price1500))
-                                            <option value="1.5LITRES">1.5Litres Ksh: {{$productDetail->product_price1500}}</option>
-                                                @endif
-                                            @if(isset($productDetail->product_price))
-                                            <option value="1LITRE">1LITRE Ksh: {{$productDetail->product_price}}</option>
-                                                @endif
-                                            @if(isset($productDetail->product_price750))
-                                            <option value="750ML">750ML Ksh: {{$productDetail->product_price750}}</option>
-                                                @endif
-                                            @if(isset($productDetail->product_price500))
-                                            <option value="500ML">500ML Ksh: {{$productDetail->product_price500}}</option>
-                                                @endif
-                                            @if(isset($productDetail->product_price375))
-                                            <option value="375ML">375ML Ksh: {{$productDetail->product_price375}}</option>
-                                                @endif
-                                            @if(isset($productDetail->product_price350))
-                                            <option value="350ML">350ML Ksh: {{$productDetail->product_price350}}</option>
-                                                @endif
-                                            @if(isset($productDetail->product_price330))
-                                            <option value="330ML">330ML Ksh: {{$productDetail->product_price330}}</option>
-                                                @endif
-                                            @if(isset($productDetail->product_price250))
-                                             <option value="250ML">250ML Ksh: {{$productDetail->product_price250}}</option>
-                                                @endif
-                                        </select>
-                                    </div>
-                                    @if($productDetail->product_flavour)
-                                        <div class="col-md-12 form-group">
-                                            <label for="exampleFormControlSelect1">Flavour:</label>
-                                            <select class="form-control" name="flavour">
-                                                @if(isset($productDetail->product_flavour))
-                                                    <option value="{{$productDetail->product_flavour}}">{{$productDetail->product_flavour}}</option>
-                                                @endif
-                                                @if(isset($productDetail->product_flavour1))
-                                                    <option value="{{$productDetail->product_flavour1}}">{{$productDetail->product_flavour1}}</option>
-                                                @endif
-                                                @if(isset($productDetail->product_flavour2))
-                                                    <option value="{{$productDetail->product_flavour2}}">{{$productDetail->product_flavour2}}</option>
-                                                @endif
-                                                @if(isset($productDetail->product_flavour3))
-                                                    <option value="{{$productDetail->product_flavour3}}">{{$productDetail->product_flavour3}}</option>
-                                                @endif
-                                                @if(isset($productDetail->product_flavour4))
-                                                    <option value="{{$productDetail->product_flavour4}}">{{$productDetail->product_flavour4}}</option>
-                                                @endif
-                                                @if(isset($productDetail->product_flavour5))
-                                                    <option value="{{$productDetail->product_flavour5}}">{{$productDetail->product_flavour5}}</option>
-                                                @endif
-                                            </select>
-                                        </div>
-                                    @endif
 
                                         <input type="hidden" name="productId" value="{{$productDetail->id}}">
                                         <div class="product-buttons"><a href="javascript:document.getElementById('formCart').submit();" class="btn btn-normal">Add to Cart</a>

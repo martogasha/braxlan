@@ -1,7 +1,7 @@
 @include('CPartials.header')
 <title>Checkout</title>
 @include('flash-message')
-@if($totalSum<500)
+@if($totalPrice<500)
 <div class="alert alert-danger" role="alert">
     ORDER BELOW KSH:500 WILL BE CHARGED DELIVERY FEE OF KSH:100
 </div>
@@ -19,23 +19,25 @@
                             <form action="{{url('placeOrder')}}" method="post" id="placeOrder">
                                 @csrf
                             <div class="theme-form">
+                                @if(isset($user))
                                 <div class="row check-out ">
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Name</label>
-                                        <input type="text" name="name" id="name" placeholder="" required="">
+                                        <input type="text" name="name" id="name" value="{{$user->name}}" placeholder="" required="">
 
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Phone</label>
-                                        <input type="text" name="phone" value="" placeholder="" required>
+                                        <input type="text" name="phone" value="{{$user->phone}}" placeholder="" required>
 
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Location</label>
-                                        <input type="text" name="location" value=""  placeholder="" required>
+                                        <input type="text" name="location" value="{{$user->location}}"  placeholder="" required>
 
                                     </div>
                                 </div>
+                                    @endif
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12 col-xs-12">
@@ -46,55 +48,26 @@
                                     </div>
                                     <ul class="qty">
                                         @foreach($checkouts as $checkout)
-                                        <li>{{$checkout->product->product_name}} × {{$checkout->quantity}}
-                                            @switch($checkout)
-                                                @case($checkout->size=='1LITRE')
-                                                <span>Ksh: {{$checkout->product->product_price*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='1.5LITRES')
-                                                <span>Ksh: {{$checkout->product->product_price1500*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='4.5LITRES')
-                                                <span>Ksh: {{$checkout->product->product_price4500*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='5LITRES')
-                                            <span>Ksh: {{$checkout->product->product_price5000*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='750ML')
-                                                <span>Ksh: {{$checkout->product->product_price750*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='500ML')
-                                                <span>Ksh: {{$checkout->product->product_price500*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='350ML')
-                                                <span>Ksh: {{$checkout->product->product_price350*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='330ML')
-                                                <span>Ksh: {{$checkout->product->product_price330*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='375ML')
-                                                <span>Ksh: {{$checkout->product->product_price375*$checkout->quantity}}</span>
-                                                @break
-                                                @case($checkout->size=='250ML')
-                                                <span>Ksh: {{$checkout->product->product_price250*$checkout->quantity}}</span>
-                                                @break
-                                            @endswitch
+                                        <li>{{$checkout['item']['product_name']}}
+
+                                                <span>Ksh: {{$checkout['item']['product_price']*$checkout['quantity']}}</span>
+
                                         </li>
                                         @endforeach
                                     </ul>
                                     <ul class="sub-total">
-                                        <li>Subtotal <span class="count">Ksh: {{$totalSum}}</span></li>
-                                        @if($totalSum < 500)
+                                        <li>Subtotal <span class="count">Ksh: {{$totalPrice}}</span></li>
+                                        @if($totalPrice < 500)
                                         <li>Delivery Fee <span class="count">Ksh: 100</span></li>
                                         @else
                                             <li>Delivery Fee <span class="count">Ksh: Free</span></li>
                                         @endif
                                     </ul>
                                     <ul class="total">
-                                        @if($totalSum < 500)
-                                        <li>Total <span class="count" style="color: #0b0b0b">Ksh: {{$totalSum+100}}</span></li>
+                                        @if($totalPrice < 500)
+                                        <li>Total <span class="count" style="color: #0b0b0b">Ksh: {{$totalPrice+100}}</span></li>
                                         @else
-                                            <li>Total <span class="count" style="color: #0b0b0b">Ksh: {{$totalSum}}</span></li>
+                                            <li>Total <span class="count" style="color: #0b0b0b">Ksh: {{$totalPrice}}</span></li>
 
                                         @endif
                                     </ul>

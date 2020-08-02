@@ -35,9 +35,8 @@
                         </div>
                         <div class="col-3 order_detail">
                             <div>
-                                <h4>Size</h4>
-                                <h5>{{$order->size}}</h5></div>
-
+                                <h4>Price</h4>
+                                <h5>{{$order->product->product_price}}</h5></div>
                         </div>
                         <div class="col-3 order_detail">
                             <div>
@@ -47,20 +46,8 @@
                         <div class="col-3 order_detail">
                             <div>
                                 <h4>Total</h4>
-                                @switch($order)
-                                    @case($order->size=='1LITRE')
+
                                     <h5>Ksh: <b>{{$order->product->product_price*$order->quantity}}</b></h5>
-                                    @break
-                                    @case($order->size=='750ML')
-                                    <h5>Ksh: <b>{{$order->product->product_price750*$order->quantity}}</b></h5>
-                                    @break
-                                    @case($order->size=='375ML')
-                                    <h5>Ksh: <b>{{$order->product->product_price375*$order->quantity}}</b></h5>
-                                    @break
-                                    @case($order->size=='250ML')
-                                    <h5>Ksh: <b>{{$order->product->product_price250*$order->quantity}}</b></h5>
-                                    @break
-                                @endswitch
 
                             </div>
                         </div>

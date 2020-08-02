@@ -59,7 +59,7 @@
                                     </div>
                                 </td>
                                 <td><span class="badge badge-secondary">{{$comp->order_status}}</span></td>
-                                <td>{{$comp->customer->name}}</td>
+                                <td>{{$comp->user->name}}</td>
                                 <td><span class="badge badge-success">{{$comp->order_stats}}</span></td>
                                 <td>{{$comp->created_at->format('m/d/y')}}</td>
                                 <td>{{$comp->product->product_price}}</td>

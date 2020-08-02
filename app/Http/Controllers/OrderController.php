@@ -7,73 +7,29 @@ use App\Checkout;
 use App\Customer;
 use App\Helpers\UserSystemInfoHelper;
 use App\Order;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
     public function index(){
-        $getIp = UserSystemInfoHelper::get_ip();
-        $orders = Order::where('ip', $getIp)->where('order_stats','Awaiting Confirmation')->get();
-            $orderSums = Order::where('ip', $getIp)->where('order_stats','Awaiting Confirmation')->get();
-        $customer = Customer::where('ip', $getIp)->first();
+        $orders = Order::where('user_id', Auth::id())->where('order_stats','Awaiting Confirmation')->get();
+            $orderSums = Order::where('user_id', Auth::id())->where('order_stats','Awaiting Confirmation')->get();
+        $customer = User::where('id', Auth::id())->first();
 
 
 
         $totalSum=0;
 
             foreach ($orderSums as $orderSum){
-                switch ($orderSum){
-                    case($orderSum->size=='1.5LITRES'):
-                        $sum = $orderSum->product->product_price1500;
-                        $quant = $orderSum->quantity;
 
-                        $total = $sum * $quant;
-                        $totalSum += $total;
-                        break;
-                    case($orderSum->size=='4.5LITRES'):
-                        $sum = $orderSum->product->product_price4500;
-                        $quant = $orderSum->quantity;
-
-                        $total = $sum * $quant;
-                        $totalSum += $total;
-                        break;
-                    case($orderSum->size=='5LITRES'):
-                        $sum = $orderSum->product->product_price5000;
-                        $quant = $orderSum->quantity;
-
-                        $total = $sum * $quant;
-                        $totalSum += $total;
-                        break;
-                    case($orderSum->size=='1LITRE'):
                         $sum = $orderSum->product->product_price;
                         $quant = $orderSum->quantity;
 
                         $total = $sum * $quant;
                         $totalSum += $total;
-                        break;
-                    case ($orderSum->size=='750ML'):
-                        $sum = $orderSum->product->product_price750;
-                        $quant = $orderSum->quantity;
 
-                        $total = $sum * $quant;
-                        $totalSum += $total;
-                        break;
-                    case ($orderSum->size=='375ML'):
-                        $sum = $orderSum->product->product_price375;
-                        $quant = $orderSum->quantity;
-
-                        $total = $sum * $quant;
-                        $totalSum += $total;
-                        break;
-                    case ($orderSum->size=='250ML'):
-                        $sum = $orderSum->product->product_price250;
-                        $quant = $orderSum->quantity;
-
-                        $total = $sum * $quant;
-                        $totalSum += $total;
-                        break;
-                }
             }
             return view('customer.orderSuccess', [
                 'orders' => $orders,
@@ -111,85 +67,19 @@ class OrderController extends Controller
         }
     }
     public function getOrderDetails(Request $request){
-        $checks = Order::where('customer_id',$request->order)->where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get();
+        $checks = Order::where('user_id',$request->order)->where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get();
         $totalSum=0;
         foreach ($checks as $check){
-            switch ($check){
-                case($check->size=='1.5LITRES'):
-                    $sum = $check->product->product_price1500;
-                    $quant = $check->quantity;
 
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case($check->size=='4.5LITRES'):
-                    $sum = $check->product->product_price4500;
-                    $quant = $check->quantity;
-
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case($check->size=='5LITRES'):
-                    $sum = $check->product->product_price5000;
-                    $quant = $check->quantity;
-
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case($check->size=='1LITRE'):
                     $sum = $check->product->product_price;
                     $quant = $check->quantity;
 
                     $total = $sum * $quant;
                     $totalSum += $total;
-                    break;
-                case ($check->size=='750ML'):
-                    $sum = $check->product->product_price750;
-                    $quant = $check->quantity;
-
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case ($check->size=='500ML'):
-                    $sum = $check->product->product_price500;
-                    $quant = $check->quantity;
-
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case ($check->size=='375ML'):
-                    $sum = $check->product->product_price375;
-                    $quant = $check->quantity;
-
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case ($check->size=='350ML'):
-                    $sum = $check->product->product_price350;
-                    $quant = $check->quantity;
-
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case ($check->size=='330ML'):
-                    $sum = $check->product->product_price330;
-                    $quant = $check->quantity;
-
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-                case ($check->size=='250ML'):
-                    $sum = $check->product->product_price250;
-                    $quant = $check->quantity;
-
-                    $total = $sum * $quant;
-                    $totalSum += $total;
-                    break;
-            }
         }
         if ($request->ajax()){
             $output="";
-            $orders = Order::where('customer_id',$request->order)->where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get();
+            $orders = Order::where('user_id',$request->order)->where('order_stats','Awaiting Confirmation')->orWhere('order_stats','Order on the Way')->get();
         }
         foreach ($orders as $order) {
             $output .= '<tbody>
@@ -200,8 +90,8 @@ class OrderController extends Controller
                                 <img src="uploads/product/'.$order->product->product_image.'" alt="" class="img-fluid img-30 mr-2 blur-up lazyloaded">
                             </div>
                         </td>
-                        <input type="hidden" name="userId" value='.$order->customer_id.' id="userId">
-                        <td>'.$order->product->product_name.'('.$order->flavour.')</td>
+                        <input type="hidden" name="userId" value='.$order->user_id.' id="userId">
+                        <td>'.$order->product->product_name.'</td>
                         <td><span class="badge badge-primary">Cash on Delivery</span></td>
                         <td><span class="badge badge-secondary">'.$order->size.'</span></td>
 

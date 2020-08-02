@@ -22,6 +22,10 @@
                                 <input type="text" class="form-control" name="email" id="email" placeholder="Email">
                             </div>
                             <div class="col-md-12 form-group">
+                                <label for="exampleFormControlSelect1">Phone:</label>
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone">
+                            </div>
+                            <div class="col-md-12 form-group">
                                 <label for="exampleFormControlSelect1">Location:</label>
                                 <input type="text" class="form-control" name="location" id="location" placeholder="Location">
                             </div>
