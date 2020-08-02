@@ -13,17 +13,17 @@ class ProductController extends Controller
     public function index()
     {
             $whiskys = Product::where('product_category', 'whisky')->inRandomOrder()->get();
-            $beers = Product::where('product_category', 'beer')->get();
+            $beers = Product::where('product_category', 'beer')->inRandomOrder()->get();
             $vodkas = Product::where('product_category', 'vodka')->inRandomOrder()->get();
-            $gins = Product::where('product_category', 'gin')->get();
-            $rums = Product::where('product_category', 'RUM')->get();
-             $brandys = Product::where('product_category', 'brandy')->get();
-        $liqs = Product::where('product_category', 'liq')->get();
-             $wines = Product::where('product_category', 'wines')->get();
-            $softs = Product::where('product_category', 'soft')->get();
-            $extras = Product::where('product_category', 'extra')->get();
+            $gins = Product::where('product_category', 'gin')->inRandomOrder()->get();
+            $rums = Product::where('product_category', 'RUM')->inRandomOrder()->get();
+             $brandys = Product::where('product_category', 'brandy')->inRandomOrder()->get();
+        $liqs = Product::where('product_category', 'liq')->inRandomOrder()->get();
+             $wines = Product::where('product_category', 'wines')->inRandomOrder()->get();
+            $softs = Product::where('product_category', 'soft')->inRandomOrder()->get();
+            $extras = Product::where('product_category', 'extra')->inRandomOrder()->get();
             $mostSolds = Product::where('product_category1', 'mostSold')->inRandomOrder()->get();
-            $under1000s = Product::where('product_price','<', 1000)->get();
+            $under1000s = Product::where('product_price','<', 1000)->inRandomOrder()->get();
             $poster = Poster::where('poster_category', 'first')->first();
             $poster2 = Poster::where('poster_category', 'second')->first();
             $poster3 = Poster::where('poster_category', 'third')->first();

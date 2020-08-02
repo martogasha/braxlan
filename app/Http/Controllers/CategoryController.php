@@ -8,23 +8,23 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function whisky(){
-        $whiskys = Product::where('product_category','whisky')->get();
-        $newProducts = Product::where('product_category3','trending')->get();
+        $whiskys = Product::where('product_category','whisky')->inRandomOrder()->get();
+        $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
         return view('customer.whisky',[
             'whiskys'=>$whiskys,
             'newProducts'=>$newProducts
         ]);
     }
     public function liqs(){
-        $liqs = Product::where('product_category','liq')->get();
-        $newProducts = Product::where('product_category3','trending')->get();
+        $liqs = Product::where('product_category','liq')->inRandomOrder()->get();
+        $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
         return view('customer.liqs',[
             'liqs'=>$liqs,
             'newProducts'=>$newProducts
         ]);
     }
     public function tequila(){
-        $teqs = Product::where('product_category','tequila')->get();
+        $teqs = Product::where('product_category','tequila')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
         return view('customer.tequila',[
             'teqs'=>$teqs,
@@ -89,7 +89,7 @@ class CategoryController extends Controller
         return response($output);
     }
     public function beer(){
-        $beers = Product::where('product_category','beer')->get();
+        $beers = Product::where('product_category','beer')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
         return view('customer.beer',[
             'beers'=>$beers,
@@ -148,7 +148,7 @@ class CategoryController extends Controller
         return response($output);
     }
     public function vodka(){
-        $vodkas = Product::where('product_category','vodka')->get();
+        $vodkas = Product::where('product_category','vodka')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
 
         return view('customer.vodka',[
@@ -223,7 +223,7 @@ class CategoryController extends Controller
     }
 
     public function gin(){
-        $gins = Product::where('product_category','gin')->get();
+        $gins = Product::where('product_category','gin')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
         return view('customer.gin',[
             'gins'=>$gins,
@@ -231,7 +231,7 @@ class CategoryController extends Controller
         ]);
     }
     public function brandy(){
-        $brandys = Product::where('product_category','brandy')->get();
+        $brandys = Product::where('product_category','brandy')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
         return view('customer.brandy',[
             'brandys'=>$brandys,
@@ -290,7 +290,7 @@ class CategoryController extends Controller
         return response($output);
     }
     public function rum(){
-        $rums = Product::where('product_category','rum')->get();
+        $rums = Product::where('product_category','rum')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
         return view('customer.rum',[
             'rums'=>$rums,
@@ -350,7 +350,7 @@ class CategoryController extends Controller
     }
 
     public function wine(){
-        $wines = Product::where('product_category','wines')->get();
+        $wines = Product::where('product_category','wines')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
         return view('customer.wines',[
             'wines'=>$wines,
@@ -416,7 +416,7 @@ class CategoryController extends Controller
     }
 
     public function soft(){
-        $softs = Product::where('product_category','soft')->get();
+        $softs = Product::where('product_category','soft')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
         return view('customer.soft',[
             'softs'=>$softs,
@@ -482,8 +482,8 @@ class CategoryController extends Controller
     }
 
     public function extra(){
-        $extras = Product::where('product_category','extra')->get();
-        $newProducts = Product::where('product_category3','trending')->get();
+        $extras = Product::where('product_category','extra')->inRandomOrder()->get();
+        $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
         return view('customer.extra',[
             'extras'=>$extras,
             'newProducts'=>$newProducts
@@ -543,14 +543,14 @@ class CategoryController extends Controller
 
 
     public function mostSold(){
-        $mostSolds = Product::where('product_category1','mostSold')->get();
+        $mostSolds = Product::where('product_category1','mostSold')->inRandomOrder()->get();
         return view('customer.mostSold',[
             'mostSolds'=>$mostSolds
         ]);
     }
     public function under1000(){
-        $under1000s = Product::where('product_category2','under1000')->get();
-        $newProducts = Product::where('product_category3','trending')->get();
+        $under1000s = Product::where('product_price','<',1000)->inRandomOrder()->get();
+        $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
         return view('customer.under1000',[
             'under1000s'=>$under1000s,
             'newProducts'=>$newProducts
