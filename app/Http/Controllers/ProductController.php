@@ -22,8 +22,8 @@ class ProductController extends Controller
              $wines = Product::where('product_category', 'wines')->get();
             $softs = Product::where('product_category', 'soft')->get();
             $extras = Product::where('product_category', 'extra')->get();
-            $mostSolds = Product::where('product_category1', 'mostSold')->get();
-            $under1000s = Product::where('product_category2', 'under1000')->get();
+            $mostSolds = Product::where('product_category1', 'mostSold')->inRandomOrder()->get();
+            $under1000s = Product::where('product_price','<', 1000)->get();
             $poster = Poster::where('poster_category', 'first')->first();
             $poster2 = Poster::where('poster_category', 'second')->first();
             $poster3 = Poster::where('poster_category', 'third')->first();
