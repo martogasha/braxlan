@@ -14,7 +14,7 @@ class ProductController extends Controller
     {
             $whiskys = Product::where('product_category', 'whisky')->inRandomOrder()->get();
             $beers = Product::where('product_category', 'beer')->get();
-            $vodkas = Product::where('product_category', 'vodka')->get();
+            $vodkas = Product::where('product_category', 'vodka')->inRandomOrder()->get();
             $gins = Product::where('product_category', 'gin')->get();
             $rums = Product::where('product_category', 'RUM')->get();
              $brandys = Product::where('product_category', 'brandy')->get();
