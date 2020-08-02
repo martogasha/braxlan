@@ -119,31 +119,9 @@
                                                                             <a href="#">
                                                                                 <h6 class="price-title">
                                                                                     {{$gin->product_name}}.
-                                                                                    @if(isset($gin->product_flavour))
-                                                                                        <br>
-                                                                                        <h6 class="text-dark"><b>FLAVOURS</b></h6>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_flavour))
-                                                                                        {{$gin->product_flavour}}
-                                                                                    @endif
-                                                                                    <br>
-                                                                                    @if(isset($gin->product_flavour1))
-                                                                                        {{$gin->product_flavour1}}
-                                                                                    @endif
-                                                                                    <br>
-                                                                                    @if(isset($gin->product_flavour2))
-                                                                                        {{$gin->product_flavour2}}
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_flavour3))
-                                                                                        {{$gin->product_flavour3}}
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_flavour4))
-                                                                                        {{$gin->product_flavour4}}
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_flavour5))
-                                                                                        {{$gin->product_flavour5}}
-                                                                                    @endif
+
                                                                                 </h6>
+                                                                                <br>
                                                                             </a>
                                                                         </div>
                                                                         <div class="detail-right">
@@ -151,36 +129,8 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    @if(isset($gin->product_price5000))
-                                                                                        5Litres Ksh: {{$gin->product_price750}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price4500))
-                                                                                        4.5Litres Ksh: {{$gin->product_price4500}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price1500))
-                                                                                        1.5Litres Ksh: {{$gin->product_price1500}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price))
-                                                                                        1Litre Ksh: {{$gin->product_price}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price750))
-                                                                                        750ML Ksh: {{$gin->product_price750}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price500))
-                                                                                        500ML Ksh: {{$gin->product_price500}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price375))
-                                                                                        375ML Ksh: {{$gin->product_price375}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price350))
-                                                                                        350ML Ksh: {{$gin->product_price350}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price330))
-                                                                                        330ML Ksh: {{$gin->product_price330}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($gin->product_price250))
-                                                                                        250ML Ksh: {{$gin->product_price250}}<br>
-                                                                                    @endif
+                                                                                         Ksh: {{$gin->product_price}}<br>
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>

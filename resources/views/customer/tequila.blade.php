@@ -119,31 +119,8 @@
                                                                             <a href="#">
                                                                                 <h6 class="price-title">
                                                                                     {{$teq->product_name}}.
-                                                                                    @if(isset($teq->product_flavour))
-                                                                                        <br>
-                                                                                        <h6 class="text-dark"><b>FLAVOURS</b></h6>
-                                                                                    @endif
-                                                                                    @if(isset($teq->product_flavour))
-                                                                                        {{$teq->product_flavour}}
-                                                                                    @endif
-                                                                                    <br>
-                                                                                    @if(isset($teq->product_flavour1))
-                                                                                        {{$teq->product_flavour1}}
-                                                                                    @endif
-                                                                                    <br>
-                                                                                    @if(isset($teq->product_flavour2))
-                                                                                        {{$teq->product_flavour2}}
-                                                                                    @endif
-                                                                                    @if(isset($teq->product_flavour3))
-                                                                                        {{$teq->product_flavour3}}
-                                                                                    @endif
-                                                                                    @if(isset($teq->product_flavour4))
-                                                                                        {{$teq->product_flavour4}}
-                                                                                    @endif
-                                                                                    @if(isset($teq->product_flavour5))
-                                                                                        {{$teq->product_flavour5}}
-                                                                                    @endif
                                                                                 </h6>
+                                                                                <br>
                                                                             </a>
                                                                         </div>
                                                                         <div class="detail-right">
@@ -151,40 +128,8 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    @if($teq->product_price)
                                                                                         Ksh: {{$teq->product_price}}
-                                                                                    @else
-                                                                                        @if(isset($teq->product_price5000))
-                                                                                            5Litres Ksh: {{$teq->product_price750}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price4500))
-                                                                                            4.5Litres Ksh: {{$teq->product_price4500}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price1500))
-                                                                                            1.5Litres Ksh: {{$teq->product_price1500}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price))
-                                                                                            1Litre Ksh: {{$teq->product_price}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price750))
-                                                                                            750ML Ksh: {{$teq->product_price750}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price500))
-                                                                                            500ML Ksh: {{$teq->product_price500}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price375))
-                                                                                            375ML Ksh: {{$teq->product_price375}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price350))
-                                                                                            350ML Ksh: {{$teq->product_price350}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price330))
-                                                                                            330ML Ksh: {{$teq->product_price330}}<br>
-                                                                                        @endif
-                                                                                        @if(isset($teq->product_price250))
-                                                                                            250ML Ksh: {{$teq->product_price250}}<br>
-                                                                                        @endif
-                                                                                    @endif
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>

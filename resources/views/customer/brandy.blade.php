@@ -120,31 +120,8 @@
                                                                             <a href="#">
                                                                                 <h6 class="price-title">
                                                                                     {{$brandy->product_name}}.
-                                                                                    @if(isset($brandy->product_flavour))
-                                                                                        <br>
-                                                                                        <h6 class="text-dark"><b>FLAVOURS</b></h6>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_flavour))
-                                                                                        {{$brandy->product_flavour}}
-                                                                                    @endif
-                                                                                    <br>
-                                                                                    @if(isset($brandy->product_flavour1))
-                                                                                        {{$brandy->product_flavour1}}
-                                                                                    @endif
-                                                                                    <br>
-                                                                                    @if(isset($brandy->product_flavour2))
-                                                                                        {{$brandy->product_flavour2}}
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_flavour3))
-                                                                                        {{$brandy->product_flavour3}}
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_flavour4))
-                                                                                        {{$brandy->product_flavour4}}
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_flavour5))
-                                                                                        {{$brandy->product_flavour5}}
-                                                                                    @endif
                                                                                 </h6>
+                                                                                <br>
                                                                             </a>
                                                                         </div>
                                                                         <div class="detail-right">
@@ -152,36 +129,8 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                    @if(isset($brandy->product_price5000))
-                                                                                        5Litres Ksh: {{$brandy->product_price750}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price4500))
-                                                                                        4.5Litres Ksh: {{$brandy->product_price4500}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price1500))
-                                                                                        1.5Litres Ksh: {{$brandy->product_price1500}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price))
-                                                                                        1Litre Ksh: {{$brandy->product_price}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price750))
-                                                                                        750ML Ksh: {{$brandy->product_price750}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price500))
-                                                                                        500ML Ksh: {{$brandy->product_price500}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price375))
-                                                                                        375ML Ksh: {{$brandy->product_price375}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price350))
-                                                                                        350ML Ksh: {{$brandy->product_price350}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price330))
-                                                                                        330ML Ksh: {{$brandy->product_price330}}<br>
-                                                                                    @endif
-                                                                                    @if(isset($brandy->product_price250))
-                                                                                        250ML Ksh: {{$brandy->product_price250}}<br>
-                                                                                    @endif
+                                                                                         Ksh: {{$brandy->product_price}}<br>
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>

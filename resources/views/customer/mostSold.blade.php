@@ -121,31 +121,8 @@
                                                                     <a href="#">
                                                                         <h6 class="price-title">
                                                                             {{$mostSold->product_name}}.
-                                                                            @if(isset($mostSold->product_flavour))
-                                                                                <br>
-                                                                                <h6 class="text-dark"><b>FLAVOURS</b></h6>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_flavour))
-                                                                                {{$mostSold->product_flavour}}
-                                                                            @endif
-                                                                            <br>
-                                                                            @if(isset($mostSold->product_flavour1))
-                                                                                {{$mostSold->product_flavour1}}
-                                                                            @endif
-                                                                            <br>
-                                                                            @if(isset($mostSold->product_flavour2))
-                                                                                {{$mostSold->product_flavour2}}
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_flavour3))
-                                                                                {{$mostSold->product_flavour3}}
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_flavour4))
-                                                                                {{$mostSold->product_flavour4}}
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_flavour5))
-                                                                                {{$mostSold->product_flavour5}}
-                                                                            @endif
                                                                         </h6>
+                                                                        <br>
                                                                     </a>
                                                                 </div>
                                                                 <div class="detail-right">
@@ -153,36 +130,8 @@
                                                                     </div>
                                                                     <div class="price">
                                                                         <div class="price">
-                                                                            @if(isset($mostSold->product_price5000))
-                                                                                5Litres Ksh: {{$mostSold->product_price750}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price4500))
-                                                                                4.5Litres Ksh: {{$mostSold->product_price4500}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price1500))
-                                                                                1.5Litres Ksh: {{$mostSold->product_price1500}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price))
-                                                                                1Litre Ksh: {{$mostSold->product_price}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price750))
-                                                                                750ML Ksh: {{$mostSold->product_price750}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price500))
-                                                                                500ML Ksh: {{$mostSold->product_price500}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price375))
-                                                                                375ML Ksh: {{$mostSold->product_price375}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price350))
-                                                                                350ML Ksh: {{$mostSold->product_price350}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price330))
-                                                                                330ML Ksh: {{$mostSold->product_price330}}<br>
-                                                                            @endif
-                                                                            @if(isset($mostSold->product_price250))
-                                                                                250ML Ksh: {{$mostSold->product_price250}}<br>
-                                                                            @endif
+                                                                                 Ksh: {{$mostSold->product_price}}<br>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
