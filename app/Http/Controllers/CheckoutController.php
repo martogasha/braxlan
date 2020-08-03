@@ -70,7 +70,7 @@ class CheckoutController extends Controller
 
 // Use the service
             $result = $sms->send([
-                'to' => '',
+                'to' => '0754238704',
                 'message' => 'Available Order ' . $phone . ''
             ]);
 
