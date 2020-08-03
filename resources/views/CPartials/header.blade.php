@@ -200,10 +200,10 @@
                                     </nav>
                                     <div class="collapse  nav-desk" id="navbarToggleExternalContent">
                                         <ul class="nav-cat title-font">
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/01.png')}}" alt="category-product"> <a href="{{url('whisky')}}">Whisky </a></li>
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/07.png')}}" alt="category-product"> <a href="{{url('beer')}}">Beer </a></li>
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/02.png')}}" alt="category-product"> <a href="{{url('vodka')}}">Vodka</a></li>
-                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/09.png')}}" alt="category-product"> <a href="{{url('gin')}}">Gin</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('whisky')}}">Whisky </a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('beer')}}">Beer </a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('vodka')}}">Vodka</a></li>
+                                            <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('gin')}}">Gin</a></li>
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('rum')}}">Rum</a></li>
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('wine')}}">Wines</a></li>
                                             <li> <img src="{{asset('assets/images/layout-1/nav-img/08.png')}}" alt="category-product"> <a href="{{url('softDrinks')}}">Soft Drink</a></li>
