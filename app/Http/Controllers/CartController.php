@@ -21,6 +21,7 @@ class CartController extends Controller
         $cart = new Cat($oldCart);
         return view('customer.cart', ['products'=>$cart->item,'totalPrice'=>$cart->totalPrice]);
     }
+
     public function header(){
         $getIp = UserSystemInfoHelper::get_ip();
         $count = Cart::where('ip',$getIp)->count();
@@ -34,6 +35,30 @@ class CartController extends Controller
         $cart = new Cat($oldCart);
         $cart->add($product , $product->id);
         $request->session()->put('cat',$cart);
+        return redirect()->back();
+    }
+    public function getReduceByOne($id){
+        $oldCart = Session::has('cat') ? Session::get('cat'):null;
+        $cart = new Cat($oldCart);
+        $cart->reduceByOne($id);
+        if (count($cart->item)>0) {
+            Session::put('cat', $cart);
+        }
+        else{
+            Session::forget('cat');
+        }
+        return redirect()->back();
+    }
+    public function removeItem($id){
+        $oldCart = Session::has('cat') ? Session::get('cat'):null;
+        $cart = new Cat($oldCart);
+        $cart->removeItem($id);
+        if (count($cart->item)>0) {
+            Session::put('cat', $cart);
+        }
+        else{
+            Session::forget('cat');
+        }
         return redirect()->back();
     }
     public function delete(Request $request,$id){

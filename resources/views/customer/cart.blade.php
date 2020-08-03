@@ -27,7 +27,7 @@
                     @foreach($products as $product)
                     <tbody>
                     <tr>
-                        <td><button class="btn btn-danger">Remove</button></td>
+                        <td><a href="{{url('cartRemove',$product['item']['id'])}}"><button class="btn btn-danger">Remove</button></a></td>
                         <td>
                             <a href="#"><img src="{{asset('uploads/product/'.$product['item']['product_image'])}}" alt="cart"  class=" "></a>
                         </td>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td><a href="#" class="icon"><i class="ti-close"></i></a></td>
+                        <td><a href="{{url('cartReduceByOne',$product['item']['id'])}}" class="icon"><i class="ti-close"></i></a></td>
                         <td>
                             <h2 class="td-color">Ksh: {{$product['item']['product_price']*$product['quantity']}}</h2></td>
                     </tr>

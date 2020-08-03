@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Cat;
 use App\Poster;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use function GuzzleHttp\Promise\all;
+use Session;
 
 class ProductController extends Controller
 {
@@ -23,10 +25,12 @@ class ProductController extends Controller
             $softs = Product::where('product_category', 'soft')->inRandomOrder()->get();
             $extras = Product::where('product_category', 'extra')->inRandomOrder()->get();
             $mostSolds = Product::where('product_category1', 'mostSold')->inRandomOrder()->get();
-            $under1000s = Product::where('product_price','<', 1000)->inRandomOrder()->get();
+            $under1000s = Product::where('product_price','<', 1000)->where('product_category','!=','soft')->inRandomOrder()->get();
             $poster = Poster::where('poster_category', 'first')->first();
             $poster2 = Poster::where('poster_category', 'second')->first();
             $poster3 = Poster::where('poster_category', 'third')->first();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
 
             return view('customer.index', [
                 'whiskys' => $whiskys,
@@ -43,7 +47,9 @@ class ProductController extends Controller
                 'under1000s' => $under1000s,
                 'poster' => $poster,
                 'poster2' => $poster2,
-                'poster3' => $poster3
+                'poster3' => $poster3,
+                'products'=>$cart->item,
+                'totalPrice'=>$cart->totalPrice
             ]);
     }
 
@@ -54,11 +60,14 @@ class ProductController extends Controller
         $search = $request->input('searchProduct');
         $searchProducts = Product::where('product_name','like',"%$search%")->get();
         $newProducts = Product::where('product_category3','trending')->get();
-
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
 
         return view('customer.shop',[
             'searchProducts'=>$searchProducts,
             'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
 
 
         ]);

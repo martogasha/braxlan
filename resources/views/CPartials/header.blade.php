@@ -159,23 +159,21 @@
                             </form>
                         </div>
                     </div>
-                    <div class="cart-block cart-hover-div">
+                    <div class="cart-block cart-hover-div" onclick="openCart()">
                         <div class="cart ">
                                     <span class="cart-product">{{\Illuminate\Support\Facades\Session::has('cat') ? \Illuminate\Support\Facades\Session::get('cat')->totalQty: ''}}</span>
                             <ul>
                                 <li class="mobile-cart  ">
-                                    <a href="{{url('cart')}}">
-                                        <i class="icon-shopping-cart "></i>
+                                    <a href="#">
+                                       <i class="icon-shopping-cart "></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <a href="{{url('cart')}}">
                         <div class="cart-item">
                             <h5>shopping</h5>
                             <h5>cart</h5>
                         </div>
-                        </a>
                     </div>
                     <div class="menu-nav">
               <span class="toggle-nav">

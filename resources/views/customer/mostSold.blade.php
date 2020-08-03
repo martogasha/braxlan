@@ -136,6 +136,18 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="icon-detail">
+                                                                <div class="icon-detail">
+                                                                    <form action="{{route('cart.store')}}" method="post">
+                                                                        @csrf
+                                                                        <input type="hidden" name="productId" value="{{$mostSold->id}}">
+                                                                        <button type="submit">
+                                                                            <i class="text-danger"><b>ADD TO CART</b></i>
+                                                                        </button>
+                                                                    </form>
+
+                                                                </div>
+                                                            </div>
 
                                                         </div>
                                                     </div>
@@ -176,6 +188,7 @@
     </div>
 </section>
 <!-- section End -->
+@include('CPartials.cart')
 @include('CPartials.settings')
 
 @include('CPartials.login')

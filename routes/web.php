@@ -61,6 +61,9 @@ Route::resource('poster','PosterController');
 Route::get('posterView','PosterController@poster');
 Route::post('PosterEdit/{id}','PosterController@update');
 Route::resource('cart','CartController');
+Route::get('cartReduceByOne/{id}','CartController@getReduceByOne');
+Route::get('cartRemove/{id}','CartController@removeItem');
+
 Route::resource('updateCart','CartController');
 Route::post('cartDelete/{id}','CartController@delete');
 Route::resource('checkout','CheckoutController');

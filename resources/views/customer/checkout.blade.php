@@ -104,6 +104,7 @@
         </div>
     </div>
 </section>
+@include('CPartials.cart')
 @include('CPartials.settings')
 <!-- section end -->
 @include('CPartials.footer1')

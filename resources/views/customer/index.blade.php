@@ -93,8 +93,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($mostSolds as $mostSold)
-                                <div>
-                                    <a href="{{url('productDetail',$mostSold->id)}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -103,39 +101,37 @@
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$mostSold->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
-                                            @if($mostSold->product_status==1)
-                                            <div class="on-sale1" style="color: #ff0520">
-                                                Out of Stock
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$mostSold->id}}">
+                                                    <button type="submit">
+                                                    <i class="text-danger"><b>ADD TO CART</b></i>
+                                                </button>
+                                                </form>
                                             </div>
-                                                @endif
                                         </div>
                                         <div class="product-detail detail-inline">
                                             <div class="detail-title">
                                                 <div class="detail-left">
+                                                    <a href="#">
                                                         <h6 class="price-title">
-                                                            {{$mostSold->product_name}}
+                                                            {{$mostSold->product_name}}.
                                                         </h6>
-                                                            <br>
+                                                    </a>
+                                                </div>
                                                 <div class="detail-right">
                                                     <div class="check-price">
                                                     </div>
                                                     <div class="price">
                                                         <div class="price">
-                                                            Ksh: {{$mostSold->product_price}}
+                                                            Ksh:{{$mostSold->product_price}}
                                                         </div>
                                                     </div>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="icon-detail">
-                                                <div class="row cart-buttons">
-                                                    <div class="col-12"><a href="{{url('checkout')}}" class="btn btn-normal ml-3">ADD TO CART</a></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
-                                </div>
                                 @endforeach
 
                             </div>
@@ -177,46 +173,46 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($liqs as $liq)
-                                    <div>
-                                        <a href="{{url('productDetail',$liq->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$liq->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($liq->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$liq->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($liq->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$liq->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$liq->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$liq->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$liq->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$liq->product_name}}
-                                                            </h6>
-                                                                <br>
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                             Ksh: {{$liq->product_price}}<br>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$liq->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
+
                                 @endforeach
 
                             </div>
@@ -2246,47 +2242,46 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($whiskys as $whisky)
-                                    <div>
-                                        <a href="{{url('productDetail',$whisky->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$whisky->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($whisky->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$whisky->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($whisky->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$whisky->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$whisky->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$whisky->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$whisky->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$whisky->product_name}}
-                                                            </h6>
-                                                                    <br>
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                            Ksh: {{$whisky->product_price}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$whisky->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
+
                                 @endforeach
 
                             </div>
@@ -4316,46 +4311,46 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($beers as $beer)
-                                    <div>
-                                        <a href="{{url('productDetail',$beer->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$beer->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($beer->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$beer->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($beer->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$beer->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$beer->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$beer->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$beer->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$beer->product_name}}.
-                                                            </h6>
-                                                            <br>
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                             Ksh: {{$beer->product_price}}<br>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$beer->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
+
                                 @endforeach
 
                             </div>
@@ -6392,46 +6387,44 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($vodkas as $vodka)
-                                    <div>
-                                        <a href="{{url('productDetail',$vodka->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$vodka->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($vodka->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$vodka->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($vodka->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$vodka->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$vodka->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$vodka->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$vodka->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$vodka->product_name}}.
-                                                            </h6>
-                                                            <br>
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                             Ksh: {{$vodka->product_price}}<br>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$vodka->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -8456,47 +8449,46 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($gins as $gin)
-                                    <div>
-                                        <a href="{{url('productDetail',$gin->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$gin->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($gin->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$gin->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($gin->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$gin->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$gin->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$gin->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$gin->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$gin->product_name}}
-                                                            </h6>
-                                                            <br>
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                             Ksh: {{$gin->product_price}}<br>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$gin->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
+
                                 @endforeach
                             </div>
                         </div>
@@ -10521,46 +10513,46 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($rums as $rum)
-                                    <div>
-                                        <a href="{{url('productDetail',$rum->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$rum->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($rum->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$rum->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($rum->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$rum->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$rum->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$rum->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$rum->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$rum->product_name}}
-                                                            </h6>
-                                                                    <br>
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                             Ksh: {{$rum->product_price}}<br>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$rum->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
+
                                 @endforeach
 
                             </div>
@@ -12584,46 +12576,44 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($brandys as $brandy)
-                                    <div>
-                                        <a href="{{url('productDetail',$brandy->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$brandy->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($brandy->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$brandy->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($brandy->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$brandy->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$brandy->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$brandy->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$brandy->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$brandy->product_name}}
-                                                            </h6>
-                                                                    <br>
-
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                             Ksh: {{$brandy->product_price}}<br>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$brandy->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -14648,47 +14638,44 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($wines as $wine)
-                                    <div>
-                                        <a href="{{url('productDetail',$wine->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$wine->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($wine->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$wine->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($wine->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$wine->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$wine->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$wine->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$wine->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$wine->product_name}}
-                                                            </h6>
-                                                                    <br>
-
-
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                             Ksh: {{$wine->product_price}}<br>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$wine->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -16713,43 +16700,44 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($softs as $soft)
-                                    <div>
-                                        <a href="{{url('productDetail',$soft->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$soft->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($soft->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$soft->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$soft->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$soft->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$soft->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$soft->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-
-                                                            <a href="#">
-                                                                <h6 class="price-title">
-                                                                    {{$soft->product_name}}
-                                                                </h6>
-                                                                <br>
-                                                            </a>
-                                                        </div>
-                                                        <div class="detail-right">
-                                                            <div class="check-price">
-                                                            </div>
-                                                            <div class="price">
-                                                                <div class="price">
-                                                                         Ksh: {{$soft->product_price}}
-                                                                </div>
-                                                            </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$soft->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -18780,77 +18768,46 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($under1000s as $under1000)
-                                    <div>
-                                        <a href="{{url('productDetail',$under1000->id)}}">
-                                            <div class="product-box">
-                                                <div class="product-imgbox">
-                                                    <div class="product-front">
-                                                        <img src="{{asset('uploads/product/'.$under1000->product_image)}}" class="img-fluid  " alt="product">
-                                                    </div>
-                                                    @if(isset($under1000->product_image1))
-                                                        <div class="product-back">
-                                                            <img src="{{asset('uploads/product/'.$under1000->product_image1)}}" class="img-fluid  " alt="product">
-                                                        </div>
-                                                    @endif
-                                                    @if($under1000->product_status==1)
-                                                        <div class="on-sale1" style="color: #ff0520">
-                                                            Out of Stock
-                                                        </div>
-                                                    @endif
+                                    <div class="product-box">
+                                        <div class="product-imgbox">
+                                            <div class="product-front">
+                                                <img src="{{asset('uploads/product/'.$under1000->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-back">
+                                                <img src="{{asset('uploads/product/'.$under1000->product_image)}}" class="img-fluid  " alt="product">
+                                            </div>
+                                            <div class="product-icon icon-inline">
+                                                <form action="{{route('cart.store')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="productId" value="{{$under1000->id}}">
+                                                    <button type="submit">
+                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-detail detail-inline">
+                                            <div class="detail-title">
+                                                <div class="detail-left">
+                                                    <a href="#">
+                                                        <h6 class="price-title">
+                                                            {{$under1000->product_name}}.
+                                                        </h6>
+                                                    </a>
                                                 </div>
-                                                <div class="product-detail detail-inline">
-                                                    <div class="detail-title">
-                                                        <div class="detail-left">
-                                                            <h6 class="price-title">
-                                                                {{$under1000->product_name}}
-                                                            </h6>
-                                                                    <br>
-
-                                                            <div class="detail-right">
-                                                                <div class="check-price">
-                                                                </div>
-                                                                <div class="price">
-                                                                    <div class="price">
-                                                                        @if(isset($under1000->product_price5000))
-                                                                            5Litres Ksh: {{$under1000->product_price750}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price4500))
-                                                                            4.5Litres Ksh: {{$under1000->product_price4500}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price1500))
-                                                                            1.5Litres Ksh: {{$under1000->product_price1500}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price))
-                                                                            1Litre Ksh: {{$under1000->product_price}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price750))
-                                                                            750ML Ksh: {{$under1000->product_price750}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price500))
-                                                                            500ML Ksh: {{$under1000->product_price500}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price375))
-                                                                            375ML Ksh: {{$under1000->product_price375}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price350))
-                                                                            350ML Ksh: {{$under1000->product_price350}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price330))
-                                                                            330ML Ksh: {{$under1000->product_price330}}<br>
-                                                                        @endif
-                                                                        @if(isset($under1000->product_price250))
-                                                                            250ML Ksh: {{$under1000->product_price250}}<br>
-                                                                        @endif
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                <div class="detail-right">
+                                                    <div class="check-price">
+                                                    </div>
+                                                    <div class="price">
+                                                        <div class="price">
+                                                            Ksh:{{$under1000->product_price}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
+
                                 @endforeach
                             </div>
                         </div>
@@ -20882,92 +20839,7 @@
 <!-- tap to top End -->
 
 <!-- Add to cart bar -->
-<div id="cart_side" class=" add_to_cart top">
-    <a href="javascript:void(0)" class="overlay" onclick="closeCart()"></a>
-    <div class="cart-inner">
-        <div class="cart_top">
-            <h3>my cart</h3>
-            <div class="close-cart">
-                <a href="javascript:void(0)" onclick="closeCart()">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-        <div class="cart_media">
-            <ul class="cart_product">
-                <li>
-                    <div class="media">
-                        <a href="#">
-                            <img alt="" class="mr-3" src="assets/images/layout-2/product/1.jpg">
-                        </a>
-                        <div class="media-body">
-                            <a href="#">
-                                <h4>item name</h4>
-                            </a>
-                            <h4>
-                                <span>1 x $ 299.00</span>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="close-circle">
-                        <a href="#">
-                            <i class="ti-trash" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="media">
-                        <a href="#">
-                            <img alt="" class="mr-3" src="assets/images/layout-2/product/a1.jpg">
-                        </a>
-                        <div class="media-body">
-                            <a href="#">
-                                <h4>item name</h4>
-                            </a>
-                            <h4>
-                                <span>1 x $ 299.00</span>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="close-circle">
-                        <a href="#">
-                            <i class="ti-trash" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="media">
-                        <a href="#"><img alt="" class="mr-3" src="assets/images/layout-2/product/1.jpg"></a>
-                        <div class="media-body">
-                            <a href="#">
-                                <h4>item name</h4>
-                            </a>
-                            <h4><span>1 x $ 299.00</span></h4>
-                        </div>
-                    </div>
-                    <div class="close-circle">
-                        <a href="#">
-                            <i class="ti-trash" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="cart_total">
-                <li>
-                    <div class="total">
-                        <h5>subtotal : <span>$299.00</span></h5>
-                    </div>
-                </li>
-                <li>
-                    <div class="buttons">
-                        <a href="{{url('cart')}}" class="btn btn-normal btn-xs view-cart">view cart</a>
-                        <a href="#" class="btn btn-normal btn-xs checkout">checkout</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+@include('CPartials.cart')
 <!-- Add to cart bar end-->
 
 <!--Newsletter modal popup start-->

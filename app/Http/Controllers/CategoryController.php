@@ -2,33 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Cat;
 use App\Product;
 use Illuminate\Http\Request;
+use Session;
 
 class CategoryController extends Controller
 {
     public function whisky(){
         $whiskys = Product::where('product_category','whisky')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.whisky',[
             'whiskys'=>$whiskys,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function liqs(){
         $liqs = Product::where('product_category','liq')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.liqs',[
             'liqs'=>$liqs,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function tequila(){
         $teqs = Product::where('product_category','tequila')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.tequila',[
             'teqs'=>$teqs,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function getWhisky(Request $request){
@@ -91,9 +105,13 @@ class CategoryController extends Controller
     public function beer(){
         $beers = Product::where('product_category','beer')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.beer',[
             'beers'=>$beers,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function getBeer(Request $request){
@@ -150,10 +168,13 @@ class CategoryController extends Controller
     public function vodka(){
         $vodkas = Product::where('product_category','vodka')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
-
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.vodka',[
             'vodkas'=>$vodkas,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function getVodka(Request $request){
@@ -225,17 +246,25 @@ class CategoryController extends Controller
     public function gin(){
         $gins = Product::where('product_category','gin')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.gin',[
             'gins'=>$gins,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function brandy(){
         $brandys = Product::where('product_category','brandy')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.brandy',[
             'brandys'=>$brandys,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function getGin(Request $request){
@@ -292,9 +321,13 @@ class CategoryController extends Controller
     public function rum(){
         $rums = Product::where('product_category','rum')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.rum',[
             'rums'=>$rums,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function getRum(Request $request){
@@ -352,9 +385,13 @@ class CategoryController extends Controller
     public function wine(){
         $wines = Product::where('product_category','wines')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.wines',[
             'wines'=>$wines,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+             'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function getWine(Request $request){
@@ -418,9 +455,13 @@ class CategoryController extends Controller
     public function soft(){
         $softs = Product::where('product_category','soft')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.soft',[
             'softs'=>$softs,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function getSoft(Request $request){
@@ -484,9 +525,13 @@ class CategoryController extends Controller
     public function extra(){
         $extras = Product::where('product_category','extra')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.extra',[
             'extras'=>$extras,
-            'newProducts'=>$newProducts
+            'newProducts'=>$newProducts,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function getExtra(Request $request){
@@ -544,15 +589,23 @@ class CategoryController extends Controller
 
     public function mostSold(){
         $mostSolds = Product::where('product_category1','mostSold')->inRandomOrder()->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.mostSold',[
-            'mostSolds'=>$mostSolds
+            'mostSolds'=>$mostSolds,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
         ]);
     }
     public function under1000(){
         $under1000s = Product::where('product_price','<',1000)->where('product_category','!=','soft')->inRandomOrder()->get();
         $newProducts = Product::where('product_category3','trending')->inRandomOrder()->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
         return view('customer.under1000',[
             'under1000s'=>$under1000s,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice,
             'newProducts'=>$newProducts
 
         ]);

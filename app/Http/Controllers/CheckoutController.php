@@ -27,6 +27,7 @@ class CheckoutController extends Controller
        $totalPrice = $cart->totalPrice;
             return view('customer.checkout', [
                 'checkouts'=>$cart->item,
+                'products'=>$cart->item,
                 'totalPrice' => $totalPrice,
                 'user'=>$user
             ]);
