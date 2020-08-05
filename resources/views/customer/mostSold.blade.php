@@ -1,5 +1,7 @@
 @include('CPartials.header')
 <title>Most Sold</title>
+@include('flash-message')
+
 
 <!-- breadcrumb start -->
 <!-- breadcrumb End -->

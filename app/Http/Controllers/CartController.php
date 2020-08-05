@@ -35,7 +35,7 @@ class CartController extends Controller
         $cart = new Cat($oldCart);
         $cart->add($product , $product->id);
         $request->session()->put('cat',$cart);
-        return redirect()->back();
+        return redirect()->back()->with('success','ITEM SUCCESSFULLY ADDED TO CART');
     }
     public function getReduceByOne($id){
         $oldCart = Session::has('cat') ? Session::get('cat'):null;
@@ -47,7 +47,7 @@ class CartController extends Controller
         else{
             Session::forget('cat');
         }
-        return redirect()->back();
+        return redirect()->back()->with('success','ITEM SUCCESSFULLY REMOVED TO CART');
     }
     public function removeItem($id){
         $oldCart = Session::has('cat') ? Session::get('cat'):null;
@@ -59,7 +59,7 @@ class CartController extends Controller
         else{
             Session::forget('cat');
         }
-        return redirect()->back();
+        return redirect()->back()->with('success','ITEM SUCCESSFULLY REMOVED TO CART');
     }
     public function delete(Request $request,$id){
         $getIp = UserSystemInfoHelper::get_ip();

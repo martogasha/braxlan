@@ -1,5 +1,6 @@
 @include('CPartials.header')
 <title>Under1000</title>
+@include('flash-message')
 
 <!-- breadcrumb start -->
 <!-- breadcrumb End -->

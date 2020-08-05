@@ -31,7 +31,7 @@
                         <td>
                             <a href="#"><img src="{{asset('uploads/product/'.$product['item']['product_image'])}}" alt="cart"  class=" "></a>
                         </td>
-                        <td><a href="#">cotton shirt</a>
+                        <td><a href="#">{{$product['item']['product_name']}}</a>
                             <div class="mobile-cart-content row">
                                 <div class="col-xs-3">
                                     <div class="qty-box">
