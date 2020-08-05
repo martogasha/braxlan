@@ -9,7 +9,12 @@
                     <h2>thank you</h2>
                     <p>Order is successfully placed will contact you shortly for confirmation</p>
                     <span class="badge badge-secondary" id="orderStatus">Awaiting Confirmation</span>
+                    <br>
+                    <br>
+                    <a href="{{'trackOrder'}}"><button class="btn btn-danger">Track Order</button></a>
+
                 </div>
+
             </div>
         </div>
     </div>
@@ -30,8 +35,8 @@
                         <div class="col-3"><img src="{{asset('uploads/product/'.$order->product->product_image)}}" alt="" class="img-fluid "></div>
                         <div class="col-3 order_detail">
                             <div>
-                                <h4>{{$order->product->product_name}}@if($order->flavour)({{$order->flavour}})@endif</h4>
-                                <h5>cotton shirt</h5></div>
+                                <h4>Name</h4>
+                                <h5>{{$order->product->product_name}}</h5></div>
                         </div>
                         <div class="col-3 order_detail">
                             <div>

@@ -21,14 +21,17 @@
                         </div>
                         <a href="javascript:document.getElementById('loginForm').submit();" class="btn btn-normal">Login</a>
                         <a class="float-right txt-default mt-2" href="{{url('password/reset')}}" id="fgpwd">Forgot your password?</a>
+                        <a href="{{url('registerUser')}}" class="txt-default pt-3 d-block">Create an Account</a>
+
                     </form>
                     <p class="mt-3">Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</p>
-                    <a href="{{url('registerUser')}}" class="txt-default pt-3 d-block">Create an Account</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+@include('CPartials.cart')
+
 <!--Section ends-->
 @include('CPartials.login')
 

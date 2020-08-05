@@ -51,6 +51,8 @@
         </div>
     </div>
 </section>
+@include('CPartials.cart')
+
 @include('CPartials.settings')
 
 <!--Section ends-->

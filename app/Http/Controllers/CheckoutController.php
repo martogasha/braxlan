@@ -46,6 +46,15 @@ class CheckoutController extends Controller
     public function placeOrder(Request $request)
     {
         if (Auth::check()) {
+            $editUser = User::find($request->userId);
+            $editUser->name = $request->name;
+            if ($request->email) {
+                $editUser->email = $request->email;
+            }
+            $editUser->phone = $request->phone;
+            $editUser->location = $request->location;
+            $editUser->save();
+
             $oldCart = Session::get('cat');
             $cart = new Cat($oldCart);
             $checkouts = $cart->item;

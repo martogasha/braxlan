@@ -58,6 +58,8 @@
 <!--footer end-->
 
 <!-- tap to top -->
+@include('CPartials.cart')
+
 @include('CPartials.login')
 
 

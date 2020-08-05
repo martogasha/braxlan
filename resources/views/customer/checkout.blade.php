@@ -21,6 +21,7 @@
                             <div class="theme-form">
                                 @if(isset($user))
                                 <div class="row check-out ">
+                                    <input type="hidden" name="userId" value="{{$user->id}}">
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Name</label>
                                         <input type="text" name="name" id="name" value="{{$user->name}}" placeholder="" required="">
@@ -37,6 +38,11 @@
 
                                     </div>
                                 </div>
+                                @else
+                                        <h4 class="text-danger">Kindly Login to Place Order</h4>
+                                <br>
+                                    <a href="{{url('loginUser')}}"><button class="btn btn-info">Login/Register</button></a>
+                                    </div>
                                     @endif
                             </div>
                         </div>
