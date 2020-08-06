@@ -7,6 +7,7 @@
     <div class="custom-container">
         <div class="row collection2">
             <div class="col-md-4">
+                <a href="{{url('whisky')}}">
                 <div class="collection-banner-main banner-1  p-right">
                         <div class="collection-img" style="background-color: aquamarine">
                         <img src="{{asset('uploads/product/'.$poster->poster_image)}}" class="img-fluid bg-img  " alt="banner">
@@ -14,16 +15,16 @@
                     <div class="collection-banner-contain">
                         <div>
                             <div class="shop">
-                                <a href="{{url('whisky')}}">
                                     <button class="btn btn-primary">Shop Now</button>
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
             <a href="{{url('vodka')}}">
             <div class="col-md-4">
+                <a href="{{url('vodka')}}">
                 <div class="collection-banner-main banner-1  p-right">
                     <div class="collection-img" style="background-color: aquamarine">
                         <img src="{{asset('uploads/product/'.$poster2->poster_image)}}" class="img-fluid bg-img  " alt="banner">
@@ -31,18 +32,16 @@
                     <div class="collection-banner-contain">
                         <div>
                             <div class="shop">
-                                <a href="{{url('vodka')}}">
                                     <button class="btn btn-primary">Shop Now</button>
-
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
             </a>
-            <a href="{{url('gin')}}">
             <div class="col-md-4">
+                <a href="{{url('gin')}}">
                 <div class="collection-banner-main banner-1  p-right">
                     <div class="collection-img" style="background-color: aquamarine">
                         <img src="{{asset('uploads/product/'.$poster3->poster_image)}}" class="img-fluid bg-img  " alt="banner">
@@ -50,16 +49,14 @@
                     <div class="collection-banner-contain">
                         <div>
                             <div class="shop">
-                                <a href="{{'gin'}}">
                                     <button class="btn btn-primary">Shop Now</button>
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
-            </a>
-        </div>
+    </div>
     </div>
 </section>
 <!--collection banner end-->
