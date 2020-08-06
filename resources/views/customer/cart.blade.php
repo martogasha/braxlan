@@ -36,7 +36,7 @@
                                 <div class="col-xs-3">
                                     <div class="qty-box">
                                         <div class="input-group">
-                                            <input type="text" name="quantity" class="form-control input-number" value="{{$product['quantity']}}">
+                                            <input type="text" name="quantity" class="form-control input-number" value="{{$product['quantity']}}" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                         <td>
                             <div class="qty-box">
                                 <div class="input-group">
-                                    <input type="number" name="quantity" class="form-control input-number" value="{{$product['quantity']}}">
+                                    <input type="number" name="quantity" class="form-control input-number" value="{{$product['quantity']}}" disabled>
                                 </div>
                             </div>
                         </td>
