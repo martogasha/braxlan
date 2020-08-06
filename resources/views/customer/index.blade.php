@@ -95,12 +95,14 @@
                                 @foreach($mostSolds as $mostSold)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$mostSold->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$mostSold->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$mostSold->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -175,12 +177,14 @@
                                 @foreach($liqs as $liq)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$liq->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$liq->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$liq->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -2244,12 +2248,14 @@
                                 @foreach($whiskys as $whisky)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$whisky->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$whisky->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$whisky->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -4313,12 +4319,14 @@
                                 @foreach($beers as $beer)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$beer->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$beer->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$beer->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -6389,12 +6397,14 @@
                                 @foreach($vodkas as $vodka)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$vodka->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$vodka->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$vodka->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -8451,12 +8461,14 @@
                                 @foreach($gins as $gin)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$gin->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$gin->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$gin->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -10515,12 +10527,14 @@
                                 @foreach($rums as $rum)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$rum->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$rum->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$rum->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -12578,12 +12592,14 @@
                                 @foreach($brandys as $brandy)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$brandy->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$brandy->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$brandy->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -14640,12 +14656,14 @@
                                 @foreach($wines as $wine)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$wine->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$wine->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$wine->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -16702,12 +16720,14 @@
                                 @foreach($softs as $soft)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$soft->id)}}">
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$soft->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$soft->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
@@ -18770,12 +18790,15 @@
                                 @foreach($under1000s as $under1000)
                                     <div class="product-box">
                                         <div class="product-imgbox">
+                                            <a href="{{url('productDetail',$under1000->id)}}">
+
                                             <div class="product-front">
                                                 <img src="{{asset('uploads/product/'.$under1000->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
                                             <div class="product-back">
                                                 <img src="{{asset('uploads/product/'.$under1000->product_image)}}" class="img-fluid  " alt="product">
                                             </div>
+                                            </a>
                                             <div class="product-icon icon-inline">
                                                 <form action="{{route('cart.store')}}" method="post">
                                                     @csrf
