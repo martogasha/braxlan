@@ -20872,26 +20872,6 @@
     </form>
     </div>
 <!--Newsletter modal popup start-->
-<div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="news-latter">
-                    <div class="modal-bg">
-                        <div class="offer-content">
-                            <div>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                    <h2>FREE DELIVERY!!! AND AMAIZING OFFERS FOR YOU</h2>
-                                <p>Braxlan Liquor store brings you best liquor prices and amaizing Offers, Just for you!</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!--Newsletter Modal popup end-->
 <!-- Quick-view modal popup end-->
 

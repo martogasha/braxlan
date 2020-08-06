@@ -54,7 +54,12 @@ class ProductController extends Controller
     }
 
     public function shopping(){
-        return view('customer.shop');
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
+        return view('customer.shop',[
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
+        ]);
     }
     public function shop(Request $request){
         $search = $request->input('searchProduct');

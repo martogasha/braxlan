@@ -109,54 +109,56 @@
                                         <div class="row">
                                             @if(count($searchProducts))
                                             @foreach($searchProducts as $searchProduct)
-                                            <div class="col-xl-3 col-md-4 col-6  col-grid-box">
-                                                <div class="product">
                                                     <a href="{{url('productDetail',$searchProduct->id)}}">
-                                                        <div class="product-box">
-                                                            <div class="product-imgbox">
-                                                                <div class="product-front">
-                                                                    <img src="{{asset('uploads/product/'.$searchProduct->product_image)}}" class="img-fluid  " alt="product">
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="product-detail detail-inline">
-                                                                <div class="detail-title">
-                                                                    <div class="detail-left">
-                                                                        <a href="#">
-                                                                            <h6 class="price-title">
-                                                                                {{$searchProduct->product_name}}.
-                                                                            </h6>
-                                                                            <br>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="detail-right">
-                                                                        <div class="check-price">
+                                                        <div class="col-xl-3 col-md-4 col-6  col-grid-box">
+                                                            <div class="product">
+                                                                <div class="product-box">
+                                                                    <div class="product-imgbox">
+                                                                        <div class="product-front">
+                                                                            <img src="{{asset('uploads/product/'.$searchProduct->product_image)}}" class="img-fluid  " alt="product">
                                                                         </div>
-                                                                        <div class="price">
-                                                                            <div class="price">
-                                                                                     Ksh: {{$searchProduct->product_price}}<br>
+                                                                    </div>
+                                                                    <div class="product-detail detail-center ">
+                                                                        <div class="detail-title">
+                                                                            <div class="detail-left">
+                                                                                <a href="#">
+                                                                                    <h6 class="price-title">
+                                                                                        {{$searchProduct->product_name}}.
+                                                                                    </h6>
+                                                                                    <br>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="detail-right">
+                                                                                <div class="check-price">
+                                                                                </div>
+                                                                                <div class="price">
+                                                                                    <div class="price">
+                                                                                        Ksh: {{$searchProduct->product_price}}<br>
+
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="icon-detail">
-                                                                    <div class="icon-detail">
-                                                                        <form action="{{route('cart.store')}}" method="post">
-                                                                            @csrf
-                                                                            <input type="hidden" name="productId" value="{{$searchProduct->id}}">
-                                                                            <button type="submit">
-                                                                                <i class="text-danger"><b>ADD TO CART</b></i>
-                                                                            </button>
-                                                                        </form>
+                                                                        <div class="icon-detail">
+                                                                            <div class="icon-detail">
+                                                                                <form action="{{url('cartOne')}}" method="post">
+                                                                                    @csrf
+                                                                                    <input type="hidden" name="productId" value="{{$searchProduct->id}}">
+                                                                                    <button type="submit">
+                                                                                        <i class="text-danger"><b>ADD TO CART</b></i>
+                                                                                    </button>
+                                                                                </form>
+
+                                                                            </div>
+                                                                        </div>
 
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </a>
-                                                </div>
-                                            </div>
-                                            @endforeach
+
+                                                @endforeach
                                             @else
                                                 <div class="container-fluid text-center">
                                                     <div class="card px-5 py-5">
