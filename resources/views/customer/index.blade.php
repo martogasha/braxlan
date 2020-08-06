@@ -93,7 +93,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($mostSolds as $mostSold)
-                                    <a href="{{'productDetail',$mostSold->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -133,7 +132,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
                                 @endforeach
 
                             </div>
