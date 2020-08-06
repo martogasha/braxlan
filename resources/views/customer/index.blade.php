@@ -175,8 +175,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($liqs as $liq)
-                                    <a href="{{'productDetail',$liq->id}}">
-
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -216,7 +214,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
+
                                 @endforeach
 
                             </div>
@@ -2246,7 +2244,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($whiskys as $whisky)
-                                    <a href="{{'productDetail',$whisky->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -2286,7 +2283,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
+
                                 @endforeach
 
                             </div>
@@ -4316,7 +4313,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($beers as $beer)
-                                    <a href="{{'productDetail',$beer->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -4356,7 +4352,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
+
                                 @endforeach
 
                             </div>
@@ -6393,7 +6389,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($vodkas as $vodka)
-                                    <a href="{{'productDetail',$vodka->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -6433,7 +6428,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
                                 @endforeach
                             </div>
                         </div>
@@ -8457,7 +8451,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($gins as $gin)
-                                    <a href="{{'productDetail',$gin->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -8497,7 +8490,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
+
                                 @endforeach
                             </div>
                         </div>
@@ -10522,7 +10515,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($rums as $rum)
-                                    <a href="{{'productDetail',$rum->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -10562,7 +10554,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
+
                                 @endforeach
 
                             </div>
@@ -12586,7 +12578,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($brandys as $brandy)
-                                    <a href="{{'productDetail',$brandy->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -12626,7 +12617,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
                                 @endforeach
                             </div>
                         </div>
@@ -14650,7 +14640,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($wines as $wine)
-                                    <a href="{{'productDetail',$wine->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -14690,7 +14679,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
                                 @endforeach
                             </div>
                         </div>
@@ -16714,8 +16702,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($softs as $soft)
-                                    <a href="{{'productDetail',$soft->id}}">
-
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -16755,7 +16741,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
                                 @endforeach
                             </div>
                         </div>
@@ -18785,7 +18770,6 @@
                         <div id="tab-1" class="tab-content active default">
                             <div class="product-slide-6 product-m no-arrow">
                                 @foreach($under1000s as $under1000)
-                                    <a href="{{'productDetail',$under1000->id}}">
                                     <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
@@ -18825,7 +18809,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </a>
+
                                 @endforeach
                             </div>
                         </div>
