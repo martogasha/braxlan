@@ -128,7 +128,7 @@
                                                                             </div>
                                                                             <div class="price">
                                                                                 <div class="price">
-                                                                                        5Litres Ksh: {{$beer->product_price}}<br>
+                                                                                       Ksh: {{$beer->product_price}}<br>
 
                                                                                 </div>
                                                                             </div>
