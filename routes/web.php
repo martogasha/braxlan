@@ -64,6 +64,8 @@ Route::resource('cart','CartController');
 Route::post('cartOne','CartController@storeOne');
 
 Route::get('cartReduceByOne/{id}','CartController@getReduceByOne');
+Route::get('addByOne/{id}','CartController@addByOne');
+
 Route::get('cartRemove/{id}','CartController@removeItem');
 
 Route::resource('updateCart','CartController');
@@ -131,30 +133,6 @@ Route::post('editUserDetail','UserController@editUser');
 Route::post('eProduct','ProductController@eProduct');
 Route::get('editProductDetails/{id}','ProductController@editProductDetails');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::view('dashboard','customer.dashboard');
 Route::post('shopping','ProductController@shop');
 Route::get('newTrending','ProductController@trending');
@@ -164,6 +142,7 @@ Route::get('getShopDetails','ProductController@shopDetails');
 
 
 Route::resource('productDetail','ProductDetailController');
+
 
 
 

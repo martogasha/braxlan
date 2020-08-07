@@ -33,6 +33,7 @@
                         </td>
                         <td><a href="#">{{$product['item']['product_name']}}</a>
                             <div class="mobile-cart-content row">
+                                <a href="{{url('addByOne',$product['item']['id'])}}"> +</a>
                                 <div class="col-xs-3">
                                     <div class="qty-box">
                                         <div class="input-group">
@@ -40,6 +41,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <a href="{{url('cartReduceByOne',$product['item']['id'])}}"> -</a>
                                 <div class="col-xs-3">
                                     <h2 class="td-color">Ksh: {{$product['item']['product_price']*$product['quantity']}}</h2></div>
                                 <div class="col-xs-3">
@@ -49,11 +51,15 @@
                         <td>
                             <h2>Ksh: {{$product['item']['product_price']}}</h2></td>
                         <td>
+                            <a href="{{url('addByOne',$product['item']['id'])}}"> + </a>
+
                             <div class="qty-box">
                                 <div class="input-group">
-                                    <input type="number" name="quantity" class="form-control input-number" value="{{$product['quantity']}}" disabled>
+                                    <input  name="quantity" class="form-control input-number" value="{{$product['quantity']}}" disabled>
                                 </div>
                             </div>
+                            <a href="{{url('cartReduceByOne',$product['item']['id'])}}"> - </a>
+
                         </td>
                         <td><a href="{{url('cartReduceByOne',$product['item']['id'])}}" class="icon"><i class="ti-close"></i></a></td>
                         <td>

@@ -35,6 +35,15 @@ class Cat
            $this->totalQty++;
            $this->totalPrice += $item->product_price;
    }
+    public function addByOne($id){
+        $this->item[$id]['quantity']++;
+        $this->item[$id]['product_price'] += $this->item[$id]['item']['product_price'];
+        $this->totalQty++;
+        $this->totalPrice += $this->item[$id]['item']['product_price'];
+        if ($this->item[$id]['quantity'] <= 0){
+            unset($this->item[$id]);
+        }
+    }
    public function reduceByOne($id){
        $this->item[$id]['quantity']--;
        $this->item[$id]['product_price'] -= $this->item[$id]['item']['product_price'];

@@ -57,6 +57,18 @@ class CartController extends Controller
         }
         return redirect()->back()->with('success','ITEM SUCCESSFULLY REMOVED TO CART');
     }
+    public function addByOne($id){
+        $oldCart = Session::has('cat') ? Session::get('cat'):null;
+        $cart = new Cat($oldCart);
+        $cart->addByOne($id);
+        if (count($cart->item)>0) {
+            Session::put('cat', $cart);
+        }
+        else{
+            Session::forget('cat');
+        }
+        return redirect()->back()->with('success','ITEM SUCCESSFULLY ADDED TO CART');
+    }
     public function removeItem($id){
         $oldCart = Session::has('cat') ? Session::get('cat'):null;
         $cart = new Cat($oldCart);
