@@ -45,7 +45,7 @@
                                 <div class="col-xs-3">
                                     <h2 class="td-color">Ksh: {{$product['item']['product_price']*$product['quantity']}}</h2></div>
                                 <div class="col-xs-3">
-                                    <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
+                                    <h2 class="td-color"><a href="{{url('cartReduceByOne',$product['item']['id'])}}" class="icon"><i class="ti-close"></i></a></h2></div>
                             </div>
                         </td>
                         <td>
