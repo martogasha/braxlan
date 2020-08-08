@@ -35,7 +35,7 @@ class CartController extends Controller
         $cart = new Cat($oldCart);
         $cart->add($product , $product->id);
         $request->session()->put('cat',$cart);
-        return redirect()->back()->with('success','ITEM SUCCESSFULLY ADDED TO CART');
+        return redirect(url('cart'))->with('success','ITEM SUCCESSFULLY ADDED TO CART');
     }
     public function storeOne(Request $request){
         $product = Product::find($request->productId);
