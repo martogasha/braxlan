@@ -46,6 +46,7 @@ Route::view('addProduct','admin.addProduct');
 Route::view('l','auth.l');
 Route::view('r','auth.r');
 
+Route::view('r','customer.index1');
 
 
 

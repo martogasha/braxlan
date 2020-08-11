@@ -165,7 +165,7 @@
                             <ul>
                                 <li class="mobile-cart  ">
                                     <a href="#">
-                                       <i class="icon-shopping-cart "></i>
+                                       <i class="icon-shopping-cart "><h6 style="font-size: 10px">Cart</h6></i>
                                     </a>
                                 </li>
                             </ul>
@@ -274,7 +274,7 @@
                             </div>
                             <div class="icon-block">
                                 <ul>
-                                    <li class="mobile-search"><a href="#"><i class="icon-search"></i></a>
+                                    <li class="mobile-search"><a href="#"><i class="icon-search"><br><h6 style="font-size: 10px">Search</h6></i></a>
                                         <div class ="search-overlay">
                                             <div>
                                                 <span class="close-mobile-search">×</span>
@@ -295,10 +295,10 @@
                                         </div>
                                     </li>
                                     @if(\Illuminate\Support\Facades\Auth::check())
-                                    <li class="mobile-setting mobile-setting-hover" onclick="openSetting()"><a href="#"><i class="icon-user"></i></a>
+                                    <li class="mobile-setting mobile-setting-hover" onclick="openSetting()"><a href="#"><i class="icon-user"><h6 style="font-size: 10px">Account</h6></i></a>
                                     </li>
                                     @else
-                                        <li class="mobile-setting mobile-setting-hover" onclick="openAccount()"><a href="#"><i class="icon-user"></i></a>
+                                        <li class="mobile-setting mobile-setting-hover" onclick="openAccount()"><a href="#"><i class="icon-user"><h6 style="font-size: 10px">Login</h6></i></a>
                                         </li>
                                     @endif
                                 </ul>
